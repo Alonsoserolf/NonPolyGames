@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: ae77b42c4517c42178cd5388c0975f22
+timeCreated: 1508109452
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Square Wood-7
+  fontNames:
+  - Square Wood-7
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
