@@ -59,26 +59,7 @@ public class StartMenu : MonoBehaviour {
                 makeChild.GetComponent<CubeBehavior>().enabled = false;
 
                 sidesCube = new GameObject[makeChild.transform.childCount];
-                /*for (int j = 0; j < makeChild.transform.childCount; j++)
-                {
-                    sidesCube[j] = makeChild.transform.GetChild(j).gameObject;
-                    randColor = Random.Range(1, 5);
-
-                    switch (randColor)
-                    {
-                        case 1: sidesCube[j].GetComponent<Renderer>().material = red;
-                            break;
-                        case 2: sidesCube[j].GetComponent<Renderer>().material = yellow;
-                            break;
-                        case 3: sidesCube[j].GetComponent<Renderer>().material = green;
-                            break;
-                        case 4: sidesCube[j].GetComponent<Renderer>().material = blue;
-                            break;
-                        case 5: sidesCube[j].GetComponent<Renderer>().material = pink;
-                            break;
-                        default: break;
-                    }
-                }*/
+               
                 makeChild.transform.parent = GameObject.Find("Stack").transform;
             }
 
