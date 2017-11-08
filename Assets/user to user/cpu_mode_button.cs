@@ -8,8 +8,9 @@ public class cpu_mode_button : MonoBehaviour {
     public void second_screen()
     {
 
-        SceneManager.LoadScene(1);
-
+        SceneManager.LoadScene(2);
+  
+       
     }
     // Use this for initialization
     void Start () {

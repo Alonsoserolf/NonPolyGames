@@ -10,7 +10,7 @@ public class restart_button : MonoBehaviour {
     {
         
         SceneManager.LoadScene(1);
-        tictac.mode_choice_func();
+
        
         
     }
