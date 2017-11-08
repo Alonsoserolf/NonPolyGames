@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,17 +12,17 @@ public class tictac : MonoBehaviour
     private static int[] level2;
     private static int[] level3;
     private static int player_turn;
-    public static  int mode_choice=1;
-    public Text player_turn_text ;
+    public static int mode_choice = 1;
+    public Text player_turn_text;
     public Text player_won_text;
     private int player_turn_text_overrule = 0;
-    public  Button restart_button;
-    public static  void mode_choice_func()
+    public Button restart_button;
+    public static void mode_choice_func()
     {
         mode_choice = 0;
-        
+
     }
-    
+
 
     private void checkWin()
     {
@@ -129,7 +130,7 @@ public class tictac : MonoBehaviour
             mode_choice = 1;
             restart_button.gameObject.SetActive(true);
         }
-        if (level3[1] == 2 && level2[4] == 2 && level1[7] == 2 || level3[3] == 2 && level2[4] == 2 && level1[5] == 2 || level3[5] == 2 && level2[4] == 2 && level1[3] == 2 || level3[7] == 2 && level2[4] == 2 && level1[1] == 2 || level3[8] == 2 && level2[4] == 2 && level1[0] == 2||level3[8] == 2 && level2[7] == 2 && level1[6] == 2 || level3[8] == 2 && level2[5] == 2 && level1[2] == 2 || level3[8] == 2 && level2[4] == 2 && level1[0] == 2 || level3[6] == 2 && level2[4] == 2 && level1[2] == 2 || level3[6] == 2 && level2[7] == 2 && level1[8] == 2 || level3[6] == 2 && level2[3] == 2 && level1[0] == 2 || level3[0] == 2 && level2[1] == 2 && level1[2] == 2 || level3[0] == 2 && level2[3] == 2 && level1[6] == 2 || level3[0] == 2 && level2[4] == 2 && level1[5] == 2 || level3[2] == 2 && level2[5] == 2 && level1[8] == 2 || level3[2] == 2 && level2[4] == 2 && level1[6] == 2 || level3[2] == 2 && level2[1] == 2 && level1[0] == 2)
+        if (level3[1] == 2 && level2[4] == 2 && level1[7] == 2 || level3[3] == 2 && level2[4] == 2 && level1[5] == 2 || level3[5] == 2 && level2[4] == 2 && level1[3] == 2 || level3[7] == 2 && level2[4] == 2 && level1[1] == 2 || level3[8] == 2 && level2[4] == 2 && level1[0] == 2 || level3[8] == 2 && level2[7] == 2 && level1[6] == 2 || level3[8] == 2 && level2[5] == 2 && level1[2] == 2 || level3[8] == 2 && level2[4] == 2 && level1[0] == 2 || level3[6] == 2 && level2[4] == 2 && level1[2] == 2 || level3[6] == 2 && level2[7] == 2 && level1[8] == 2 || level3[6] == 2 && level2[3] == 2 && level1[0] == 2 || level3[0] == 2 && level2[1] == 2 && level1[2] == 2 || level3[0] == 2 && level2[3] == 2 && level1[6] == 2 || level3[0] == 2 && level2[4] == 2 && level1[5] == 2 || level3[2] == 2 && level2[5] == 2 && level1[8] == 2 || level3[2] == 2 && level2[4] == 2 && level1[6] == 2 || level3[2] == 2 && level2[1] == 2 && level1[0] == 2)
         {
             player_turn_text.text = "";
             player_won_text.text = "Player 2 won,click Restart or Return ";
@@ -138,7 +139,7 @@ public class tictac : MonoBehaviour
             mode_choice = 1;
             restart_button.gameObject.SetActive(true);
         }
-        check_draw();
+
 
         if (player_turn_text_overrule == 0)
         {
@@ -157,14 +158,14 @@ public class tictac : MonoBehaviour
                 player_turn_text.color = Color.blue;
             }
         }
-       
+
 
     }
 
-void check_draw()
+    void check_draw()
     {
         int counter = 0;
-        while (counter<9)
+        while (counter < 9)
         {
             if (level3[counter] == 0 || level2[counter] == 0 || level1[counter] == 0)
             {
@@ -185,6 +186,7 @@ void check_draw()
 
 
     }
+
     // Use this for initialization
 
     void Start()
@@ -196,25 +198,24 @@ void check_draw()
         player_turn = 0;
         restart_button = null;
 
-
+        Debug.Log("script 1 has been started");
 
 
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        
-       
+
+
     }
 
     void OnMouseDown()
     {
-        
        
-        if (Input.GetMouseButton(0) &&mode_choice == 0)
+        if (Input.GetMouseButton(0) && mode_choice == 0)
         {
-            
+
             if (gameObject.tag == "Cube0" && level3[0] == 0)
             {
                 if (player_turn == 0)
@@ -733,6 +734,6 @@ void check_draw()
 
 
     }
-    
+
 
 }
