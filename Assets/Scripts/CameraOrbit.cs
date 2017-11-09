@@ -20,14 +20,10 @@ public class CameraOrbit : MonoBehaviour {
 	void Start () {
         this._XForm_Camera = this.transform;
         this._XForm_Parent = this.transform.parent;
-        _LocalRotation.x = -19;
-        _LocalRotation.y = 19;
-
-
-    }
-
-    // LateUpdate is called once per frame after Update() on every game object in the scene
-    void LateUpdate () {
+	}
+	
+	// LateUpdate is called once per frame after Update() on every game object in the scene
+	void LateUpdate () {
         if (Input.GetMouseButton(1)){
             CameraDisabled = false;
         }

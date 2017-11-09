@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,9 +13,10 @@ public class createStack : MonoBehaviour {
     public int bricksLeft;
     private int turn;
     public int[] vals;
+    public int[] optimalPlays;
     private int score1;
     private int score2;
-
+    public static int mode;
 
     public Text countText;
     public Text playerTurn;
@@ -23,7 +25,8 @@ public class createStack : MonoBehaviour {
     public Text winText;
     public Text stackVals;
 
-    
+
+  
 
     void Start()
     {
@@ -35,42 +38,37 @@ public class createStack : MonoBehaviour {
         bricksLeft = 10;
         turn = 2;
         switchTurn();
-        setCountText();
+
         stack = new Transform[bricksLeft];
         vals = new int[bricksLeft];
+        optimalPlays = new int[bricksLeft];
         System.Random rnd = new System.Random();
 
 	    for(int y = 0; y<bricksLeft; y++){
             vals[y] = rnd.Next(1, 11);
             stack[y] = Instantiate(brick, new Vector3(0,y,0), Quaternion.identity);
-            setCountText();
+            
         }
+        setCountText();
         updateVals();
+        optimal(bricksLeft - 1);
 	 }
+
+    
 
     private void updateVals()
     {
-        stackVals.text = "{";
-        for (int x = 0; x < bricksLeft; x++)
+        stackVals.text = "";
+        for (int x = bricksLeft - 1; x >= 0; x--)
         {
-            stackVals.text += vals[x].ToString();
-            if (x != bricksLeft - 1)
-            {
-                stackVals.text += ", ";
-            }
-            else
-            {
-                stackVals.text += "}";
-            }
-        }
-        if (bricksLeft == 0)
-        stackVals.text += "}";
+            Console.WriteLine("brick val =" + vals[x]);
+            stackVals.text += vals[x].ToString()+"\n";
+        }   
 
     }
 
     public void removeBrick(int num)
     {
-       
         for (int x = num; x > 0; x--)
         { 
             if (bricksLeft > 0)
@@ -92,11 +90,66 @@ public class createStack : MonoBehaviour {
         }
 
         updateVals();
+        if (mode == 1 && turn == 1)
+        {
+            StartCoroutine("compTurn");
+        }
         switchTurn();
         if (bricksLeft == 0)
             endGame();
     }
 
+    IEnumerator compTurn()
+    {
+        yield return new WaitForSeconds(3.0f);
+        if (optimalPlays[bricksLeft - 1] == 1)
+            removeBrick(1);
+        else
+            removeBrick(2);
+            
+    }
+
+    int optimal(int ind)
+    {
+        if (ind <= 0)
+        {
+            if (ind == 0)
+            {
+                optimalPlays[0] = 2;
+                return vals[0];
+            }
+            else
+                return 0;
+        }
+        else
+        {
+            int take1 = min(optimal(ind - 2), optimal(ind - 3));
+            int take2 = vals[ind - 1] + min(optimal(ind - 3), optimal(ind - 4));
+
+            if (take1 > take2)
+                optimalPlays[ind] = 1;
+            else
+                optimalPlays[ind] = 2;
+
+            return vals[ind] + max(take1, take2); 
+        }
+    }
+
+    int max(int x, int y)
+    {
+        if (x > y)
+            return x;
+        else
+            return y;
+    }
+
+    int min(int x, int y)
+    {
+        if (x > y)
+            return y;
+        else
+            return x;
+    }
     void endGame()
     {
         if (score1 > score2)
