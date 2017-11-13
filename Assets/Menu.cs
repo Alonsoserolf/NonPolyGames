@@ -32,7 +32,7 @@ public class Menu : MonoBehaviour {
 		SceneManager.LoadScene ("BlockMenu");
 	}
 	public void OnReturntoMainMenu(){
-		SceneManager.LoadScene ("MainMenu");
+		SceneManager.LoadScene ("ScrollingMainMenu");
 	}
 	public void OnLevelSelect(){
 		SceneManager.LoadScene ("SokabanLevelSelect");
