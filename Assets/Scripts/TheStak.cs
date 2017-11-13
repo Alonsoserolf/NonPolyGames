@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TheStak : MonoBehaviour {
     private int [][] cFaces;
-    GameObject selectedCube;
+    GameObject prevCube;
     private int yPos;
     public Transform cubePrefab;
     private GameObject[][] theStak;
@@ -18,7 +18,6 @@ public class TheStak : MonoBehaviour {
     // Use this for initialization
     private void Start () {
         int cubeNum = (transform.childCount);
-        print(this.gameObject.transform.childCount);
         cFaces = new int[cubeNum][];
         theStak = new GameObject[cubeNum][];
         for (int i=0; i < cubeNum; i++)
@@ -29,7 +28,8 @@ public class TheStak : MonoBehaviour {
             {
                 theStak[i][j] = this.gameObject.transform.GetChild(i).gameObject.transform.GetChild(j).gameObject;
                 cFaces[i][j] = (int) (1 + (Mathf.Floor((((i*6)+j)) * Mathf.PI) % cubeNum));
-                print( i+","+j+": "+ (1 + (Mathf.Floor((((i * 6) + j)) * Mathf.PI) % cubeNum)));
+                print(cFaces[i][j] + ",");
+
 
                 switch (cFaces[i][j])
                 {
@@ -66,27 +66,18 @@ public class TheStak : MonoBehaviour {
             if (Input.GetMouseButtonDown(0))
             {
                 GameObject hitCube = hit.transform.gameObject;
-                print(hitCube.name);
                 CubeSelect(hitCube);
             }
         }
     }      
     public void CubeSelect(GameObject obj)
     {
-        if (selectedCube != null && selectedCube!=obj)
+        if (prevCube != null && prevCube!=obj)
         {
-            if (selectedCube.GetComponent<CubeBehavior>().isActiveAndEnabled)
+            if (prevCube.GetComponent<CubeBehavior>().isActiveAndEnabled)
             {
-                selectedCube.GetComponent<CubeBehavior>().enabled = false;
-                selectedCube.transform.position= new Vector3(0, yPos, 0);
-
-                int xPosition = (selectedCube.transform.eulerAngles.x < 90) ? 0 :
-                             (selectedCube.transform.eulerAngles.x < 180) ? 90 :
-                             (selectedCube.transform.eulerAngles.x < 270) ? 180 :
-                             (selectedCube.transform.eulerAngles.x < 360) ? 270 : 360;
-
-                selectedCube.transform.eulerAngles  =new Vector3(xPosition , 0, 0);
-
+                prevCube.GetComponent<CubeBehavior>().enabled = false;
+                prevCube.transform.position= new Vector3(0, yPos, 0);
             }
         }
         if (obj.GetComponent<CubeBehavior>().isActiveAndEnabled)
@@ -94,43 +85,34 @@ public class TheStak : MonoBehaviour {
             obj.GetComponent<CubeBehavior>().enabled = false;
             obj.transform.position = new Vector3(0, yPos, 0);
 
-            int xPosition = (int)selectedCube.transform.eulerAngles.x;
+            int xPosition = (int)prevCube.transform.eulerAngles.x;
             xPosition = (xPosition > 325 || xPosition < 45) ? 0 :
                               (xPosition>45 && xPosition < 135) ? 90 :
                               (xPosition > 135 && xPosition < 225) ? 180 :
                               (xPosition > 225 && xPosition < 325) ? 270 : 360;
-            int yPosition = (int)selectedCube.transform.eulerAngles.y;
+            int yPosition = (int)prevCube.transform.eulerAngles.y;
             yPosition = (yPosition > 325 || yPosition < 45) ? 0 :
                               (yPosition > 45 && yPosition < 135) ? 90 :
                               (yPosition > 135 && yPosition < 225) ? 180 :
                               (yPosition > 225 && yPosition < 325) ? 270 : 360;
-            int zPosition = (int)selectedCube.transform.eulerAngles.z;
-            print(zPosition);
+            int zPosition = (int)prevCube.transform.eulerAngles.z;
             zPosition = (zPosition > 325 || zPosition < 45) ? 0 :
                               (zPosition > 45 && zPosition < 135) ? 90 :
                               (zPosition > 135 && zPosition < 225) ? 180 :
                               (zPosition > 225 && zPosition < 325) ? 270 : 360;
-            print(zPosition);
+            print("("+xPosition+","+yPosition+","+zPosition+")");
 
-            //print(xPosition);
-            selectedCube.transform.eulerAngles = new Vector3(xPosition, yPosition, zPosition);
+            prevCube.transform.eulerAngles = new Vector3(xPosition, yPosition, zPosition);
 
         }
         else
         {
              obj.GetComponent<CubeBehavior>().enabled = true;
              yPos = (int)obj.transform.position.y;
-             print(yPos);
-             obj.transform.position= new Vector3(2, yPos, 1);
-
+             //offset cube for rotation visibility
+             obj.transform.position = new Vector3(2, yPos, 1);
         }
 
-        selectedCube = obj;
-
-    }
-    void CubeDeselect()
-    {
-
-    }
-    
+        prevCube = obj;
+    }    
 }
