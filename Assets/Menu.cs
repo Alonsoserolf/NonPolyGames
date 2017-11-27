@@ -38,7 +38,10 @@ public class Menu : MonoBehaviour {
 		SceneManager.LoadScene ("SokabanLevelSelect");
 	}
 	public void OnTicPlay(){
-		SceneManager.LoadScene ("TicTacToeUserComputer");
+		SceneManager.LoadScene ("cubes");
+	}
+	public void PlayInstantInsanity(){
+		SceneManager.LoadScene ("InstantInsanity");
 	}
 	public void OnQuit(){
 		#if UNITY_EDITOR

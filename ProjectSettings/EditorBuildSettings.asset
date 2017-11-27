@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/MainMenu.unity
     guid: 63dc247c783524673939707a23637593
   - enabled: 1
+    path: Assets/Scenes/Menus/Level1.unity
+    guid: 4a886223cdbbb421088eca865c292cd8
+  - enabled: 1
+    path: Assets/Scenes/Menus/Level2.unity
+    guid: 70c99a1b663f44635bcda0f6baaec77d
+  - enabled: 1
+    path: Assets/Scenes/Menus/Level3.unity
+    guid: b544fe1eeb94a423188e67ce43fc1a00
+  - enabled: 1
     path: Assets/Scenes/cubes.unity
     guid: 592de7443cbc70546ac5df058ae1b90e
   - enabled: 1
@@ -38,12 +47,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/TicTacToeUserComputer.unity
     guid: 2381451aedc254a718d2373b2402700e
-  - enabled: 1
-    path: Assets/Scenes/Menus/Level1.unity
-    guid: 4a886223cdbbb421088eca865c292cd8
-  - enabled: 1
-    path: Assets/Scenes/Menus/Level2.unity
-    guid: 70c99a1b663f44635bcda0f6baaec77d
-  - enabled: 1
-    path: Assets/Scenes/Menus/Level3.unity
-    guid: b544fe1eeb94a423188e67ce43fc1a00
