@@ -75,7 +75,7 @@ public class tictac : MonoBehaviour
 
         }
 
-        if (level3[1] == 1 && level2[4] == 1 && level1[7] == 1 || level3[3] == 1 && level2[4] == 1 && level1[5] == 1 || level3[5] == 1 && level2[4] == 1 && level1[3] == 1 || level3[7] == 1 && level2[4] == 1 && level1[1] == 1 || level3[8] == 1 && level2[4] == 1 && level1[0] == 1 || level3[8] == 1 && level2[5] == 1 && level1[2] == 1 || level3[8] == 1 && level2[4] == 1 && level1[0] == 1 || level3[6] == 1 && level2[4] == 1 && level1[2] == 1 || level3[6] == 1 && level2[7] == 1 && level1[8] == 1 || level3[6] == 1 && level2[3] == 1 && level1[0] == 1 || level3[0] == 1 && level2[1] == 1 && level1[2] == 1 || level3[0] == 1 && level2[3] == 1 && level1[6] == 1 || level3[0] == 1 && level2[4] == 1 && level1[5] == 1 || level3[2] == 1 && level2[5] == 1 && level1[8] == 1 || level3[2] == 1 && level2[4] == 1 && level1[6] == 1 || level3[2] == 1 && level2[1] == 1 && level1[0] == 1)
+        if (level3[1] == 1 && level2[4] == 1 && level1[7] == 1 || level3[3] == 1 && level2[4] == 1 && level1[5] == 1 || level3[5] == 1 && level2[4] == 1 && level1[3] == 1 || level3[7] == 1 && level2[4] == 1 && level1[1] == 1 || level3[8] == 1 && level2[4] == 1 && level1[0] == 1 || level3[8] == 1 && level2[5] == 1 && level1[2] == 1 || level3[8] == 1 && level2[4] == 1 && level1[0] == 1 || level3[6] == 1 && level2[4] == 1 && level1[2] == 1 || level3[6] == 1 && level2[7] == 1 && level1[8] == 1 || level3[6] == 1 && level2[3] == 1 && level1[0] == 1 || level3[0] == 1 && level2[1] == 1 && level1[2] == 1 || level3[0] == 1 && level2[3] == 1 && level1[6] == 1  || level3[2] == 1 && level2[5] == 1 && level1[8] == 1 || level3[2] == 1 && level2[4] == 1 && level1[6] == 1 || level3[2] == 1 && level2[1] == 1 && level1[0] == 1 || level3[8] == 1 && level2[7] == 1 && level1[6] == 1)
         {
             player_turn_text.text = "";
             player_won_text.text = "Player 1 won,click Restart or Return ";
@@ -130,7 +130,7 @@ public class tictac : MonoBehaviour
             mode_choice = 1;
             restart_button.gameObject.SetActive(true);
         }
-        if (level3[1] == 2 && level2[4] == 2 && level1[7] == 2 || level3[3] == 2 && level2[4] == 2 && level1[5] == 2 || level3[5] == 2 && level2[4] == 2 && level1[3] == 2 || level3[7] == 2 && level2[4] == 2 && level1[1] == 2 || level3[8] == 2 && level2[4] == 2 && level1[0] == 2 || level3[8] == 2 && level2[7] == 2 && level1[6] == 2 || level3[8] == 2 && level2[5] == 2 && level1[2] == 2 || level3[8] == 2 && level2[4] == 2 && level1[0] == 2 || level3[6] == 2 && level2[4] == 2 && level1[2] == 2 || level3[6] == 2 && level2[7] == 2 && level1[8] == 2 || level3[6] == 2 && level2[3] == 2 && level1[0] == 2 || level3[0] == 2 && level2[1] == 2 && level1[2] == 2 || level3[0] == 2 && level2[3] == 2 && level1[6] == 2 || level3[0] == 2 && level2[4] == 2 && level1[5] == 2 || level3[2] == 2 && level2[5] == 2 && level1[8] == 2 || level3[2] == 2 && level2[4] == 2 && level1[6] == 2 || level3[2] == 2 && level2[1] == 2 && level1[0] == 2)
+        if (level3[1] == 2 && level2[4] == 2 && level1[7] == 2 || level3[3] == 2 && level2[4] == 2 && level1[5] == 2 || level3[5] == 2 && level2[4] == 2 && level1[3] == 2 || level3[7] == 2 && level2[4] == 2 && level1[1] == 2 || level3[8] == 2 && level2[4] == 2 && level1[0] == 2 || level3[8] == 2 && level2[7] == 2 && level1[6] == 2 || level3[8] == 2 && level2[5] == 2 && level1[2] == 2 || level3[8] == 2 && level2[4] == 2 && level1[0] == 2 || level3[6] == 2 && level2[4] == 2 && level1[2] == 2 || level3[6] == 2 && level2[7] == 2 && level1[8] == 2 || level3[6] == 2 && level2[3] == 2 && level1[0] == 2 || level3[0] == 2 && level2[1] == 2 && level1[2] == 2 || level3[0] == 2 && level2[3] == 2 && level1[6] == 2  || level3[2] == 2 && level2[5] == 2 && level1[8] == 2 || level3[2] == 2 && level2[4] == 2 && level1[6] == 2 || level3[2] == 2 && level2[1] == 2 && level1[0] == 2)
         {
             player_turn_text.text = "";
             player_won_text.text = "Player 2 won,click Restart or Return ";
@@ -198,7 +198,7 @@ public class tictac : MonoBehaviour
         player_turn = 0;
         restart_button = null;
 
-        Debug.Log("script 1 has been started");
+        
 
 
     }

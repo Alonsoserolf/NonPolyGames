@@ -7,7 +7,7 @@ public class cpu_mode_button : MonoBehaviour {
 
     public void second_screen()
     {
-
+        tictac_cpu_mode.mode_choice = 0;
         SceneManager.LoadScene(2);
   
        
