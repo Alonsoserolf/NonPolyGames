@@ -19,12 +19,12 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 8600000, guid: 43e2c646f7e720b4eb386039744e245e, type: 2}
+        m_Texture: {fileID: 2800000, guid: 7b13b9688a4990047a4587e848be9cff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Limiter: 0.64
-    - _Outline: 0.95
+    - _Limiter: 0.41
+    - _Outline: 0.55
     m_Colors:
-    - _Color: {r: 1, g: 0.93103445, b: 0, a: 1}
+    - _Color: {r: 0.854902, g: 0.854902, b: 0.854902, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
