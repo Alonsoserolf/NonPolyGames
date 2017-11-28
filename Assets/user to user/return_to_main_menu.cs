@@ -16,7 +16,8 @@ public class return_to_main_menu : MonoBehaviour {
 	}
     public void main_menu()
     {
-        SceneManager.LoadScene("TicTacToeMenu");
+       
+        SceneManager.LoadScene(0);
        
     }
 

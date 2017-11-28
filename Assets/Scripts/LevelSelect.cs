@@ -24,11 +24,11 @@ public class LevelSelect : MonoBehaviour {
 			//}
 			int buttonRow = (int)i / buttonsPerRow;
 			int gridRow = 2*buttonRow +1;
-			float top = gridBoxHeight + gridRow;
+			float top = gridBoxHeight * gridRow;
 
 			int buttonIndex = i % buttonsPerRow;
 			int gridColumn = 2 * buttonIndex + 1;
-			float left = gridBoxWidth + gridColumn;
+			float left = gridBoxWidth * gridColumn;
 
 			var levelName = "Level " +(i+1);
 			if (GUI.Button (new Rect (left, top, gridBoxWidth, gridBoxHeight), levelName)) {

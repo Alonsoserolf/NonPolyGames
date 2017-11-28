@@ -7,7 +7,7 @@ using UnityEngine;
 public class tictac_cpu_mode : MonoBehaviour
 {
 
-
+    private GameObject find_cube;
     private static int[] level1c;
     private static int[] level2c;
     private static int[] level3c;
@@ -16,7 +16,7 @@ public class tictac_cpu_mode : MonoBehaviour
     public Text player_won_text;
     private int player_turn_text_overrule = 0;
     public Button restart_button;
-
+   
 
 
 
@@ -34,6 +34,7 @@ public class tictac_cpu_mode : MonoBehaviour
             player_won_text.text = "You won,click Restart or Return";
             player_won_text.color = Color.blue;
             player_turn_text_overrule = 1;
+            mode_choice = 1;
             restart_button.gameObject.SetActive(true);
 
 
@@ -45,7 +46,7 @@ public class tictac_cpu_mode : MonoBehaviour
             player_won_text.text = "You won,click Restart or Return";
             player_won_text.color = Color.blue;
             player_turn_text_overrule = 1;
-
+            mode_choice = 1;
             restart_button.gameObject.SetActive(true);
         }
 
@@ -56,7 +57,7 @@ public class tictac_cpu_mode : MonoBehaviour
             player_won_text.text = "You won,click Restart or Return";
             player_won_text.color = Color.blue;
             player_turn_text_overrule = 1;
-
+            mode_choice = 1;
             restart_button.gameObject.SetActive(true);
 
         }
@@ -68,18 +69,18 @@ public class tictac_cpu_mode : MonoBehaviour
             player_won_text.text = "You won,click Restart or Return";
             player_won_text.color = Color.blue;
             player_turn_text_overrule = 1;
-
+            mode_choice = 1;
             restart_button.gameObject.SetActive(true);
 
         }
         //check for diagonal between level win
-        if (level3c[1] == 1 && level2c[4] == 1 && level1c[7] == 1 || level3c[3] == 1 && level2c[4] == 1 && level1c[5] == 1 || level3c[5] == 1 && level2c[4] == 1 && level1c[3] == 1 || level3c[7] == 1 && level2c[4] == 1 && level1c[1] == 1 || level3c[8] == 1 && level2c[4] == 1 && level1c[0] == 1 || level3c[8] == 1 && level2c[5] == 1 && level1c[2] == 1 || level3c[8] == 1 && level2c[4] == 1 && level1c[0] == 1 || level3c[6] == 1 && level2c[4] == 1 && level1c[2] == 1 || level3c[6] == 1 && level2c[7] == 1 && level1c[8] == 1 || level3c[6] == 1 && level2c[3] == 1 && level1c[0] == 1 || level3c[0] == 1 && level2c[1] == 1 && level1c[2] == 1 || level3c[0] == 1 && level2c[3] == 1 && level1c[6] == 1 || level3c[0] == 1 && level2c[4] == 1 && level1c[5] == 1 || level3c[2] == 1 && level2c[5] == 1 && level1c[8] == 1 || level3c[2] == 1 && level2c[4] == 1 && level1c[6] == 1 || level3c[2] == 1 && level2c[1] == 1 && level1c[0] == 1)
+        if (level3c[1] == 1 && level2c[4] == 1 && level1c[7] == 1 || level3c[3] == 1 && level2c[4] == 1 && level1c[5] == 1 || level3c[5] == 1 && level2c[4] == 1 && level1c[3] == 1 || level3c[7] == 1 && level2c[4] == 1 && level1c[1] == 1 || level3c[8] == 1 && level2c[4] == 1 && level1c[0] == 1 || level3c[8] == 1 && level2c[5] == 1 && level1c[2] == 1 || level3c[0] == 1 && level2c[4] == 1 && level1c[8] == 1 || level3c[6] == 1 && level2c[4] == 1 && level1c[2] == 1 || level3c[6] == 1 && level2c[7] == 1 && level1c[8] == 1 || level3c[6] == 1 && level2c[3] == 1 && level1c[0] == 1 || level3c[0] == 1 && level2c[1] == 1 && level1c[2] == 1 || level3c[0] == 1 && level2c[3] == 1 && level1c[6] == 1 || level3c[8] == 1 && level2c[7] == 1 && level1c[6] == 1 || level3c[2] == 1 && level2c[5] == 1 && level1c[8] == 1 || level3c[2] == 1 && level2c[4] == 1 && level1c[6] == 1 || level3c[2] == 1 && level2c[1] == 1 && level1c[0] == 1)
         {
             player_turn_text.text = "";
             player_won_text.text = "You won,click Restart or Return";
             player_won_text.color = Color.blue;
             player_turn_text_overrule = 1;
-
+            mode_choice = 1;
             restart_button.gameObject.SetActive(true);
 
         }
@@ -93,7 +94,7 @@ public class tictac_cpu_mode : MonoBehaviour
             player_won_text.text = "Computer  won,click Restart or Return ";
             player_won_text.color = Color.red;
             player_turn_text_overrule = 1;
-
+            mode_choice = 1;
             restart_button.gameObject.SetActive(true);
 
         }
@@ -104,7 +105,7 @@ public class tictac_cpu_mode : MonoBehaviour
             player_won_text.text = "Computer  won,click Restart or Return ";
             player_won_text.color = Color.red;
             player_turn_text_overrule = 1;
-
+            mode_choice = 1;
             restart_button.gameObject.SetActive(true);
 
 
@@ -115,7 +116,7 @@ public class tictac_cpu_mode : MonoBehaviour
             player_won_text.text = "Computer  won,click Restart or Return ";
             player_won_text.color = Color.red;
             player_turn_text_overrule = 1;
-
+            mode_choice = 1;
             restart_button.gameObject.SetActive(true);
 
         }
@@ -125,10 +126,10 @@ public class tictac_cpu_mode : MonoBehaviour
             player_won_text.text = "Computer  won,click Restart or Return ";
             player_won_text.color = Color.red;
             player_turn_text_overrule = 1;
-
+            mode_choice = 1;
             restart_button.gameObject.SetActive(true);
         }
-        if (level3c[1] == 2 && level2c[4] == 2 && level1c[7] == 2 || level3c[3] == 2 && level2c[4] == 2 && level1c[5] == 2 || level3c[5] == 2 && level2c[4] == 2 && level1c[3] == 2 || level3c[7] == 2 && level2c[4] == 2 && level1c[1] == 2 || level3c[8] == 2 && level2c[4] == 2 && level1c[0] == 2 || level3c[8] == 2 && level2c[7] == 2 && level1c[6] == 2 || level3c[8] == 2 && level2c[5] == 2 && level1c[2] == 2 || level3c[8] == 2 && level2c[4] == 2 && level1c[0] == 2 || level3c[6] == 2 && level2c[4] == 2 && level1c[2] == 2 || level3c[6] == 2 && level2c[7] == 2 && level1c[8] == 2 || level3c[6] == 2 && level2c[3] == 2 && level1c[0] == 2 || level3c[0] == 2 && level2c[1] == 2 && level1c[2] == 2 || level3c[0] == 2 && level2c[3] == 2 && level1c[6] == 2 || level3c[0] == 2 && level2c[4] == 2 && level1c[5] == 2 || level3c[2] == 2 && level2c[5] == 2 && level1c[8] == 2 || level3c[2] == 2 && level2c[4] == 2 && level1c[6] == 2 || level3c[2] == 2 && level2c[1] == 2 && level1c[0] == 2)
+        if (level3c[1] == 2 && level2c[4] == 2 && level1c[7] == 2 || level3c[3] == 2 && level2c[4] == 2 && level1c[5] == 2 || level3c[5] == 2 && level2c[4] == 2 && level1c[3] == 2 || level3c[7] == 2 && level2c[4] == 2 && level1c[1] == 2 || level3c[8] == 2 && level2c[4] == 2 && level1c[0] == 2 || level3c[8] == 2 && level2c[7] == 2 && level1c[6] == 2 || level3c[8] == 2 && level2c[5] == 2 && level1c[2] == 2 || level3c[0] == 2 && level2c[4] == 2 && level1c[8] == 2 || level3c[6] == 2 && level2c[4] == 2 && level1c[2] == 2 || level3c[6] == 2 && level2c[7] == 2 && level1c[8] == 2 || level3c[6] == 2 && level2c[3] == 2 && level1c[0] == 2 || level3c[0] == 2 && level2c[1] == 2 && level1c[2] == 2 || level3c[0] == 2 && level2c[3] == 2 && level1c[6] == 2  || level3c[2] == 2 && level2c[5] == 2 && level1c[8] == 2 || level3c[2] == 2 && level2c[4] == 2 && level1c[6] == 2 || level3c[2] == 2 && level2c[1] == 2 && level1c[0] == 2)
         {
             player_turn_text.text = "";
             player_won_text.text = "Computer  won,click Restart or Return ";
@@ -154,7 +155,7 @@ public class tictac_cpu_mode : MonoBehaviour
         level3c = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         level2c = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         level1c = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        
+       
 
 
     }
@@ -169,20 +170,16 @@ public class tictac_cpu_mode : MonoBehaviour
     void OnMouseDown()
     {
 
-        Debug.Log(level3c[0]);
-        Debug.Log(level3c[1]);
-        Debug.Log(level3c[2]);
-        Debug.Log("before mouse down");
+       
+       
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0)&&mode_choice==0)
         {
-            Debug.Log("after mouse down");
+           
             if (gameObject.tag == "Cube0")
             {
 
 
-
-                Debug.Log("cube0");
 
                 level3c[0] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
@@ -196,7 +193,7 @@ public class tictac_cpu_mode : MonoBehaviour
 
 
 
-                Debug.Log("cube1");
+                
                 level3c[1] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
 
@@ -206,7 +203,7 @@ public class tictac_cpu_mode : MonoBehaviour
 
 
 
-                Debug.Log("cube2");
+               
                 level3c[2] = 1;
 
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
@@ -220,7 +217,7 @@ public class tictac_cpu_mode : MonoBehaviour
 
 
 
-                Debug.Log("cube3");
+             
                 level3c[3] = 1;
 
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
@@ -231,7 +228,7 @@ public class tictac_cpu_mode : MonoBehaviour
 
 
 
-                Debug.Log("cube4");
+                
                 level3c[4] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
 
@@ -240,7 +237,7 @@ public class tictac_cpu_mode : MonoBehaviour
             {
 
 
-                Debug.Log("cube5");
+                
                 level3c[5] = 1;
 
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
@@ -251,7 +248,7 @@ public class tictac_cpu_mode : MonoBehaviour
 
 
 
-                Debug.Log("cube6");
+                
                 level3c[6] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
 
@@ -261,14 +258,14 @@ public class tictac_cpu_mode : MonoBehaviour
 
 
 
-                Debug.Log("cube7");
+                
                 level3c[7] = 1;
 
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
             }
             if (gameObject.tag == "Cube8")
             {
-                Debug.Log("cube8");
+                
                 level3c[8] = 1;
 
 
@@ -462,9 +459,10 @@ public class tictac_cpu_mode : MonoBehaviour
 
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
             }
-
-            computer_algorithm();
             checkWin();
+            if (mode_choice==0)
+                computer_algorithm();
+            
         }
 
 
@@ -477,7 +475,7 @@ public class tictac_cpu_mode : MonoBehaviour
     //computer algorithm
     void computer_algorithm()
     {
-
+       
         int break_it = 0;
         int counter1 = 0;
         int count_1_level_1 = 0;
@@ -485,7 +483,7 @@ public class tictac_cpu_mode : MonoBehaviour
         int count_1_level_3 = 0;
         int counter = 0;
         int num;
-        int computer_offence_initiator = 0;
+         int computer_offence_initiator = 0;
         int computer_defence_initiator = 0;
         int final_stage_array = 0;
         num = Random.Range(0, 9);
@@ -495,11 +493,11 @@ public class tictac_cpu_mode : MonoBehaviour
             {
                 count_1_level_3++;
             }
-            if (level3c[counter] == 1)
+            if (level2c[counter] == 1)
             {
                 count_1_level_2++;
             }
-            if (level3c[counter] == 1)
+            if (level1c[counter] == 1)
             {
                 count_1_level_1++;
             }
@@ -512,95 +510,99 @@ public class tictac_cpu_mode : MonoBehaviour
         {
             num = Random.Range(0, 9);
         }
-        Debug.Log(num);
-        
-        
-    if (count_1_level_3 == 1 && count_1_level_2 == 0 && count_1_level_1 < 2)
-    {
-        if (level3c[4] == 0)
-        {
-            level3c[4] = 2;
-            fill_cpu_color_slot();
-        }
-        if (level3c[4] == 1)
-        {
-            level3c[num] = 2;
-            fill_cpu_color_slot();
 
-        }
-        computer_offence_initiator = 1;
-        computer_defence_initiator = 1;
-        final_stage_array = 1;
-    }
-    else if (count_1_level_2 == 1 && count_1_level_3 < 2 && count_1_level_1 < 2)
-    {
-        if (level2c[4] == 0)
-        {
-            level2c[4] = 2;
-            fill_cpu_color_slot();
-        }
-        if (level2c[4] == 1)
-        {
-            level2c[num] = 2;
-            fill_cpu_color_slot();
-        }
-        computer_offence_initiator = 1;
-        computer_defence_initiator = 1;
-        final_stage_array = 1;
-    }
-    else if (count_1_level_1 == 1 && count_1_level_2 == 0 && count_1_level_3 == 0)
-    {
-        if (level1c[4] == 0)
-        {
-            level1c[4] = 2;
-            fill_cpu_color_slot();
-        }
-        if (level1c[4] == 1)
-        {
-            level1c[num] = 2;
-            fill_cpu_color_slot();
-        }
-        computer_offence_initiator = 1;
-        computer_defence_initiator = 1;
-        final_stage_array = 1;
-    }
+        
+
+            if (count_1_level_3 == 1 && count_1_level_2 == 0 && count_1_level_1 == 0)
+            {
+            Debug.Log("first step level3");
+            if (level2c[4] == 0)
+                {
+                    level2c[4] = 2;
+                    fill_cpu_color_slot(2, 4);
+                }
+
+                computer_offence_initiator = 1;
+                computer_defence_initiator = 1;
+                final_stage_array = 1;
+            }
+            else if (count_1_level_2 == 1 && count_1_level_3 == 0 && count_1_level_1 == 0)
+            {
+            Debug.Log("first step level2");
+            if (level2c[4] == 0)
+
+                {
+                    level2c[4] = 2;
+                    fill_cpu_color_slot(2, 4);
+                }
+                if (level2c[4] == 1)
+                {
+                    level2c[num] = 2;
+                    fill_cpu_color_slot(2, num);
+                }
+                computer_offence_initiator = 1;
+                computer_defence_initiator = 1;
+                final_stage_array = 1;
+            }
+            else if (count_1_level_1 == 1 && count_1_level_2 == 0 && count_1_level_3 == 0)
+            {
+          
+            if (level2c[4] == 0)
+                {
+                Debug.Log("first step level1");
+                level2c[4] = 2;
+                    fill_cpu_color_slot(2, 4);
+                }
+
+                computer_offence_initiator = 1;
+                computer_defence_initiator = 1;
+                final_stage_array = 1;
+            }
+            
+        
 
     // function to check if cpu can finish the game before checking defence
     computer_offence2(ref computer_defence_initiator, ref computer_offence_initiator, ref final_stage_array);
     if (computer_defence_initiator == 0)
     {
-        computer_defence(ref computer_offence_initiator, ref final_stage_array);
+            Debug.Log("defence");
+            computer_defence(ref computer_offence_initiator, ref final_stage_array);
     }
     if (computer_offence_initiator == 0)
     {
-        computer_offence1(ref final_stage_array);
+            Debug.Log("offence1");
+            computer_offence1(ref final_stage_array);
     }
 
     //if possibilities for offenece and defence are consumed and no needed
     if (final_stage_array == 0)
     {
-        while (counter1 < 9&&break_it==0)
+            Debug.Log("final array");
+            while (counter1 < 9&&break_it==0)
         {
             if (level3c[counter1] != 1 && level3c[counter1] != 2)
             {
-                level3c[counter1] = 2;
-                fill_cpu_color_slot();
+                    Debug.Log("final array level3");
+                    level3c[counter1] = 2;
+                fill_cpu_color_slot(3,counter1);
                 counter1 = 8;
                 break_it = 1;
             }
 
             if (level2c[counter1] != 1 && level2c[counter1] != 2)
             {
-                level2c[counter1] = 2;
-                fill_cpu_color_slot();
+                    Debug.Log("final array level2");
+                    level2c[counter1] = 2;
+                fill_cpu_color_slot(2,counter1);
                 counter1 = 8;
                 break_it = 1;
             }
 
             if (level1c[counter1] != 1 && level1c[counter1] != 2)
             {
-                level1c[counter1] = 2;
-                fill_cpu_color_slot();
+                    Debug.Log("final array level1");
+                    level1c[counter1] = 2;
+                fill_cpu_color_slot(1,counter1);
                 counter1 = 8;
                 break_it = 1;
             }
@@ -609,7 +611,7 @@ public class tictac_cpu_mode : MonoBehaviour
     }
 
 
-
+        checkWin();
 
 }
 
@@ -659,24 +661,24 @@ void computer_defence(ref int computer_offence_initiator1, ref int final_stage_a
 { 6,6,6 },
 { 7,7,7 },
 { 8,8,8 } };
-    win_combo_diagonal = new int[16, 3] { { 1,4,7 },
+        win_combo_diagonal = new int[16, 3] { { 1,4,7 },
 { 3,4,5 },
 { 5,4,3 },
 { 7,4,1 },
 { 8,4,0 },
-{ 8,7,6 },
+{ 0,4,8 },
 { 8,5,2 },
 { 6,4,2 },
 { 6,3,0 },
 { 0,1,2 },
 { 0,3,6 },
-{ 0,4,5 },
+{ 8,7,6 },
 { 2,5,8 },
 { 2,4,6 },
 { 2,1,0 },
 { 6,7,8 } };
 
-    while (counter6 < 9)
+        while (counter6 < 9)
     {
         //check where are the player occupied slots
         if (level3c[counter6] == 1)
@@ -745,7 +747,7 @@ void computer_defence(ref int computer_offence_initiator1, ref int final_stage_a
 
 
                         level3c[win_combo[counter1, counter6]] = 2;
-                        fill_cpu_color_slot();
+                        fill_cpu_color_slot(3, win_combo[counter1, counter6]);
                         counter6 = 3;
                         counter2 = 3;
                         counter1 = 8;
@@ -770,7 +772,7 @@ void computer_defence(ref int computer_offence_initiator1, ref int final_stage_a
 
 
                         level2c[win_combo[counter1, counter6]] = 2;
-                        fill_cpu_color_slot();
+                        fill_cpu_color_slot(2, win_combo[counter1, counter6]);
                         counter6 = 3;
                         counter2 = 3;
                         counter1 = 8;
@@ -795,7 +797,7 @@ void computer_defence(ref int computer_offence_initiator1, ref int final_stage_a
 
 
                         level1c[win_combo[counter1, counter6]] = 2;
-                        fill_cpu_color_slot();
+                        fill_cpu_color_slot(1, win_combo[counter1, counter6]);
                         counter6 = 3;
                         counter2 = 3;
                         counter1 = 8;
@@ -817,14 +819,119 @@ void computer_defence(ref int computer_offence_initiator1, ref int final_stage_a
 
     }
 
+        counter10 = 0;
+        counter11 = 0;
+        counter8 = 0;
+        counter9 = 0;
+        sort_level = 2;
+        // defence for diagonal
+
+        for (counter8 = 0; counter8 < 16; counter8++)
+        {
+
+            counter11 = 0;
+            sort_level = 2;
+            for (counter9 = 0; counter9 < 3; counter9++)
+            {
+                sort_level++;
+                for (counter10 = 0; counter10 < 5; counter10++)
+                {
+                    if (sort_level % 3 == 0)
+                    {
+                        if (index_array_level3c[counter10] == win_combo_diagonal[counter8, counter9])
+                        {
+
+                            counter11++;
+
+                        }
+                    }
+                    if (sort_level % 3 == 1)
+                    {
+                        if (index_array_level2c[counter10] == win_combo_diagonal[counter8, counter9])
+                        {
+
+                            counter11++;
+
+                        }
+                    }
+                    if (sort_level % 3 == 2)
+                    {
+                        if (index_array_level1c[counter10] == win_combo_diagonal[counter8, counter9])
+                        {
+
+                            counter11++;
+
+                        }
+                    }
+
+                }
 
 
-    //defence for up and down
+                if (counter11 == 2 && level3c[win_combo_diagonal[counter8, 0]] != 2 && level2c[win_combo_diagonal[counter8, 1]] != 2 && level1c[win_combo_diagonal[counter8, 2]] != 2)
+                {
 
 
-    for (counter8 = 0; counter8 < 9; counter8++)
+                    if ((level3c[win_combo_diagonal[counter8, 0]] != 2 && level3c[win_combo_diagonal[counter8, 0]] != 1) || (level2c[win_combo_diagonal[counter8, 1]] != 2 && level2c[win_combo_diagonal[counter8, 1]] != 1) || (level1c[win_combo_diagonal[counter8, 0]] != 2 && level1c[win_combo_diagonal[counter8, 0]] != 1))
+                    {
+                        if (level3c[win_combo_diagonal[counter8, 0]] == 0)
+                        {
+                            level3c[win_combo_diagonal[counter8, 0]] = 2;
+                            fill_cpu_color_slot(3, win_combo_diagonal[counter8, 0]);
+                            computer_offence_initiator1 = 1;
+                            final_stage_array2 = 1;
+                            return;
+                        }
+                        if (level2c[win_combo_diagonal[counter8, 1]] == 0)
+                        {
+                            level2c[win_combo_diagonal[counter8, 1]] = 2;
+                            fill_cpu_color_slot(2, win_combo_diagonal[counter8, 1]);
+                            computer_offence_initiator1 = 1;
+                            final_stage_array2 = 1;
+                            return;
+                        }
+                        if (level1c[win_combo_diagonal[counter8, 2]] == 0)
+                        {
+                            level1c[win_combo_diagonal[counter8, 2]] = 2;
+                            fill_cpu_color_slot(1, win_combo_diagonal[counter8, 2]);
+                            computer_offence_initiator1 = 1;
+                            final_stage_array2 = 1;
+                            return;
+                        }
+
+
+                        counter8 = 15;
+                        counter9 = 3;
+
+
+                    }
+
+
+                    return;
+                }
+
+
+
+
+
+            }
+
+            counter11 = 0;
+
+        }
+        counter10 = 0;
+        counter11 = 0;
+        counter8 = 0;
+        counter9 = 0;
+        sort_level = 2;
+        //defence for up and down
+
+
+        for (counter8 = 0; counter8 < 9; counter8++)
     {
-        for (counter9 = 0; counter9 < 3; counter9++)
+
+            counter11 = 0;
+            sort_level = 2;
+            for (counter9 = 0; counter9 < 3; counter9++)
         {
             sort_level++;
             for (counter10 = 0; counter10 < 5; counter10++)
@@ -861,40 +968,44 @@ void computer_defence(ref int computer_offence_initiator1, ref int final_stage_a
 
 
 
-            if (counter11 == 2 && level3c[win_combo_up_down[counter8, 0]] != 2 && level2c[win_combo_up_down[counter8, 1]] != 2 && level1c[win_combo_up_down[counter8, 2]] != 2)
-            {
-                counter6 = 0;
-                while (counter6 < 3)
+                if (counter11 == 2 && level3c[win_combo_up_down[counter8, 0]] != 2 && level2c[win_combo_up_down[counter8, 1]] != 2 && level1c[win_combo_up_down[counter8, 2]] != 2)
                 {
 
-                    if ((level3c[win_combo_up_down[counter8, counter6]] != 2 && level3c[win_combo_up_down[counter8, counter6]] != 1) || (level2c[win_combo_up_down[counter8, counter6]] != 2 && level2c[win_combo_up_down[counter8, counter6]] != 1) || (level1c[win_combo_up_down[counter8, counter6]] != 2 && level1c[win_combo_up_down[counter8, counter6]] != 1))
+
+                    if ((level3c[win_combo_up_down[counter8, 0]] != 2 && level3c[win_combo_up_down[counter8, 0]] != 1) || (level2c[win_combo_up_down[counter8, 1]] != 2 && level2c[win_combo_up_down[counter8, 1]] != 1) || (level1c[win_combo_up_down[counter8, 0]] != 2 && level1c[win_combo_up_down[counter8, 0]] != 1))
                     {
-                        if (counter6 == 0)
+                        if (level3c[win_combo_up_down[counter8, 0]] == 0)
                         {
-                            level3c[win_combo[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
+                            level3c[win_combo_up_down[counter8, 0]] = 2;
+                            fill_cpu_color_slot(3, win_combo_up_down[counter8, 0]);
+                            computer_offence_initiator1 = 1;
+                            final_stage_array2 = 1;
+                            return;
                         }
-                        if (counter6 == 1)
+                        if (level2c[win_combo_up_down[counter8, 1]] == 0)
                         {
-                            level2c[win_combo[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
+                            level2c[win_combo_up_down[counter8, 1]] = 2;
+                            fill_cpu_color_slot(2, win_combo_up_down[counter8, 1]);
+                            computer_offence_initiator1 = 1;
+                            final_stage_array2 = 1;
+                            return;
                         }
-                        if (counter6 == 2)
+                        if (level1c[win_combo_up_down[counter8, 2]] == 0)
                         {
-                            level1c[win_combo[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
+                            level1c[win_combo_up_down[counter8, 2]] = 2;
+                            fill_cpu_color_slot(1, win_combo_up_down[counter8, 2]);
+                            computer_offence_initiator1 = 1;
+                            final_stage_array2 = 1;
+                            return;
                         }
 
-                        computer_offence_initiator1 = 1;
-                        final_stage_array2 = 1;
-                        counter6 = 3;
-                        counter2 = 3;
-                        counter1 = 8;
+
+                        counter8 = 15;
+                        counter9 = 3;
+
 
                     }
-                    counter6++;
-                }
-                return;
+                    return;
             }
 
 
@@ -910,97 +1021,9 @@ void computer_defence(ref int computer_offence_initiator1, ref int final_stage_a
 
 
     }
-    counter10 = 0;
-    counter11 = 0;
-    counter8 = 0;
-    counter9 = 0;
-    sort_level = 2;
+       
 
-    // defence for diagonal
-
-    for (counter8 = 0; counter8 < 16; counter8++)
-    {
-        for (counter9 = 0; counter9 < 3; counter9++)
-        {
-            sort_level++;
-            for (counter10 = 0; counter10 < 5; counter10++)
-            {
-                if (sort_level % 3 == 0)
-                {
-                    if (index_array_level3c[counter10] == win_combo_diagonal[counter8, counter9])
-                    {
-
-                        counter11++;
-
-                    }
-                }
-                if (sort_level % 3 == 1)
-                {
-                    if (index_array_level2c[counter10] == win_combo_diagonal[counter8, counter9])
-                    {
-
-                        counter11++;
-
-                    }
-                }
-                if (sort_level % 3 == 2)
-                {
-                    if (index_array_level1c[counter10] == win_combo_diagonal[counter8, counter9])
-                    {
-
-                        counter11++;
-
-                    }
-                }
-
-            }
-
-
-            if (counter11 == 2 && level3c[win_combo_diagonal[counter8, 0]] != 1 && level2c[win_combo_diagonal[counter8, 1]] != 1 && level1c[win_combo_diagonal[counter8, 2]] != 1)
-            {
-                counter6 = 0;
-                while (counter6 < 3)
-                {
-
-                    if ((level3c[win_combo_diagonal[counter8, counter6]] != 2 && level3c[win_combo_diagonal[counter8, counter6]] != 1) || (level2c[win_combo_diagonal[counter8, counter6]] != 2 && level2c[win_combo_diagonal[counter8, counter6]] != 1) || (level1c[win_combo_diagonal[counter8, counter6]] != 2 && level1c[win_combo_diagonal[counter8, counter6]] != 1))
-                    {
-                        if (counter6 == 0)
-                        {
-                            level3c[win_combo_diagonal[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
-                        }
-                        if (counter6 == 1)
-                        {
-                            level2c[win_combo_diagonal[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
-                        }
-                        if (counter6 == 2)
-                        {
-                            level1c[win_combo_diagonal[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
-                        }
-
-                        computer_offence_initiator1 = 1;
-                        final_stage_array2 = 1;
-                        counter6 = 3;
-                        counter2 = 3;
-                        counter1 = 8;
-
-                    }
-                    counter6++;
-                }
-                return;
-            }
-
-
-
-
-
-        }
-
-        counter11 = 0;
-
-    }
+      
 
 }
 
@@ -1057,13 +1080,13 @@ void computer_offence2(ref int computer_defence_initiator1, ref int computer_off
 { 5,4,3 },
 { 7,4,1 },
 { 8,4,0 },
-{ 8,7,6 },
+{ 0,4,8 },
 { 8,5,2 },
 { 6,4,2 },
 { 6,3,0 },
 { 0,1,2 },
 { 0,3,6 },
-{ 0,4,5 },
+{ 8,7,6 },
 { 2,5,8 },
 { 2,4,6 },
 { 2,1,0 },
@@ -1146,7 +1169,7 @@ void computer_offence2(ref int computer_defence_initiator1, ref int computer_off
                     if (level3c[win_combo[counter1, counter6]] != 2 && level3c[win_combo[counter1, counter6]] != 1)
                     {
                         level3c[win_combo[counter1, counter6]] = 2;
-                        fill_cpu_color_slot();
+                        fill_cpu_color_slot(3, win_combo[counter1, counter6]);
                         computer_defence_initiator1 = 1;
                         computer_offence_initiator2 = 1;
                         final_stage_array1 = 1;
@@ -1167,7 +1190,7 @@ void computer_offence2(ref int computer_defence_initiator1, ref int computer_off
                     if (level2c[win_combo[counter1, counter6]] != 2 && level2c[win_combo[counter1, counter6]] != 1)
                     {
                         level2c[win_combo[counter1, counter6]] = 2;
-                        fill_cpu_color_slot();
+                        fill_cpu_color_slot(2, win_combo[counter1, counter6]);
                         computer_defence_initiator1 = 1;
                         computer_offence_initiator2 = 1;
                         final_stage_array1 = 1;
@@ -1190,7 +1213,7 @@ void computer_offence2(ref int computer_defence_initiator1, ref int computer_off
                     if (level1c[win_combo[counter1, counter6]] != 2 && level1c[win_combo[counter1, counter6]] != 1)
                     {
                         level1c[win_combo[counter1, counter6]] = 2;
-                        fill_cpu_color_slot();
+                        fill_cpu_color_slot(1, win_combo[counter1, counter6]);
                         computer_defence_initiator1 = 1;
                         computer_offence_initiator2 = 1;
                         final_stage_array1 = 1;
@@ -1213,79 +1236,96 @@ void computer_offence2(ref int computer_defence_initiator1, ref int computer_off
 
     }
 
-    //algorithm for filling the cpu on up and down win based on 2 cpu slots occupied
-    for (counter8 = 0; counter8 < 9; counter8++)
-    {
-        for (counter9 = 0; counter9 < 3; counter9++)
+        //algorithm for filling the cpu on up and down win based on 2 cpu slots occupied
+        for (counter8 = 0; counter8 < 9; counter8++)
         {
-            sort_level++;
-            for (counter10 = 0; counter10 < 5; counter10++)
+            counter11 = 0;
+            sort_level = 2;
+            for (counter9 = 0; counter9 < 3; counter9++)
             {
-                if (sort_level % 3 == 0)
+                sort_level++;
+                for (counter10 = 0; counter10 < 5; counter10++)
                 {
-                    if (index_array_level3c[counter10] == win_combo_up_down[counter8, counter9])
+                    if (sort_level % 3 == 0)
                     {
+                        if (index_array_level3c[counter10] == win_combo_up_down[counter8, counter9])
+                        {
 
-                        counter11++;
+                            counter11++;
 
+                        }
                     }
-                }
-                if (sort_level % 3 == 1)
-                {
-                    if (index_array_level2c[counter10] == win_combo_up_down[counter8, counter9])
+                    if (sort_level % 3 == 1)
                     {
+                        if (index_array_level2c[counter10] == win_combo_up_down[counter8, counter9])
+                        {
 
-                        counter11++;
+                            counter11++;
 
+
+                        }
                     }
-                }
-                if (sort_level % 3 == 2)
-                {
-                    if (index_array_level1c[counter10] == win_combo_up_down[counter8, counter9])
+                    if (sort_level % 3 == 2)
                     {
+                        if (index_array_level1c[counter10] == win_combo_up_down[counter8, counter9])
+                        {
 
-                        counter11++;
+                            counter11++;
 
+                        }
                     }
+
                 }
-
-            }
-
+            
+        
 
             if (counter11 == 2 && level3c[win_combo_up_down[counter8, 0]] != 1 && level2c[win_combo_up_down[counter8, 1]] != 1 && level1c[win_combo_up_down[counter8, 2]] != 1)
             {
-                counter6 = 0;
-                while (counter6 < 3)
-                {
 
-                    if ((level3c[win_combo_up_down[counter8, counter6]] != 2 && level3c[win_combo_up_down[counter8, counter6]] != 1) || (level2c[win_combo_up_down[counter8, counter6]] != 2 && level2c[win_combo_up_down[counter8, counter6]] != 1) || (level1c[win_combo_up_down[counter8, counter6]] != 2 && level1c[win_combo_up_down[counter8, counter6]] != 1))
+
+
+
+
+                    if (level3c[win_combo_up_down[counter8, 0]] == 0)
                     {
-                        if (counter6 == 0)
-                        {
-                            level3c[win_combo[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
+                              
+                                level3c[win_combo_up_down[counter8, 0]] = 2;
+                            fill_cpu_color_slot(3, win_combo_up_down[counter8, 0]);
+                            computer_defence_initiator1 = 1;
+                        computer_offence_initiator2 = 1;
+                        final_stage_array1 = 1;
+                        return;
+
                         }
-                        if (counter6 == 1)
-                        {
-                            level2c[win_combo[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
-                        }
-                        if (counter6 == 2)
-                        {
-                            level1c[win_combo[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
-                        }
+
+                    if (level2c[win_combo_up_down[counter8, 1]] == 0)
+                    {
+                               
+                                level2c[win_combo_up_down[counter8, 1]] = 2;
+                            fill_cpu_color_slot(2, win_combo_up_down[counter8, 1]);
                         computer_defence_initiator1 = 1;
                         computer_offence_initiator2 = 1;
                         final_stage_array1 = 1;
-                        counter6 = 3;
+                        return;
+                    }
+
+                    if (level1c[win_combo_up_down[counter8, 2]] == 0)
+                    {
+                                
+                                level1c[win_combo_up_down[counter8, 2]] = 2;
+                            fill_cpu_color_slot(1, win_combo_up_down[counter8, 2]);
+                        computer_defence_initiator1 = 1;
+                        computer_offence_initiator2 = 1;
+                        final_stage_array1 = 1;
+                        return;
+                    }
                         counter2 = 3;
                         counter1 = 8;
 
                     }
-                    counter6++;
-                }
-                return;
+                  
+                
+                
             }
 
 
@@ -1296,7 +1336,7 @@ void computer_offence2(ref int computer_defence_initiator1, ref int computer_off
 
         counter11 = 0;
 
-    }
+    
 
 
     counter8 = 0;
@@ -1308,7 +1348,10 @@ void computer_offence2(ref int computer_defence_initiator1, ref int computer_off
     //algorithm for filling the cpu on diagonal win based on 2 cpu slots occupied
     for (counter8 = 0; counter8 < 16; counter8++)
     {
-        for (counter9 = 0; counter9 < 3; counter9++)
+
+            counter11 = 0;
+            sort_level = 2;
+            for (counter9 = 0; counter9 < 3; counter9++)
         {
             sort_level++;
             for (counter10 = 0; counter10 < 5; counter10++)
@@ -1346,43 +1389,44 @@ void computer_offence2(ref int computer_defence_initiator1, ref int computer_off
 
             if (counter11 == 2 && level3c[win_combo_diagonal[counter8, 0]] != 1 && level2c[win_combo_diagonal[counter8, 1]] != 1 && level1c[win_combo_diagonal[counter8, 2]] != 1)
             {
-                counter6 = 0;
-                while (counter6 < 3)
-                {
-
-                    if ((level3c[win_combo_diagonal[counter8, counter6]] != 2 && level3c[win_combo_diagonal[counter8, counter6]] != 1) || (level2c[win_combo_diagonal[counter8, counter6]] != 2 && level2c[win_combo_diagonal[counter8, counter6]] != 1) || (level1c[win_combo_diagonal[counter8, counter6]] != 2 && level1c[win_combo_diagonal[counter8, counter6]] != 1))
-                    {
-                        if (counter6 == 0)
+                    
+                            
+                            if (level3c[win_combo_diagonal[counter8, 0]]==0)
                         {
-                            level3c[win_combo_diagonal[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
-                        }
-                        if (counter6 == 1)
-                        {
-                            level2c[win_combo_diagonal[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
-                        }
-                        if (counter6 == 2)
-                        {
-                            level1c[win_combo_diagonal[counter8, counter6]] = 2;
-                            fill_cpu_color_slot();
-                        }
+                               
+                                level3c[win_combo_diagonal[counter8, 0]] = 2;
+                            fill_cpu_color_slot(3, win_combo_diagonal[counter8, 0]);
                         computer_defence_initiator1 = 1;
                         computer_offence_initiator2 = 1;
                         final_stage_array1 = 1;
-                        counter6 = 3;
-                        counter2 = 3;
-                        counter1 = 8;
-
+                        return;
                     }
-                    counter6++;
-                }
-                return;
+                        if (level2c[win_combo_diagonal[counter8, 1]]==0)
+                        {
+                                
+                                level2c[win_combo_diagonal[counter8, 1]] = 2;
+                            fill_cpu_color_slot(2, win_combo_diagonal[counter8, 1]);
+                        computer_defence_initiator1 = 1;
+                        computer_offence_initiator2 = 1;
+                        final_stage_array1 = 1;
+                        return;
+                    }
+                        if (level1c[win_combo_diagonal[counter8, 2]]==0)
+                        {
+                                level1c[win_combo_diagonal[counter8, 2]] = 2;
+                            fill_cpu_color_slot(1, win_combo_diagonal[counter8, 2]);
+                        computer_defence_initiator1 = 1;
+                        computer_offence_initiator2 = 1;
+                        final_stage_array1 = 1;
+                        return;
+                    }
+                       
+                        
+                        counter9 = 3;
+                        counter8 = 15;
+
+                
             }
-
-
-
-
 
         }
 
@@ -1403,6 +1447,7 @@ void computer_offence2(ref int computer_defence_initiator1, ref int computer_off
 
 void computer_offence1( ref int final_stage_array3)
 {
+        int sort_level = 2;
     int counter1 = 0;
     int counter2 = 0;
     int counter3 = 0;
@@ -1410,6 +1455,9 @@ void computer_offence1( ref int final_stage_array3)
     int counter6 = 0;
     int counter7 = 0;
     int counter8 = 0;
+        int counter9 = 0;
+        int counter10 = 0;
+        int counter11 = 0;
     int cpu_counter_level3c = 0;
     int cpu_counter_level2c = 0;
     int cpu_counter_level1c = 0;
@@ -1428,10 +1476,21 @@ void computer_offence1( ref int final_stage_array3)
 { 2,5,8 },
 { 0,4,8 },
 { 2,4,6 } };
+        int[,] win_combo_up_down;
+        win_combo_up_down = new int[9, 3] { { 0,0,0 },
+{ 1,1,1 },
+{ 2,2,2 },
+{ 3,3,3 },
+{ 4,4,4 },
+{ 5,5,5 },
+{ 6,6,6 },
+{ 7,7,7 },
+{ 8,8,8 } };
+       
 
-    //check where the cpu slots are
+        //check where the cpu slots are
 
-    while (counter6 < 9)
+        while (counter6 < 9)
     {
 
         if (level3c[counter6] == 2)
@@ -1463,10 +1522,100 @@ void computer_offence1( ref int final_stage_array3)
         counter6++;
 
     }
+        //filling offence based on up and down
+        for (counter8 = 0; counter8 < 9; counter8++)
+        {
+            counter11 = 0;
+            sort_level = 2;
+            for (counter9 = 0; counter9 < 3; counter9++)
+            {
+                sort_level++;
+                for (counter10 = 0; counter10 < 5; counter10++)
+                {
+                    if (sort_level % 3 == 0)
+                    {
+                        if (index_array_level3c[counter10] == win_combo_up_down[counter8, counter9])
+                        {
+
+                            counter11++;
+
+                        }
+                    }
+                    if (sort_level % 3 == 1)
+                    {
+                        if (index_array_level2c[counter10] == win_combo_up_down[counter8, counter9])
+                        {
+
+                            counter11++;
 
 
-    counter6 = 0;
+                        }
+                    }
+                    if (sort_level % 3 == 2)
+                    {
+                        if (index_array_level1c[counter10] == win_combo_up_down[counter8, counter9])
+                        {
 
+                            counter11++;
+
+                        }
+                    }
+
+                }
+
+
+
+                if (counter11 == 1 && level3c[win_combo_up_down[counter8, 0]] != 1 && level2c[win_combo_up_down[counter8, 1]] != 1 && level1c[win_combo_up_down[counter8, 2]] != 1)
+                {
+
+
+
+
+
+                    if (level3c[win_combo_up_down[counter8, 0]] == 0)
+                    {
+
+                        level3c[win_combo_up_down[counter8, 0]] = 2;
+                        fill_cpu_color_slot(3, win_combo_up_down[counter8, 0]);
+                        final_stage_array3 = 1;
+                        return;
+
+                    }
+
+                    if (level2c[win_combo_up_down[counter8, 1]] == 0)
+                    {
+
+                        level2c[win_combo_up_down[counter8, 1]] = 2;
+                        fill_cpu_color_slot(2, win_combo_up_down[counter8, 1]);
+                        final_stage_array3 = 1;
+                        return;
+                    }
+
+                    if (level1c[win_combo_up_down[counter8, 2]] == 0)
+                    {
+
+                        level1c[win_combo_up_down[counter8, 2]] = 2;
+                        fill_cpu_color_slot(1, win_combo_up_down[counter8, 2]);
+                        final_stage_array3 = 1;
+                        return;
+                    }
+                    counter2 = 3;
+                    counter1 = 8;
+
+                }
+
+
+
+            }
+
+
+
+
+
+        }
+
+        counter6 = 0;
+        counter8 = 0;
 
     for ( counter1 = 0; counter1 < 8; counter1++)
     {
@@ -1504,20 +1653,21 @@ void computer_offence1( ref int final_stage_array3)
 
                     if (level3c[win_combo[counter1,counter6]] != 2 && level3c[win_combo[counter1,counter6]] != 1)
                     {
-                        level3c[win_combo[counter1,counter6]] = 2;
-                        fill_cpu_color_slot();
+                           
+                            level3c[win_combo[counter1,counter6]] = 2;
+                        fill_cpu_color_slot(3, win_combo[counter1, counter6]);
                         final_stage_array3 = 1;
                         counter6 = 3;
                         counter2 = 3;
                         counter1 = 8;
 
-
-                    }
+                            return;
+                        }
 
                     counter6++;
 
                 }
-                return;
+               
 
             }
             //fill level2c
@@ -1528,20 +1678,21 @@ void computer_offence1( ref int final_stage_array3)
 
                     if (level2c[win_combo[counter1, counter6]] != 2 && level2c[win_combo[counter1, counter6]] != 1)
                     {
-                        level2c[win_combo[counter1, counter6]] = 2;
-                        fill_cpu_color_slot();
+                            
+                            level2c[win_combo[counter1, counter6]] = 2;
+                        fill_cpu_color_slot(2, win_combo[counter1, counter6]);
                         final_stage_array3 = 1;
                         counter6 = 3;
                         counter2 = 3;
                         counter1 = 8;
 
-
-                    }
+                            return;
+                        }
 
                     counter6++;
 
                 }
-                return;
+                
             }
 
             //fill level1c
@@ -1552,20 +1703,21 @@ void computer_offence1( ref int final_stage_array3)
 
                     if (level1c[win_combo[counter1, counter6]] != 2 && level1c[win_combo[counter1, counter6]] != 1)
                     {
+                           
                         level1c[win_combo[counter1, counter6]] = 2;
-                        fill_cpu_color_slot();
+                        fill_cpu_color_slot(1, win_combo[counter1, counter6]);
                         final_stage_array3 = 1;
                         counter6 = 3;
                         counter2 = 3;
                         counter1 = 8;
+                            return;
 
-
-                    }
+                        }
 
                     counter6++;
 
                 }
-                return;
+                
             }
 
 
@@ -1575,14 +1727,14 @@ void computer_offence1( ref int final_stage_array3)
 
         }
     }
+        counter8 = 0;
+       
 
 
 
 
 
-
-
-}
+    }
 
 
 
@@ -1591,221 +1743,277 @@ void computer_offence1( ref int final_stage_array3)
     
 
      //function for filling the cpu slot red
-     void fill_cpu_color_slot()
+     void fill_cpu_color_slot(int array_level,int level_index)
      {
 
-         if (gameObject.tag == "Cube0" && level3c[0] == 2)
-         {
+       
 
+        if (array_level == 3)
+        {
+            if (level_index==0)
+            {
+                find_cube = GameObject.Find("Cube0");
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
-         }
-         if (gameObject.tag == "Cube1" && level3c[1] == 2)
-         {
 
+            }
+            if (level_index==1)
+            {
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube = GameObject.Find("Cube1");
 
-         }
-         if (gameObject.tag == "Cube2" && level3c[2] == 2)
-         {
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
+            }
+            if (level_index == 2)
+            {
 
 
 
+                find_cube = GameObject.Find("Cube2");
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
 
 
-         }
-         if (gameObject.tag == "Cube3" && level3c[3] == 2)
-         {
+            }
+            if (level_index == 3)
+            {
 
+                find_cube = GameObject.Find("Cube3");
 
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
+            }
+            if (level_index == 4)
+            {
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
 
-         }
-         if (gameObject.tag == "Cube4" && level3c[4] == 2)
-         {
 
 
 
+                find_cube = GameObject.Find("Cube4");
 
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+            }
+            if (level_index == 5)
+            {
+                find_cube = GameObject.Find("Cube5");
 
-         }
-         if (gameObject.tag == "Cube5" && level3c[5] == 2)
-         {
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
+            }
+            if (level_index == 6)
+            {
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
 
-         }
-         if (gameObject.tag == "Cube6" && level3c[6] == 2)
-         {
+                find_cube = GameObject.Find("Cube6");
 
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+            }
+            if (level_index == 7)
+            {
 
-         }
-         if (gameObject.tag == "Cube7" && level3c[7] == 2)
-         {
 
 
+                find_cube = GameObject.Find("Cube7");
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
-         }
-         if (gameObject.tag == "Cube8" && level3c[8] == 2)
-         {
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
+            }
+            if (level_index == 8)
+            {
 
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
 
-         }
-         if (gameObject.tag == "Cube9" && level2c[0] == 2)
-         {
+                find_cube = GameObject.Find("Cube8");
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
-         }
-         if (gameObject.tag == "Cube10" && level2c[1] == 2)
-         {
+            }
+        }
+        if (array_level == 2)
+        {
 
+            if (level_index == 0)
+            {
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube = GameObject.Find("Cube9");
 
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
-         }
-         if (gameObject.tag == "Cube11" && level2c[2] == 2)
-         {
+            }
+            if (level_index == 1)
+            {
 
 
+                find_cube = GameObject.Find("Cube10");
 
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
 
+            }
+            if (level_index == 2)
+            {
 
-         }
-         if (gameObject.tag == "Cube12" && level2c[3] == 2)
-         {
 
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
 
+                find_cube = GameObject.Find("Cube11");
 
-         }
-         if (gameObject.tag == "Cube13" && level2c[4] == 2)
-         {
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
 
+            }
+            if (level_index == 3)
+            {
 
-         }
-         if (gameObject.tag == "Cube14" && level2c[5] == 2)
-         {
 
+                find_cube = GameObject.Find("Cube12");
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
-         }
-         if (gameObject.tag == "Cube15" && level2c[6] == 2)
-         {
+            }
+            if (level_index == 4)
+            {
 
+                find_cube = GameObject.Find("Cube13");
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
-         }
-         if (gameObject.tag == "Cube16" && level2c[7] == 2)
-         {
+            }
+            if (level_index == 5)
+            {
 
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube = GameObject.Find("Cube14");
 
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
-         }
-         if (gameObject.tag == "Cube17" && level2c[8] == 2)
-         {
+            }
+            if (level_index == 6)
+            {
 
 
+                find_cube = GameObject.Find("Cube15");
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
-         }
-         if (gameObject.tag == "Cube18" && level1c[0] == 2)
-         {
+            }
+            if (level_index == 7)
+            {
 
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube = GameObject.Find("Cube16");
 
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
-         }
-         if (gameObject.tag == "Cube19" && level1c[1] == 2)
-         {
 
+            }
+            if (level_index == 8)
+            {
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
 
-         }
-         if (gameObject.tag == "Cube20" && level1c[2] == 2)
-         {
 
+                find_cube = GameObject.Find("Cube17");
 
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
 
-         }
-         if (gameObject.tag == "Cube21" && level1c[3] == 2)
-         {
+            }
+        }
+        if (array_level == 1)
+        {
+            if (level_index == 0)
+            {
 
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube = GameObject.Find("Cube18");
 
-         }
-         if (gameObject.tag == "Cube22" && level1c[4] == 2)
-         {
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+            }
+            if (level_index == 1)
+            {
 
-         }
-         if (gameObject.tag == "Cube23" && level1c[5] == 2)
-         {
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube = GameObject.Find("Cube19");
 
-         }
-         if (gameObject.tag == "Cube24" && level1c[6] == 2)
-         {
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
 
+            }
+            if (level_index == 2)
+            {
 
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
-         }
-         if (gameObject.tag == "Cube25" && level1c[7] == 2)
-         {
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
+                find_cube = GameObject.Find("Cube20");
 
-         }
-         if (gameObject.tag == "Cube26" && level1c[8] == 2)
-         {
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
+            }
+            if (level_index == 3)
+            {
 
 
+                find_cube = GameObject.Find("Cube21");
 
-             gameObject.GetComponent<Renderer>().material.color = Color.red;
-         }
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
+
+            }
+            if (level_index == 4)
+            {
+
+
+                find_cube = GameObject.Find("Cube22");
+
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
+
+            }
+            if (level_index == 5)
+            {
+
+                find_cube = GameObject.Find("Cube23");
+
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
+
+            }
+            if (level_index == 6)
+            {
+
+
+
+                find_cube = GameObject.Find("Cube24");
+
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
+            }
+            if (level_index == 7)
+            {
+
+                find_cube = GameObject.Find("Cube25");
+
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
+
+            }
+            if (level_index == 8)
+            {
+
+
+
+                find_cube = GameObject.Find("Cube26");
+
+                find_cube.GetComponent<Renderer>().material.color = Color.red;
+            }
+        }
      }
 
 
