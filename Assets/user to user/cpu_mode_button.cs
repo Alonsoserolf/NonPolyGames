@@ -8,7 +8,7 @@ public class cpu_mode_button : MonoBehaviour {
     public void second_screen()
     {
 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("TicTacToeMenu");
   
        
     }

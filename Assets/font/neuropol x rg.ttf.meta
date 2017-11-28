@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 6d8166b5337b74f1c9a2adea4ca584c7
+timeCreated: 1511826497
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Neuropol X
+  fontNames:
+  - Neuropol X
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
