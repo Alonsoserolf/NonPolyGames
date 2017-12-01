@@ -17,13 +17,13 @@ public class LevelSelect : MonoBehaviour {
 	private static int numLevels = 15;
 	private static int completedLevels = 4;
 
-	void onGUI(){
+	void OnGUI(){
 		for (var i = 0; i < numLevels; i++) {
-			//if (i > completedLevels) {
-			//	GUI.enabled = false;
-			//}
+			if (i > completedLevels) {
+				GUI.enabled = false;
+			}
 			int buttonRow = (int)i / buttonsPerRow;
-			int gridRow = 2*buttonRow +1;
+			int gridRow = 2*buttonRow + 1;
 			float top = gridBoxHeight * gridRow;
 
 			int buttonIndex = i % buttonsPerRow;
@@ -31,8 +31,10 @@ public class LevelSelect : MonoBehaviour {
 			float left = gridBoxWidth * gridColumn;
 
 			var levelName = "Level " +(i+1);
+				Debug.Log (levelName);
 			if (GUI.Button (new Rect (left, top, gridBoxWidth, gridBoxHeight), levelName)) {
 				SceneManager.LoadScene (levelName);
+				Debug.Log (levelName);
 			}
 		}
 	}
