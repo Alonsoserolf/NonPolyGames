@@ -40,9 +40,16 @@ public class Menu : MonoBehaviour {
 	public void OnTicPlay(){
 		SceneManager.LoadScene ("cubes");
 	}
-	public void PlayInstantInsanity(){
+	public void OnPlayInstantInsanity(){
 		SceneManager.LoadScene ("InstantInsanity");
 	}
+	public void OnPlayBrick(){
+		SceneManager.LoadScene ("brick");
+	}
+	public void OnReturnToLevelSelect(){
+		SceneManager.LoadScene ("World1");
+	}
+
 	public void OnQuit(){
 		#if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;

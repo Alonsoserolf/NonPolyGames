@@ -15,6 +15,7 @@ public class LevelSelectScript : MonoBehaviour {
 			//if(Application.loadedLevelName == "World"+i)old version
 			if (SceneManager.GetActiveScene().name == "World"+i)
 			{
+				Debug.Log ("In getactivescene if statement worldindex:"+ i);
 				worldIndex = i;
 				CheckLockedLevels(); 
 			}
@@ -40,13 +41,18 @@ public class LevelSelectScript : MonoBehaviour {
 		//loop through the levels of a particular world
 		for(int j = 1; j < LockLevel.levels; j++)
 		{
+			Debug.Log ("incheckforloop");
 			levelIndex = (j+1);
+			Debug.Log ("worldIndex: "+worldIndex+" levelINdex "+levelIndex);
+			Debug.Log ("playerPref: "+ PlayerPrefs.GetInt("level"+worldIndex.ToString() +":" +levelIndex.ToString()));
 			if((PlayerPrefs.GetInt("level"+worldIndex.ToString() +":" +levelIndex.ToString()))==1)
 			{
+				Debug.Log ("in playerPref get int worldIndex: "+worldIndex+" levelIndex "+levelIndex);
 				//GameObject.Find("LockedLevel"+(j+1)).active = false;
 				GameObject.Find("LockedLevel"+(j+1)).SetActive(false);
 				Debug.Log ("Unlocked");
 			}
 		}
+
 	}
 }
