@@ -5,7 +5,7 @@ using UnityEngine;
 public class LockLevel : MonoBehaviour {
 
 	public static int worlds = 1; //number of worlds
-	public static int levels = 8; //number of levels
+	public static int levels = 5; //number of levels
 
 	private int worldIndex;   
 	private int levelIndex;   
@@ -25,14 +25,17 @@ public class LockLevel : MonoBehaviour {
 			{
 				worldIndex  = (i+1);
 				levelIndex  = (j+1);
+				Debug.Log ("inside for loop before PlayerPref has key "+worldIndex+" "+levelIndex);
 				//create a PlayerPrefs of that particular level and world and set it's to 0, if no key of that name exists
 				if(!PlayerPrefs.HasKey("level"+worldIndex.ToString() +":" +levelIndex.ToString()))
 				{
+					Debug.Log ("inside PlayerPref has key "+worldIndex+" "+levelIndex);
 					PlayerPrefs.SetInt("level"+worldIndex.ToString() +":" +levelIndex.ToString(),0);
 				}
 
 			}
 		}
+
 
 	}
 }
