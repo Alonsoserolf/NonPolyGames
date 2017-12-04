@@ -1,13 +1,15 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TheStak : MonoBehaviour {
+public class TheStak : MonoBehaviour
+{
     private Dictionary<string, int[]> cubeRotations;
     private GameObject[][] theStak;
-    private int [][] cFaces;
-    private int [][] frontBack;
-    private int [][] topBottom;
+    private int[][] cFaces;
+    private int[][] frontBack;
+    private int[][] topBottom;
     public Material[] skins;
 
     GameObject prevCube;
@@ -22,11 +24,28 @@ public class TheStak : MonoBehaviour {
     public Material pink;//5
 
     // Use this for initialization
-    private void Start ()
+    private void Start()
     {
         //count # of cubes made in menu script
-        int cubeNum = (transform.childCount);
-        print(cubeNum+",");
+        /**/
+        int cubeNum = 4;//Mathf.Floor((slide.GetComponent<Slider>().value * 10) + 4);
+        GameObject makeChild;
+        for (int i = 0; i < cubeNum; i++)
+        {
+            //instantiate cubes
+            makeChild = Instantiate(cubePrefab.gameObject, new Vector3(0, i, 0), Quaternion.identity) as GameObject;
+            //add a script(CubeBehavior) to each cube and disable it
+            makeChild.AddComponent<CubeBehavior>();
+            makeChild.GetComponent<CubeBehavior>().enabled = false;
+            makeChild.transform.parent = GameObject.Find("Stack").transform;
+        }
+        GameObject stak = GameObject.FindWithTag("Stak");
+
+        stak.GetComponent<TheStak>().enabled = true;
+        /* */
+
+        cubeNum = (transform.childCount);
+        print(cubeNum + ",");
         cubeRotations = FillInCubeRotations();
 
         cFaces = new int[cubeNum][];
@@ -158,18 +177,18 @@ public class TheStak : MonoBehaviour {
                 CubeSelect(hitCube);
             }
         }
-    }      
+    }
 
-   
+
 
     public void CubeSelect(GameObject currCube)
     {
-        if (prevCube != null && prevCube!=currCube)
+        if (prevCube != null && prevCube != currCube)
         {
             if (prevCube.GetComponent<CubeBehavior>().isActiveAndEnabled)
             {
                 prevCube.GetComponent<CubeBehavior>().enabled = false;
-                prevCube.transform.position= new Vector3(0, yPos, 0);
+                prevCube.transform.position = new Vector3(0, yPos, 0);
                 FixRotation(prevCube);
             }
         }
@@ -190,33 +209,33 @@ public class TheStak : MonoBehaviour {
             prevCube = currCube;
         }
         //IsGameSolved();
-    }   
-    
+    }
+
     private void FixRotation(GameObject obj)
     {
         int xPosition = (int)obj.transform.eulerAngles.x;
         int yPosition = (int)obj.transform.eulerAngles.y;
         int zPosition = (int)obj.transform.eulerAngles.z;
 
-       // print("(" + xPosition + "," + yPosition + "," + zPosition + ").");
+        // print("(" + xPosition + "," + yPosition + "," + zPosition + ").");
 
         xPosition = FixAngles(xPosition);
         yPosition = FixAngles(yPosition);
         zPosition = FixAngles(zPosition);
 
-       // print("(" + xPosition + "," + yPosition + "," + zPosition + ")");
+        // print("(" + xPosition + "," + yPosition + "," + zPosition + ")");
 
         obj.transform.eulerAngles = new Vector3(xPosition, yPosition, zPosition);
 
         int[] o = UpdateStackSides(xPosition, yPosition, zPosition);
-        SetSideArrays(obj,o);
-       // print(frontBack[0][0]+","+topBottom[0][0]);
+        SetSideArrays(obj, o);
+        // print(frontBack[0][0]+","+topBottom[0][0]);
     }
 
     private int FixAngles(int angl)
     {
-        angl = (angl > 325 || angl < 45 ) ? 0   :
-               (angl > 45  && angl < 135) ? 90  :
+        angl = (angl > 325 || angl < 45) ? 0 :
+               (angl > 45 && angl < 135) ? 90 :
                (angl > 135 && angl < 225) ? 180 :
                (angl > 225 && angl < 325) ? 270 : 360;
         return angl;
@@ -226,12 +245,12 @@ public class TheStak : MonoBehaviour {
         string xStr = x.ToString();
         string yStr = y.ToString();
         string zStr = z.ToString();
-        string anglesKEY = string.Concat(xStr,yStr,zStr);
+        string anglesKEY = string.Concat(xStr, yStr, zStr);
 
         int[] sidesArray = cubeRotations[anglesKEY];
         return sidesArray;
         //SetSideArrays(sidesArray);
-    } 
+    }
     //instantiate paired sides of stack to check 
     private void SetSideArrays(GameObject obj, int[] arr)
     {
@@ -248,24 +267,30 @@ public class TheStak : MonoBehaviour {
 
     public void IsGameSolved()
     {
-        int cubeCount = 6;
-        int[] repeatFacesCounter = new int[cubeCount];
-        //print(cubeCount);
-        for(int i = 0; i < 4; i++)
-        {
-            int frontFace= ++repeatFacesCounter[cFaces[i][frontBack[i][0]]];
-            //print(frontBack[i][0] + "," + frontBack[i][1] + "," + topBottom[i][0] + "," + topBottom[i][1]);
-            //print(cFaces[i][frontBack[i][0]]);
-            int backFace = ++repeatFacesCounter[cFaces[i][frontBack[i][1]]];
-            int topFace = ++repeatFacesCounter[cFaces[i][topBottom[i][0]]];
-            int bottomFace = ++repeatFacesCounter[cFaces[i][topBottom[i][1]]];
-            print(repeatFacesCounter[0] + "," + repeatFacesCounter[1] + "," + repeatFacesCounter[2] + "," + repeatFacesCounter[3] + "," + repeatFacesCounter[4] + "," + repeatFacesCounter[5]);
+        int cubeCount = 5;
+        int frontFace = 0;
+        int[] frontFacesCounter = new int[cubeCount];
+        int[] backFacesCounter = new int[cubeCount];
+        int[] topFacesCounter = new int[cubeCount];
+        int[] bottomFacesCounter = new int[cubeCount];
 
-            if (repeatFacesCounter[cFaces[i][frontBack[i][0]]] > 4 || repeatFacesCounter[cFaces[i][frontBack[i][1]]] > 4 || repeatFacesCounter[cFaces[i][topBottom[i][0]]] > 4 || repeatFacesCounter[cFaces[i][topBottom[i][1]]] > 4)
-            {
-                print("wrong");
-                return;
-            }
+        //print(cubeCount);
+        for (int i = 0; i < 4; i++)
+        {
+            ++frontFacesCounter[cFaces[i][frontBack[i][0]]];
+            ++backFacesCounter[cFaces[i][frontBack[i][1]]];
+            ++topFacesCounter[cFaces[i][topBottom[i][0]]];
+            ++bottomFacesCounter[cFaces[i][topBottom[i][1]]];
+
+            // print(frontFacesCounter[0] + "," + frontFacesCounter[1] + "," + frontFacesCounter[2] + "," + frontFacesCounter[3] + "," + frontFacesCounter[4] + "," + frontFacesCounter[5]); 
+        }
+        if (frontFacesCounter[0] > 1 || frontFacesCounter[1] > 1 || frontFacesCounter[2] > 1 || frontFacesCounter[3] > 1 || frontFacesCounter[4] > 1
+            || backFacesCounter[0] > 1 || backFacesCounter[1] > 1 || backFacesCounter[2] > 1 || backFacesCounter[3] > 1 || backFacesCounter[4] > 1
+            || topFacesCounter[0] > 1 || topFacesCounter[1] > 1 || topFacesCounter[2] > 1 || topFacesCounter[3] > 1 || topFacesCounter[4] > 1
+            || bottomFacesCounter[0] > 1 || bottomFacesCounter[1] > 1 || bottomFacesCounter[2] > 1 || bottomFacesCounter[3] > 1 || bottomFacesCounter[4] > 1)
+        {
+            print("wrong");
+            return;
         }
         print("correct");
     }
