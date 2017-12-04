@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TheStak : MonoBehaviour
 {
@@ -290,9 +291,13 @@ public class TheStak : MonoBehaviour
             || bottomFacesCounter[0] > 1 || bottomFacesCounter[1] > 1 || bottomFacesCounter[2] > 1 || bottomFacesCounter[3] > 1 || bottomFacesCounter[4] > 1)
         {
             print("wrong");
+            Text lose= GameObject.FindWithTag("lose").GetComponent<Text>();
+            lose.text = "NO U LOSE";
             return;
         }
         print("correct");
+        Text win = GameObject.FindWithTag("win").GetComponent<Text>();
+        win.text = "Bigly WINNING";
     }
 
     private void SolveItForMe()
