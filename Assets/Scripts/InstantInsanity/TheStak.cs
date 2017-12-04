@@ -274,7 +274,7 @@ public class TheStak : MonoBehaviour
         int[] backFacesCounter = new int[cubeCount];
         int[] topFacesCounter = new int[cubeCount];
         int[] bottomFacesCounter = new int[cubeCount];
-
+        Text lose;
         //print(cubeCount);
         for (int i = 0; i < 4; i++)
         {
@@ -291,11 +291,13 @@ public class TheStak : MonoBehaviour
             || bottomFacesCounter[0] > 1 || bottomFacesCounter[1] > 1 || bottomFacesCounter[2] > 1 || bottomFacesCounter[3] > 1 || bottomFacesCounter[4] > 1)
         {
             print("wrong");
-            Text lose= GameObject.FindWithTag("lose").GetComponent<Text>();
+            lose= GameObject.FindWithTag("lose").GetComponent<Text>();
             lose.text = "NO U LOSE";
             return;
         }
         print("correct");
+        lose = GameObject.FindWithTag("lose").GetComponent<Text>();
+        lose.text = "";
         Text win = GameObject.FindWithTag("win").GetComponent<Text>();
         win.text = "Bigly WINNING";
     }
