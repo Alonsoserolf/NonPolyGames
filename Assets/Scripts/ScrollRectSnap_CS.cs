@@ -42,14 +42,14 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 			//distance [i] = Mathf.Abs (center.transform.position.x - bttn [i].transform.position.x);
 			distance[i] = Mathf.Abs(distReposition[i]);
 
-			if(distReposition[i]>2200){
+			if(distReposition[i]>2700){
 				float curX = bttn [i].GetComponent<RectTransform> ().anchoredPosition.x;
 				float curY = bttn [i].GetComponent<RectTransform> ().anchoredPosition.y;
 
 				Vector2 newAnchoredPos = new Vector2 (curX + (bttnLength * bttnDistance),curY);
 				bttn [i].GetComponent<RectTransform> ().anchoredPosition = newAnchoredPos;
 			}
-			if(distReposition[i] < -2200){
+			if(distReposition[i] < -2700){
 				float curX = bttn [i].GetComponent<RectTransform> ().anchoredPosition.x;
 				float curY = bttn [i].GetComponent<RectTransform> ().anchoredPosition.y;
 
@@ -57,6 +57,7 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 				bttn [i].GetComponent<RectTransform> ().anchoredPosition = newAnchoredPos;
 			}
 		}
+
 		if (targetNearestButton) {
 			
 			float minDistance = Mathf.Min (distance); //Get the Min Distance
@@ -79,6 +80,7 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 		if(Mathf.Abs(position - newX) < 3f){
 			//lerpSpeed = 25f;
 			newX = position;
+
 		}
 
 		if(Mathf.Abs(newX)>= Mathf.Abs(position)-1f && Mathf.Abs(newX) <= Mathf.Abs(position)+1 && !messageSend){

@@ -22,27 +22,10 @@ public class TheStak : MonoBehaviour {
     public Material pink;//5
 
     // Use this for initialization
-    private void Start()
+    private void Start ()
     {
         //count # of cubes made in menu script
-        /**/
-        int cubeNum = 4;//Mathf.Floor((slide.GetComponent<Slider>().value * 10) + 4);
-        GameObject makeChild;
-        for (int i = 0; i < cubeNum; i++)
-        {
-            //instantiate cubes
-            makeChild = Instantiate(cubePrefab.gameObject, new Vector3(0, i, 0), Quaternion.identity) as GameObject;
-            //add a script(CubeBehavior) to each cube and disable it
-            makeChild.AddComponent<CubeBehavior>();
-            makeChild.GetComponent<CubeBehavior>().enabled = false;
-            makeChild.transform.parent = GameObject.Find("Stack").transform;
-        }
-        GameObject stak = GameObject.FindWithTag("Stak");
-
-        stak.GetComponent<TheStak>().enabled = true;
-        /* */
-
-        cubeNum = (transform.childCount);
+        int cubeNum = (transform.childCount);
         print(cubeNum+",");
         cubeRotations = FillInCubeRotations();
 
@@ -265,31 +248,25 @@ public class TheStak : MonoBehaviour {
 
     public void IsGameSolved()
     {
-        int cubeCount = 5;
-        int frontFace=0;
-        int[] frontFacesCounter = new int[cubeCount];
-        int[] backFacesCounter = new int[cubeCount];
-        int[] topFacesCounter = new int[cubeCount];
-        int[] bottomFacesCounter = new int[cubeCount];
-
+        int cubeCount = 6;
+        int[] repeatFacesCounter = new int[cubeCount];
         //print(cubeCount);
-        for (int i = 0; i < 4; i++)
+        for(int i = 0; i < 4; i++)
         {
-            ++frontFacesCounter[cFaces[i][frontBack[i][0]]];
-            ++backFacesCounter[cFaces[i][frontBack[i][1]]];
-            ++topFacesCounter[cFaces[i][topBottom[i][0]]];
-            ++bottomFacesCounter[cFaces[i][topBottom[i][1]]];
+            int frontFace= ++repeatFacesCounter[cFaces[i][frontBack[i][0]]];
+            //print(frontBack[i][0] + "," + frontBack[i][1] + "," + topBottom[i][0] + "," + topBottom[i][1]);
+            //print(cFaces[i][frontBack[i][0]]);
+            int backFace = ++repeatFacesCounter[cFaces[i][frontBack[i][1]]];
+            int topFace = ++repeatFacesCounter[cFaces[i][topBottom[i][0]]];
+            int bottomFace = ++repeatFacesCounter[cFaces[i][topBottom[i][1]]];
+            print(repeatFacesCounter[0] + "," + repeatFacesCounter[1] + "," + repeatFacesCounter[2] + "," + repeatFacesCounter[3] + "," + repeatFacesCounter[4] + "," + repeatFacesCounter[5]);
 
-           // print(frontFacesCounter[0] + "," + frontFacesCounter[1] + "," + frontFacesCounter[2] + "," + frontFacesCounter[3] + "," + frontFacesCounter[4] + "," + frontFacesCounter[5]); 
-        }
-        if (frontFacesCounter[0] > 1 || frontFacesCounter[1] > 1 || frontFacesCounter[2] > 1 || frontFacesCounter[3] > 1 || frontFacesCounter[4] > 1
-            || backFacesCounter[0] > 1 || backFacesCounter[1] > 1 || backFacesCounter[2] > 1 || backFacesCounter[3] > 1 || backFacesCounter[4] > 1
-            || topFacesCounter[0] > 1 || topFacesCounter[1] > 1 || topFacesCounter[2] > 1 || topFacesCounter[3] > 1 || topFacesCounter[4] > 1
-            || bottomFacesCounter[0] > 1 || bottomFacesCounter[1] > 1 || bottomFacesCounter[2] > 1 || bottomFacesCounter[3] > 1 || bottomFacesCounter[4] > 1)
+            if (repeatFacesCounter[cFaces[i][frontBack[i][0]]] > 4 || repeatFacesCounter[cFaces[i][frontBack[i][1]]] > 4 || repeatFacesCounter[cFaces[i][topBottom[i][0]]] > 4 || repeatFacesCounter[cFaces[i][topBottom[i][1]]] > 4)
             {
                 print("wrong");
                 return;
             }
+        }
         print("correct");
     }
 
