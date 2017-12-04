@@ -57,7 +57,6 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 				bttn [i].GetComponent<RectTransform> ().anchoredPosition = newAnchoredPos;
 			}
 		}
-
 		if (targetNearestButton) {
 			
 			float minDistance = Mathf.Min (distance); //Get the Min Distance
@@ -80,7 +79,6 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 		if(Mathf.Abs(position - newX) < 3f){
 			//lerpSpeed = 25f;
 			newX = position;
-
 		}
 
 		if(Mathf.Abs(newX)>= Mathf.Abs(position)-1f && Mathf.Abs(newX) <= Mathf.Abs(position)+1 && !messageSend){
