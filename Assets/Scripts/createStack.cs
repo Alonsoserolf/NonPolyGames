@@ -3,12 +3,15 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class createStack : MonoBehaviour { 
+public class createStack : MonoBehaviour
+{
 
     public Transform brick;
     public static Transform[] stack;
 
     public Button restart;
+    public Button take1;
+    public Button take2;
 
     public int bricksLeft;
     private int turn;
@@ -18,22 +21,23 @@ public class createStack : MonoBehaviour {
     private int score2;
     public static int mode;
 
-    public Text countText;
+   
     public Text playerTurn;
     public Text scoreText1;
     public Text scoreText2;
     public Text winText;
     public Text stackVals;
+    public Text plus1;
+    public Text plus2;
 
 
-  
 
     void Start()
     {
         stackVals.text = "";
         score1 = score2 = 0;
-        scoreText1.text = "Player 1's score:" + score1.ToString();
-        scoreText2.text = "Player 2's score:" + score2.ToString();
+        scoreText1.text = "Score 1\n" + score1.ToString();
+        scoreText2.text = "Score 2\n" + score2.ToString();
         winText.text = "";
         bricksLeft = 10;
         turn = 2;
@@ -44,17 +48,20 @@ public class createStack : MonoBehaviour {
         optimalPlays = new int[bricksLeft];
         System.Random rnd = new System.Random();
 
-	    for(int y = 0; y<bricksLeft; y++){
+        for (int y = 0; y < bricksLeft; y++)
+        {
             vals[y] = rnd.Next(1, 11);
-            stack[y] = Instantiate(brick, new Vector3(0,y,0), Quaternion.identity);
-            
+            stack[y] = Instantiate(brick, new Vector3(0, y, 0), Quaternion.identity);
+          /*TextMesh t = stack[y].gameObject.AddComponent<TextMesh>();
+            t.text = vals[y].ToString();
+            t.fontSize = 20;
+            t.font = Resources.GetBuiltinResource(typeof(Font), "neuropol x rg.ttf") as Font ;*/
         }
-        setCountText();
         updateVals();
         optimal(bricksLeft - 1);
-	 }
+    }
 
-    
+
 
     private void updateVals()
     {
@@ -62,38 +69,46 @@ public class createStack : MonoBehaviour {
         for (int x = bricksLeft - 1; x >= 0; x--)
         {
             Console.WriteLine("brick val =" + vals[x]);
-            stackVals.text += vals[x].ToString()+"\n";
-        }   
+            stackVals.text += vals[x].ToString() + "\n";
+        }
 
     }
 
     public void removeBrick(int num)
     {
+        int total = 0;
         for (int x = num; x > 0; x--)
-        { 
+        {
             if (bricksLeft > 0)
             {
+                total+=vals[bricksLeft - 1]; 
                 if (turn == 1)
                 {
                     score1 += vals[bricksLeft - 1];
-                    scoreText1.text = "Player 1's score:" + score1.ToString();
+                    scoreText1.text = "Score 1\n" + score1.ToString();
                 }
                 else
                 {
                     score2 += vals[bricksLeft - 1];
-                    scoreText2.text = "Player 2's score:" + score2.ToString();
+                    scoreText2.text = "Score 2\n" + score2.ToString();
                 }
                 stack[bricksLeft - 1].gameObject.SetActive(false);
                 bricksLeft--;
-                setCountText();
             }
         }
-
         updateVals();
         if (mode == 1 && turn == 1)
         {
+            take1.interactable = false;
+            take2.interactable = false;
             StartCoroutine("compTurn");
+           
         }
+        if(turn==1)
+            plus1.gameObject.GetComponent<Fade>().StartFade(total);
+        else
+            plus2.gameObject.GetComponent<Fade>().StartFade(total);
+
         switchTurn();
         if (bricksLeft == 0)
             endGame();
@@ -102,11 +117,12 @@ public class createStack : MonoBehaviour {
     IEnumerator compTurn()
     {
         yield return new WaitForSeconds(3.0f);
+        take1.interactable = true;
+        take2.interactable = true;
         if (optimalPlays[bricksLeft - 1] == 1)
             removeBrick(1);
         else
             removeBrick(2);
-            
     }
 
     int optimal(int ind)
@@ -131,7 +147,7 @@ public class createStack : MonoBehaviour {
             else
                 optimalPlays[ind] = 2;
 
-            return vals[ind] + max(take1, take2); 
+            return vals[ind] + max(take1, take2);
         }
     }
 
@@ -154,10 +170,12 @@ public class createStack : MonoBehaviour {
     {
         if (score1 > score2)
         {
+            winText.color = Color.red;
             winText.text = "Player 1 wins";
         }
         else if (score1 < score2)
         {
+            winText.color = Color.blue;
             winText.text = "Player 2 wins";
         }
         else
@@ -168,26 +186,24 @@ public class createStack : MonoBehaviour {
 
     }
 
-    void setCountText()
-    {
-        countText.text = "Bricks left:"+bricksLeft.ToString();
-    }
-
     void switchTurn()
     {
         if (turn == 1)
         {
             turn = 2;
+            playerTurn.color = Color.blue;
         }
         else
         {
             turn = 1;
+            playerTurn.color = Color.red;
         }
 
         playerTurn.text = "Player " + turn.ToString() + "'s turn";
+
     }
 
-    
+
 
 }
 
