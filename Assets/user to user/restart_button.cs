@@ -15,12 +15,12 @@ public class restart_button : MonoBehaviour {
         if (scene.name== "cpu vs user")
         {
             tictac_cpu_mode.mode_choice = 0;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("cpu vs user");
         }
         else
         {
             tictac.mode_choice_func();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("secondlevel");
         }
         
      
