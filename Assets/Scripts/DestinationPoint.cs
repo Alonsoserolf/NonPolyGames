@@ -8,6 +8,8 @@ public class DestinationPoint : MonoBehaviour {
 
 
 	public Text blocksLeftText;
+	public Text levelText;
+	public Renderer rend;
 	private static int blocksLeft;
 	private static int currentLevel;
 
@@ -17,12 +19,14 @@ public class DestinationPoint : MonoBehaviour {
 	protected int levelIndex;
 	//-------------------------
 
+
 	void Start() {
 		blocksLeft = GameObject.FindGameObjectsWithTag("DestinationPoint").Length;
 		setBlocksLeft();
 		currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
 		currLevel = SceneManager.GetActiveScene().name;
-		//currentLevel = Application.loadedLevelName;
+		setLevelText();
+		rend = GetComponent<Renderer>();
 	}
 
 	void Update() {
@@ -34,12 +38,14 @@ public class DestinationPoint : MonoBehaviour {
 			blocksLeft--;
 			setBlocksLeft();
 			Destroy(other.gameObject);
-			//-------------ivan lvl select-----------------
-			UnlockLevels();
-			//------------------------------
+			rend.material.color = Color.cyan;
 			if (blocksLeft == 0) {
 				int totalLevels = SceneManager.sceneCount;
-				string level = "Level " + currentLevel++;
+				string level = "Level " + ++currentLevel;
+//				if (currentLevel > totalLevels) {
+//					Application.Quit();
+//				}
+				//SceneManager.LoadScene(level);
 				SceneManager.LoadScene ("Level1.2");
 			}
 		}
@@ -47,6 +53,10 @@ public class DestinationPoint : MonoBehaviour {
 
 	void setBlocksLeft() {
 		blocksLeftText.text = "Blocks left: " + blocksLeft.ToString();
+	}
+
+	void setLevelText() {
+		levelText.text = "Level " + currentLevel.ToString();
 	}
 	//----ivan lvl select--------------
 	protected void  UnlockLevels (){
@@ -68,6 +78,4 @@ public class DestinationPoint : MonoBehaviour {
 		//Application.LoadLevel("World1");
 		//SceneManager.LoadScene("World1");
 	}
-
-	//
 }
