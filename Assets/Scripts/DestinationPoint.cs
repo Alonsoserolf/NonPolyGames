@@ -39,6 +39,9 @@ public class DestinationPoint : MonoBehaviour {
 			setBlocksLeft();
 			Destroy(other.gameObject);
 			rend.material.color = Color.cyan;
+			//-------------ivan lvl select-----------------
+			UnlockLevels();
+			//------------------------------
 			if (blocksLeft == 0) {
 				int totalLevels = SceneManager.sceneCount;
 				string level = "Level " + ++currentLevel;

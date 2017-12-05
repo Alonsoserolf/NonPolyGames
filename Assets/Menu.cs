@@ -35,7 +35,7 @@ public class Menu : MonoBehaviour {
 		SceneManager.LoadScene ("ScrollingMainMenu");
 	}
 	public void OnLevelSelect(){
-		SceneManager.LoadScene ("SokabanLevelSelect");
+		SceneManager.LoadScene ("World1");
 	}
 	public void OnTicPlay(){
 		SceneManager.LoadScene ("cubes");
