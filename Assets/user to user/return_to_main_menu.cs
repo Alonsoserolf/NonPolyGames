@@ -16,8 +16,15 @@ public class return_to_main_menu : MonoBehaviour {
 	}
     public void main_menu()
     {
-       
-        SceneManager.LoadScene(0);
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "cubes")
+        {
+            tictac_cpu_mode.mode_choice = 0;
+            SceneManager.LoadScene("TicTacToeMenu");
+        }
+        else 
+           SceneManager.LoadScene("cubes");
        
     }
 

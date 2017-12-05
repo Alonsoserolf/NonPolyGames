@@ -8,7 +8,7 @@ public class user_mode_button : MonoBehaviour {
     public void second_screen()
     {
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("secondlevel");
         tictac.mode_choice_func();
 
     }
