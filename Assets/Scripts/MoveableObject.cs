@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveableObject : MonoBehaviour {
 
-	public float pushPower = 3.0F;
+	public float pushPower = .1F;
 	Vector3 pos;
 	GameObject floor;
 	GameObject destinationPoint;
