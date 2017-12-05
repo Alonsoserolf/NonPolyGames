@@ -9,6 +9,36 @@ TagManager:
   - countcubes
   - CubNum
   - bg
+  - Cube26
+  - Cube21
+  - Cube0
+  - Cube19
+  - Cube18
+  - Cube12
+  - Cube23
+  - Cube8
+  - Cube16
+  - Cube6
+  - Cube9
+  - Cube20
+  - Cube15
+  - Cube14
+  - Cube4
+  - Cube24
+  - Cube22
+  - Cube3
+  - Cube1
+  - Cube11
+  - Cube5
+  - Cube7
+  - Cube13
+  - Cube10
+  - Cube17
+  - Cube2
+  - Cube25
+  - ModeSelect
+  - win
+  - lose
   layers:
   - Default
   - TransparentFX

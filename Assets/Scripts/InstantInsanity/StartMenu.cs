@@ -9,11 +9,7 @@ public class StartMenu : MonoBehaviour {
     public Slider mainSlider;
     private GameObject slide;
     public Transform cubePrefab;
-    public Material red;//1
-    public Material yellow;//2
-    public Material green;//3
-    public Material blue;//4
-    public Material pink;//5
+    
 
     public Text countCubes;
 

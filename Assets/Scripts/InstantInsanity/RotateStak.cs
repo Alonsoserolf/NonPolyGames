@@ -8,12 +8,9 @@ public class RotateStak : MonoBehaviour {
     private Transform _XForm_Parent;
 
     private Vector3 _LocalRotation;
-    private float _CameraDistance = 10f;
 
     public float MouseSensitivity = 4f;
-    public float ScrollSensitivity = 2f;
     public float OrbitDampening = 10f;
-    public float ScrollDampening = 6f;
 
     public bool CameraDisabled = false;
     // Use this for initialization
@@ -41,7 +38,7 @@ public class RotateStak : MonoBehaviour {
 
         if ((!CameraDisabled))
         {
- /*Rotation of the camera is based on mouse coordinates
+            // Rotation of the camera is based on mouse coordinates
             //Rotation of the camera is based on mouse coordinates
             if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
             {
@@ -49,10 +46,10 @@ public class RotateStak : MonoBehaviour {
                 _LocalRotation.y -= Input.GetAxis("Mouse Y") * MouseSensitivity;
 
                 //Clamp the y rotation to horizon and not flipping over at the top
-                _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, 0f, 15f);
+                _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, 0f, 19f);
             }
-           */
-            if (Input.GetAxis("Mouse X") > 0)
+          
+            /*if (Input.GetAxis("Mouse X") > 0)
             {
 
                 transform.RotateAround(Vector3.zero, -Vector3.up, 150 * Time.deltaTime);
@@ -60,12 +57,12 @@ public class RotateStak : MonoBehaviour {
             else if(Input.GetAxis("Mouse X") < 0)
             {
                 transform.RotateAround(Vector3.zero, Vector3.up, 150 * Time.deltaTime);
-            }
+            } */
         }
-        /*Actual camera  rig transformations
+        //Actual camera  rig transformations
         Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x, 0);
         this._XForm_Parent.rotation = Quaternion.Lerp(this._XForm_Parent.rotation, QT, Time.deltaTime * OrbitDampening);
-        need to change rotation for image*/
+       // need to change rotation for image
 
     }
 }
