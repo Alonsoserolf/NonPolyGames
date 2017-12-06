@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CPU Mode
+  m_Text: Player Vs. CPU Mode
 --- !u!222 &8392062
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -833,6 +833,13 @@ Prefab:
     - target: {fileID: 1134755981261904, guid: c916dbde6ce9b3744b018a4443aaea91, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114613951679149506, guid: c916dbde6ce9b3744b018a4443aaea91,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Player Vs. Player Mode
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -2008,7 +2015,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'User Mode
+  m_Text: 'Player Vs. Player Mode
 
 '
 --- !u!222 &957364556
