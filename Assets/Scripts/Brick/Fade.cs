@@ -11,7 +11,7 @@ public class Fade : MonoBehaviour
     {
         plus = this.gameObject.GetComponent<Text>();
         plus.text= "+" + total;
-        StartCoroutine(FadeTextToZeroAlpha(1f, GetComponent<Text>()));
+        StartCoroutine(FadeTextToZeroAlpha(2f, GetComponent<Text>()));
     }
 
     public IEnumerator FadeTextToFullAlpha(float t, Text i)
