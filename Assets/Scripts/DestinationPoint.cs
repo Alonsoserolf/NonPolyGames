@@ -23,7 +23,7 @@ public class DestinationPoint : MonoBehaviour {
 	void Start() {
 		blocksLeft = GameObject.FindGameObjectsWithTag("DestinationPoint").Length;
 		setBlocksLeft();
-		currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
+		currentLevel = SceneManager.GetActiveScene().buildIndex;
 		currLevel = SceneManager.GetActiveScene().name;
 		setLevelText();
 		rend = GetComponent<Renderer>();
