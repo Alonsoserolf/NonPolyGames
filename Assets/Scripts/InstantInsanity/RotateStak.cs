@@ -6,7 +6,7 @@ public class RotateStak : MonoBehaviour {
 
     private Transform _XForm_Camera;
     private Transform _XForm_Parent;
-
+    GameObject cmr;
     private Vector3 _LocalRotation;
 
     public float MouseSensitivity = 4f;
@@ -20,8 +20,7 @@ public class RotateStak : MonoBehaviour {
         this._XForm_Parent = this.transform.parent;
         _LocalRotation.x = -19;
         _LocalRotation.y = 19;
-
-
+        cmr = GameObject.FindWithTag("MainCamera");
     }
 
     // LateUpdate is called once per frame after Update() on every game object in the scene
@@ -49,6 +48,7 @@ public class RotateStak : MonoBehaviour {
                 _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, 0f, 19f);
             }
           
+
             /*if (Input.GetAxis("Mouse X") > 0)
             {
 
@@ -62,8 +62,8 @@ public class RotateStak : MonoBehaviour {
         //Actual camera  rig transformations
         Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x, 0);
         this._XForm_Parent.rotation = Quaternion.Lerp(this._XForm_Parent.rotation, QT, Time.deltaTime * OrbitDampening);
-       // need to change rotation for image
-
+        this._XForm_Parent.position = new Vector3(0f,_LocalRotation.y,0);
+      
     }
 }
 

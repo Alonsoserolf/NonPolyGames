@@ -7,7 +7,6 @@ TagManager:
   - Stak
   - Canvas
   - countcubes
-  - CubNum
   - bg
   - Cube26
   - Cube21
@@ -39,6 +38,9 @@ TagManager:
   - ModeSelect
   - win
   - lose
+  - morecube
+  - lesscube
+  - Camera
   layers:
   - Default
   - TransparentFX
