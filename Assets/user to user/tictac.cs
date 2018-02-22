@@ -8,15 +8,18 @@ using UnityEngine;
 public class tictac : MonoBehaviour
 {
 
-    private static int[] level1;
-    private static int[] level2;
-    private static int[] level3;
+    public static int[] level1;
+    public static int[] level2;
+    public static int[] level3;
     private static int player_turn;
     public static int mode_choice = 1;
     public Text player_turn_text;
     public Text player_won_text;
     private int player_turn_text_overrule = 0;
     public Button restart_button;
+    public static GameObject current_cube0; public static GameObject current_cube1; public static GameObject current_cube2; public static GameObject current_cube3; public static GameObject current_cube4; public static GameObject current_cube5; public static GameObject current_cube6; public static GameObject current_cube7; public static GameObject current_cube8;
+    public static GameObject current_cube9; public static GameObject current_cube10; public static GameObject current_cube11; public static GameObject current_cube12; public static GameObject current_cube13; public static GameObject current_cube14; public static GameObject current_cube15; public static GameObject current_cube16; public static GameObject current_cube17;
+    public static GameObject current_cube18; public static GameObject current_cube19; public static GameObject current_cube20; public static GameObject current_cube21; public static GameObject current_cube22; public static GameObject current_cube23; public static GameObject current_cube24; public static GameObject current_cube25; public static GameObject current_cube26;
     public static void mode_choice_func()
     {
         mode_choice = 0;
@@ -37,7 +40,12 @@ public class tictac : MonoBehaviour
             player_won_text.color = Color.blue;
             player_turn_text_overrule = 1;
             mode_choice = 1;
+
+
             restart_button.gameObject.SetActive(true);
+            make_cubes_blink2.who_won(1);           
+            current_cube0 = GameObject.FindWithTag("Cube0"); current_cube1 = GameObject.FindWithTag("Cube1"); current_cube2 = GameObject.FindWithTag("Cube2"); current_cube3 = GameObject.FindWithTag("Cube3"); current_cube4 = GameObject.FindWithTag("Cube4"); current_cube5 = GameObject.FindWithTag("Cube5"); current_cube6 = GameObject.FindWithTag("Cube6"); current_cube7 = GameObject.FindWithTag("Cube7"); current_cube8 = GameObject.FindWithTag("Cube8");
+            current_cube0.GetComponent<make_cubes_blink2>().enabled = true; current_cube1.GetComponent<make_cubes_blink2>().enabled = true; current_cube2.GetComponent<make_cubes_blink2>().enabled = true; current_cube3.GetComponent<make_cubes_blink2>().enabled = true; current_cube4.GetComponent<make_cubes_blink2>().enabled = true; current_cube5.GetComponent<make_cubes_blink2>().enabled = true; current_cube6.GetComponent<make_cubes_blink2>().enabled = true; current_cube7.GetComponent<make_cubes_blink2>().enabled = true; current_cube8.GetComponent<make_cubes_blink2>().enabled = true;
 
 
         }
@@ -48,7 +56,13 @@ public class tictac : MonoBehaviour
             player_won_text.color = Color.blue;
             player_turn_text_overrule = 1;
             mode_choice = 1;
+
             restart_button.gameObject.SetActive(true);
+            make_cubes_blink2.who_won(1);
+            
+            current_cube0 = GameObject.FindWithTag("Cube9"); current_cube1 = GameObject.FindWithTag("Cube10"); current_cube2 = GameObject.FindWithTag("Cube11"); current_cube3 = GameObject.FindWithTag("Cube12"); current_cube4 = GameObject.FindWithTag("Cube13"); current_cube5 = GameObject.FindWithTag("Cube14"); current_cube6 = GameObject.FindWithTag("Cube15"); current_cube7 = GameObject.FindWithTag("Cube16"); current_cube8 = GameObject.FindWithTag("Cube17");
+            current_cube0.GetComponent<make_cubes_blink2>().enabled = true; current_cube1.GetComponent<make_cubes_blink2>().enabled = true; current_cube2.GetComponent<make_cubes_blink2>().enabled = true; current_cube3.GetComponent<make_cubes_blink2>().enabled = true; current_cube4.GetComponent<make_cubes_blink2>().enabled = true; current_cube5.GetComponent<make_cubes_blink2>().enabled = true; current_cube6.GetComponent<make_cubes_blink2>().enabled = true; current_cube7.GetComponent<make_cubes_blink2>().enabled = true; current_cube8.GetComponent<make_cubes_blink2>().enabled = true;
+            
         }
 
 
@@ -59,7 +73,11 @@ public class tictac : MonoBehaviour
             player_won_text.color = Color.blue;
             player_turn_text_overrule = 1;
             mode_choice = 1;
+           
             restart_button.gameObject.SetActive(true);
+            make_cubes_blink2.who_won(1);
+            current_cube0 = GameObject.FindWithTag("Cube18"); current_cube1 = GameObject.FindWithTag("Cube19"); current_cube2 = GameObject.FindWithTag("Cube20"); current_cube3 = GameObject.FindWithTag("Cube21"); current_cube4 = GameObject.FindWithTag("Cube22"); current_cube5 = GameObject.FindWithTag("Cube23"); current_cube6 = GameObject.FindWithTag("Cube24"); current_cube7 = GameObject.FindWithTag("Cube25"); current_cube8 = GameObject.FindWithTag("Cube26");
+            current_cube0.GetComponent<make_cubes_blink2>().enabled = true; current_cube1.GetComponent<make_cubes_blink2>().enabled = true; current_cube2.GetComponent<make_cubes_blink2>().enabled = true; current_cube3.GetComponent<make_cubes_blink2>().enabled = true; current_cube4.GetComponent<make_cubes_blink2>().enabled = true; current_cube5.GetComponent<make_cubes_blink2>().enabled = true; current_cube6.GetComponent<make_cubes_blink2>().enabled = true; current_cube7.GetComponent<make_cubes_blink2>().enabled = true; current_cube8.GetComponent<make_cubes_blink2>().enabled = true;
 
         }
 
@@ -71,7 +89,15 @@ public class tictac : MonoBehaviour
             player_won_text.color = Color.blue;
             player_turn_text_overrule = 1;
             mode_choice = 1;
+          
             restart_button.gameObject.SetActive(true);
+            make_cubes_blink2.who_won(1);
+            current_cube0 = GameObject.FindWithTag("Cube0"); current_cube1 = GameObject.FindWithTag("Cube1"); current_cube2 = GameObject.FindWithTag("Cube2"); current_cube3 = GameObject.FindWithTag("Cube3"); current_cube4 = GameObject.FindWithTag("Cube4"); current_cube5 = GameObject.FindWithTag("Cube5"); current_cube6 = GameObject.FindWithTag("Cube6"); current_cube7 = GameObject.FindWithTag("Cube7"); current_cube8 = GameObject.FindWithTag("Cube8");
+            current_cube9 = GameObject.FindWithTag("Cube9"); current_cube10 = GameObject.FindWithTag("Cube10"); current_cube11 = GameObject.FindWithTag("Cube11"); current_cube12 = GameObject.FindWithTag("Cube12"); current_cube13 = GameObject.FindWithTag("Cube13"); current_cube14 = GameObject.FindWithTag("Cube14"); current_cube15 = GameObject.FindWithTag("Cube15"); current_cube16 = GameObject.FindWithTag("Cube16"); current_cube17 = GameObject.FindWithTag("Cube17");
+            current_cube18 = GameObject.FindWithTag("Cube18"); current_cube19 = GameObject.FindWithTag("Cube19"); current_cube20 = GameObject.FindWithTag("Cube20"); current_cube21 = GameObject.FindWithTag("Cube21"); current_cube22 = GameObject.FindWithTag("Cube22"); current_cube23 = GameObject.FindWithTag("Cube23"); current_cube24 = GameObject.FindWithTag("Cube24"); current_cube25 = GameObject.FindWithTag("Cube25"); current_cube26 = GameObject.FindWithTag("Cube26");
+            current_cube0.GetComponent<make_cubes_blink2>().enabled = true; current_cube1.GetComponent<make_cubes_blink2>().enabled = true; current_cube2.GetComponent<make_cubes_blink2>().enabled = true; current_cube3.GetComponent<make_cubes_blink2>().enabled = true; current_cube4.GetComponent<make_cubes_blink2>().enabled = true; current_cube5.GetComponent<make_cubes_blink2>().enabled = true; current_cube6.GetComponent<make_cubes_blink2>().enabled = true; current_cube7.GetComponent<make_cubes_blink2>().enabled = true; current_cube8.GetComponent<make_cubes_blink2>().enabled = true;
+            current_cube9.GetComponent<make_cubes_blink2>().enabled = true; current_cube10.GetComponent<make_cubes_blink2>().enabled = true; current_cube11.GetComponent<make_cubes_blink2>().enabled = true; current_cube12.GetComponent<make_cubes_blink2>().enabled = true; current_cube13.GetComponent<make_cubes_blink2>().enabled = true; current_cube14.GetComponent<make_cubes_blink2>().enabled = true; current_cube15.GetComponent<make_cubes_blink2>().enabled = true; current_cube16.GetComponent<make_cubes_blink2>().enabled = true; current_cube17.GetComponent<make_cubes_blink2>().enabled = true;
+            current_cube18.GetComponent<make_cubes_blink2>().enabled = true; current_cube19.GetComponent<make_cubes_blink2>().enabled = true; current_cube20.GetComponent<make_cubes_blink2>().enabled = true; current_cube21.GetComponent<make_cubes_blink2>().enabled = true; current_cube22.GetComponent<make_cubes_blink2>().enabled = true; current_cube23.GetComponent<make_cubes_blink2>().enabled = true; current_cube24.GetComponent<make_cubes_blink2>().enabled = true; current_cube25.GetComponent<make_cubes_blink2>().enabled = true; current_cube26.GetComponent<make_cubes_blink2>().enabled = true;
 
         }
 
@@ -82,7 +108,15 @@ public class tictac : MonoBehaviour
             player_won_text.color = Color.blue;
             player_turn_text_overrule = 1;
             mode_choice = 1;
+            
             restart_button.gameObject.SetActive(true);
+            make_cubes_blink2.who_won(1);
+            current_cube0 = GameObject.FindWithTag("Cube0"); current_cube1 = GameObject.FindWithTag("Cube1"); current_cube2 = GameObject.FindWithTag("Cube2"); current_cube3 = GameObject.FindWithTag("Cube3"); current_cube4 = GameObject.FindWithTag("Cube4"); current_cube5 = GameObject.FindWithTag("Cube5"); current_cube6 = GameObject.FindWithTag("Cube6"); current_cube7 = GameObject.FindWithTag("Cube7"); current_cube8 = GameObject.FindWithTag("Cube8");
+            current_cube9 = GameObject.FindWithTag("Cube9"); current_cube10 = GameObject.FindWithTag("Cube10"); current_cube11 = GameObject.FindWithTag("Cube11"); current_cube12 = GameObject.FindWithTag("Cube12"); current_cube13 = GameObject.FindWithTag("Cube13"); current_cube14 = GameObject.FindWithTag("Cube14"); current_cube15 = GameObject.FindWithTag("Cube15"); current_cube16 = GameObject.FindWithTag("Cube16"); current_cube17 = GameObject.FindWithTag("Cube17");
+            current_cube18 = GameObject.FindWithTag("Cube18"); current_cube19 = GameObject.FindWithTag("Cube19"); current_cube20 = GameObject.FindWithTag("Cube20"); current_cube21 = GameObject.FindWithTag("Cube21"); current_cube22 = GameObject.FindWithTag("Cube22"); current_cube23 = GameObject.FindWithTag("Cube23"); current_cube24 = GameObject.FindWithTag("Cube24"); current_cube25 = GameObject.FindWithTag("Cube25"); current_cube26 = GameObject.FindWithTag("Cube26");
+            current_cube0.GetComponent<make_cubes_blink2>().enabled = true; current_cube1.GetComponent<make_cubes_blink2>().enabled = true; current_cube2.GetComponent<make_cubes_blink2>().enabled = true; current_cube3.GetComponent<make_cubes_blink2>().enabled = true; current_cube4.GetComponent<make_cubes_blink2>().enabled = true; current_cube5.GetComponent<make_cubes_blink2>().enabled = true; current_cube6.GetComponent<make_cubes_blink2>().enabled = true; current_cube7.GetComponent<make_cubes_blink2>().enabled = true; current_cube8.GetComponent<make_cubes_blink2>().enabled = true;
+            current_cube9.GetComponent<make_cubes_blink2>().enabled = true; current_cube10.GetComponent<make_cubes_blink2>().enabled = true; current_cube11.GetComponent<make_cubes_blink2>().enabled = true; current_cube12.GetComponent<make_cubes_blink2>().enabled = true; current_cube13.GetComponent<make_cubes_blink2>().enabled = true; current_cube14.GetComponent<make_cubes_blink2>().enabled = true; current_cube15.GetComponent<make_cubes_blink2>().enabled = true; current_cube16.GetComponent<make_cubes_blink2>().enabled = true; current_cube17.GetComponent<make_cubes_blink2>().enabled = true;
+            current_cube18.GetComponent<make_cubes_blink2>().enabled = true; current_cube19.GetComponent<make_cubes_blink2>().enabled = true; current_cube20.GetComponent<make_cubes_blink2>().enabled = true; current_cube21.GetComponent<make_cubes_blink2>().enabled = true; current_cube22.GetComponent<make_cubes_blink2>().enabled = true; current_cube23.GetComponent<make_cubes_blink2>().enabled = true; current_cube24.GetComponent<make_cubes_blink2>().enabled = true; current_cube25.GetComponent<make_cubes_blink2>().enabled = true; current_cube26.GetComponent<make_cubes_blink2>().enabled = true;
 
         }
 
@@ -96,7 +130,11 @@ public class tictac : MonoBehaviour
             player_won_text.color = Color.red;
             player_turn_text_overrule = 1;
             mode_choice = 1;
+            
             restart_button.gameObject.SetActive(true);
+            make_cubes_blink2.who_won(2);
+            current_cube0 = GameObject.FindWithTag("Cube0"); current_cube1 = GameObject.FindWithTag("Cube1"); current_cube2 = GameObject.FindWithTag("Cube2"); current_cube3 = GameObject.FindWithTag("Cube3"); current_cube4 = GameObject.FindWithTag("Cube4"); current_cube5 = GameObject.FindWithTag("Cube5"); current_cube6 = GameObject.FindWithTag("Cube6"); current_cube7 = GameObject.FindWithTag("Cube7"); current_cube8 = GameObject.FindWithTag("Cube8");
+            current_cube0.GetComponent<make_cubes_blink2>().enabled = true; current_cube1.GetComponent<make_cubes_blink2>().enabled = true; current_cube2.GetComponent<make_cubes_blink2>().enabled = true; current_cube3.GetComponent<make_cubes_blink2>().enabled = true; current_cube4.GetComponent<make_cubes_blink2>().enabled = true; current_cube5.GetComponent<make_cubes_blink2>().enabled = true; current_cube6.GetComponent<make_cubes_blink2>().enabled = true; current_cube7.GetComponent<make_cubes_blink2>().enabled = true; current_cube8.GetComponent<make_cubes_blink2>().enabled = true;
 
         }
 
@@ -107,7 +145,11 @@ public class tictac : MonoBehaviour
             player_won_text.color = Color.red;
             player_turn_text_overrule = 1;
             mode_choice = 1;
+            
             restart_button.gameObject.SetActive(true);
+            make_cubes_blink2.who_won(2);
+            current_cube0 = GameObject.FindWithTag("Cube9"); current_cube1 = GameObject.FindWithTag("Cube10"); current_cube2 = GameObject.FindWithTag("Cube11"); current_cube3 = GameObject.FindWithTag("Cube12"); current_cube4 = GameObject.FindWithTag("Cube13"); current_cube5 = GameObject.FindWithTag("Cube14"); current_cube6 = GameObject.FindWithTag("Cube15"); current_cube7 = GameObject.FindWithTag("Cube16"); current_cube8 = GameObject.FindWithTag("Cube17");
+            current_cube0.GetComponent<make_cubes_blink2>().enabled = true; current_cube1.GetComponent<make_cubes_blink2>().enabled = true; current_cube2.GetComponent<make_cubes_blink2>().enabled = true; current_cube3.GetComponent<make_cubes_blink2>().enabled = true; current_cube4.GetComponent<make_cubes_blink2>().enabled = true; current_cube5.GetComponent<make_cubes_blink2>().enabled = true; current_cube6.GetComponent<make_cubes_blink2>().enabled = true; current_cube7.GetComponent<make_cubes_blink2>().enabled = true; current_cube8.GetComponent<make_cubes_blink2>().enabled = true;
 
 
         }
@@ -118,7 +160,11 @@ public class tictac : MonoBehaviour
             player_won_text.color = Color.red;
             player_turn_text_overrule = 1;
             mode_choice = 1;
+        
             restart_button.gameObject.SetActive(true);
+            make_cubes_blink2.who_won(2);
+            current_cube0 = GameObject.FindWithTag("Cube18"); current_cube1 = GameObject.FindWithTag("Cube19"); current_cube2 = GameObject.FindWithTag("Cube20"); current_cube3 = GameObject.FindWithTag("Cube21"); current_cube4 = GameObject.FindWithTag("Cube22"); current_cube5 = GameObject.FindWithTag("Cube23"); current_cube6 = GameObject.FindWithTag("Cube24"); current_cube7 = GameObject.FindWithTag("Cube25"); current_cube8 = GameObject.FindWithTag("Cube26");
+            current_cube0.GetComponent<make_cubes_blink2>().enabled = true; current_cube1.GetComponent<make_cubes_blink2>().enabled = true; current_cube2.GetComponent<make_cubes_blink2>().enabled = true; current_cube3.GetComponent<make_cubes_blink2>().enabled = true; current_cube4.GetComponent<make_cubes_blink2>().enabled = true; current_cube5.GetComponent<make_cubes_blink2>().enabled = true; current_cube6.GetComponent<make_cubes_blink2>().enabled = true; current_cube7.GetComponent<make_cubes_blink2>().enabled = true; current_cube8.GetComponent<make_cubes_blink2>().enabled = true;
 
         }
         if (level3[0] == 2 && level2[0] == 2 && level1[0] == 2 || level3[1] == 2 && level2[1] == 2 && level1[1] == 2 || level3[2] == 2 && level2[2] == 2 && level1[2] == 2 || level3[3] == 2 && level2[3] == 2 && level1[3] == 2 || level3[4] == 2 && level2[4] == 2 && level1[4] == 2 || level3[5] == 2 && level2[5] == 2 && level1[5] == 2 || level3[6] == 2 && level2[6] == 2 && level1[6] == 2 || level3[7] == 2 && level2[7] == 2 && level1[7] == 2 || level3[8] == 2 && level2[8] == 2 && level1[8] == 2)
@@ -128,7 +174,16 @@ public class tictac : MonoBehaviour
             player_won_text.color = Color.red;
             player_turn_text_overrule = 1;
             mode_choice = 1;
+           
             restart_button.gameObject.SetActive(true);
+            make_cubes_blink2.who_won(2);
+            current_cube0 = GameObject.FindWithTag("Cube0"); current_cube1 = GameObject.FindWithTag("Cube1"); current_cube2 = GameObject.FindWithTag("Cube2"); current_cube3 = GameObject.FindWithTag("Cube3"); current_cube4 = GameObject.FindWithTag("Cube4"); current_cube5 = GameObject.FindWithTag("Cube5"); current_cube6 = GameObject.FindWithTag("Cube6"); current_cube7 = GameObject.FindWithTag("Cube7"); current_cube8 = GameObject.FindWithTag("Cube8");
+            current_cube9 = GameObject.FindWithTag("Cube9"); current_cube10 = GameObject.FindWithTag("Cube10"); current_cube11 = GameObject.FindWithTag("Cube11"); current_cube12 = GameObject.FindWithTag("Cube12"); current_cube13 = GameObject.FindWithTag("Cube13"); current_cube14 = GameObject.FindWithTag("Cube14"); current_cube15 = GameObject.FindWithTag("Cube15"); current_cube16 = GameObject.FindWithTag("Cube16"); current_cube17 = GameObject.FindWithTag("Cube17");
+            current_cube18 = GameObject.FindWithTag("Cube18"); current_cube19 = GameObject.FindWithTag("Cube19"); current_cube20 = GameObject.FindWithTag("Cube20"); current_cube21 = GameObject.FindWithTag("Cube21"); current_cube22 = GameObject.FindWithTag("Cube22"); current_cube23 = GameObject.FindWithTag("Cube23"); current_cube24 = GameObject.FindWithTag("Cube24"); current_cube25 = GameObject.FindWithTag("Cube25"); current_cube26 = GameObject.FindWithTag("Cube26");
+            current_cube0.GetComponent<make_cubes_blink2>().enabled = true; current_cube1.GetComponent<make_cubes_blink2>().enabled = true; current_cube2.GetComponent<make_cubes_blink2>().enabled = true; current_cube3.GetComponent<make_cubes_blink2>().enabled = true; current_cube4.GetComponent<make_cubes_blink2>().enabled = true; current_cube5.GetComponent<make_cubes_blink2>().enabled = true; current_cube6.GetComponent<make_cubes_blink2>().enabled = true; current_cube7.GetComponent<make_cubes_blink2>().enabled = true; current_cube8.GetComponent<make_cubes_blink2>().enabled = true;
+            current_cube9.GetComponent<make_cubes_blink2>().enabled = true; current_cube10.GetComponent<make_cubes_blink2>().enabled = true; current_cube11.GetComponent<make_cubes_blink2>().enabled = true; current_cube12.GetComponent<make_cubes_blink2>().enabled = true; current_cube13.GetComponent<make_cubes_blink2>().enabled = true; current_cube14.GetComponent<make_cubes_blink2>().enabled = true; current_cube15.GetComponent<make_cubes_blink2>().enabled = true; current_cube16.GetComponent<make_cubes_blink2>().enabled = true; current_cube17.GetComponent<make_cubes_blink2>().enabled = true;
+            current_cube18.GetComponent<make_cubes_blink2>().enabled = true; current_cube19.GetComponent<make_cubes_blink2>().enabled = true; current_cube20.GetComponent<make_cubes_blink2>().enabled = true; current_cube21.GetComponent<make_cubes_blink2>().enabled = true; current_cube22.GetComponent<make_cubes_blink2>().enabled = true; current_cube23.GetComponent<make_cubes_blink2>().enabled = true; current_cube24.GetComponent<make_cubes_blink2>().enabled = true; current_cube25.GetComponent<make_cubes_blink2>().enabled = true; current_cube26.GetComponent<make_cubes_blink2>().enabled = true;
+
         }
         if (level3[1] == 2 && level2[4] == 2 && level1[7] == 2 || level3[3] == 2 && level2[4] == 2 && level1[5] == 2 || level3[5] == 2 && level2[4] == 2 && level1[3] == 2 || level3[7] == 2 && level2[4] == 2 && level1[1] == 2 || level3[8] == 2 && level2[4] == 2 && level1[0] == 2 || level3[8] == 2 && level2[7] == 2 && level1[6] == 2 || level3[8] == 2 && level2[5] == 2 && level1[2] == 2 || level3[8] == 2 && level2[4] == 2 && level1[0] == 2 || level3[6] == 2 && level2[4] == 2 && level1[2] == 2 || level3[6] == 2 && level2[7] == 2 && level1[8] == 2 || level3[6] == 2 && level2[3] == 2 && level1[0] == 2 || level3[0] == 2 && level2[1] == 2 && level1[2] == 2 || level3[0] == 2 && level2[3] == 2 && level1[6] == 2  || level3[2] == 2 && level2[5] == 2 && level1[8] == 2 || level3[2] == 2 && level2[4] == 2 && level1[6] == 2 || level3[2] == 2 && level2[1] == 2 && level1[0] == 2)
         {
@@ -137,7 +192,16 @@ public class tictac : MonoBehaviour
             player_won_text.color = Color.red;
             player_turn_text_overrule = 1;
             mode_choice = 1;
+           
             restart_button.gameObject.SetActive(true);
+            make_cubes_blink2.who_won(2);
+            current_cube0 = GameObject.FindWithTag("Cube0"); current_cube1 = GameObject.FindWithTag("Cube1"); current_cube2 = GameObject.FindWithTag("Cube2"); current_cube3 = GameObject.FindWithTag("Cube3"); current_cube4 = GameObject.FindWithTag("Cube4"); current_cube5 = GameObject.FindWithTag("Cube5"); current_cube6 = GameObject.FindWithTag("Cube6"); current_cube7 = GameObject.FindWithTag("Cube7"); current_cube8 = GameObject.FindWithTag("Cube8");
+            current_cube9 = GameObject.FindWithTag("Cube9"); current_cube10 = GameObject.FindWithTag("Cube10"); current_cube11 = GameObject.FindWithTag("Cube11"); current_cube12 = GameObject.FindWithTag("Cube12"); current_cube13 = GameObject.FindWithTag("Cube13"); current_cube14 = GameObject.FindWithTag("Cube14"); current_cube15 = GameObject.FindWithTag("Cube15"); current_cube16 = GameObject.FindWithTag("Cube16"); current_cube17 = GameObject.FindWithTag("Cube17");
+            current_cube18 = GameObject.FindWithTag("Cube18"); current_cube19 = GameObject.FindWithTag("Cube19"); current_cube20 = GameObject.FindWithTag("Cube20"); current_cube21 = GameObject.FindWithTag("Cube21"); current_cube22 = GameObject.FindWithTag("Cube22"); current_cube23 = GameObject.FindWithTag("Cube23"); current_cube24 = GameObject.FindWithTag("Cube24"); current_cube25 = GameObject.FindWithTag("Cube25"); current_cube26 = GameObject.FindWithTag("Cube26");
+            current_cube0.GetComponent<make_cubes_blink2>().enabled = true; current_cube1.GetComponent<make_cubes_blink2>().enabled = true; current_cube2.GetComponent<make_cubes_blink2>().enabled = true; current_cube3.GetComponent<make_cubes_blink2>().enabled = true; current_cube4.GetComponent<make_cubes_blink2>().enabled = true; current_cube5.GetComponent<make_cubes_blink2>().enabled = true; current_cube6.GetComponent<make_cubes_blink2>().enabled = true; current_cube7.GetComponent<make_cubes_blink2>().enabled = true; current_cube8.GetComponent<make_cubes_blink2>().enabled = true;
+            current_cube9.GetComponent<make_cubes_blink2>().enabled = true; current_cube10.GetComponent<make_cubes_blink2>().enabled = true; current_cube11.GetComponent<make_cubes_blink2>().enabled = true; current_cube12.GetComponent<make_cubes_blink2>().enabled = true; current_cube13.GetComponent<make_cubes_blink2>().enabled = true; current_cube14.GetComponent<make_cubes_blink2>().enabled = true; current_cube15.GetComponent<make_cubes_blink2>().enabled = true; current_cube16.GetComponent<make_cubes_blink2>().enabled = true; current_cube17.GetComponent<make_cubes_blink2>().enabled = true;
+            current_cube18.GetComponent<make_cubes_blink2>().enabled = true; current_cube19.GetComponent<make_cubes_blink2>().enabled = true; current_cube20.GetComponent<make_cubes_blink2>().enabled = true; current_cube21.GetComponent<make_cubes_blink2>().enabled = true; current_cube22.GetComponent<make_cubes_blink2>().enabled = true; current_cube23.GetComponent<make_cubes_blink2>().enabled = true; current_cube24.GetComponent<make_cubes_blink2>().enabled = true; current_cube25.GetComponent<make_cubes_blink2>().enabled = true; current_cube26.GetComponent<make_cubes_blink2>().enabled = true;
+
         }
 
 
@@ -196,7 +260,7 @@ public class tictac : MonoBehaviour
         level2 = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         level3 = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         player_turn = 0;
-        restart_button = null;
+       
 
         
 

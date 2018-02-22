@@ -11,7 +11,7 @@ public class restart_button : MonoBehaviour {
        
         
         Scene scene = SceneManager.GetActiveScene();
-        Debug.Log(scene.name);
+       
         if (scene.name== "cpu vs user")
         {
             tictac_cpu_mode.mode_choice = 0;
