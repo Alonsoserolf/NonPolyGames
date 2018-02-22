@@ -10,7 +10,7 @@ public class user_mode_button : MonoBehaviour {
 
         SceneManager.LoadScene("secondlevel");
         tictac.mode_choice_func();
-
+        
     }
 
 

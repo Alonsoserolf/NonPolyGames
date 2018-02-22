@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 131146695}
   - component: {fileID: 131146694}
   - component: {fileID: 131146691}
+  - component: {fileID: 131146692}
   m_Layer: 0
   m_Name: Cube22
   m_TagString: Cube22
@@ -146,6 +147,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &131146692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 131146690}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &131146694
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -225,6 +237,7 @@ GameObject:
   - component: {fileID: 150014301}
   - component: {fileID: 150014300}
   - component: {fileID: 150014297}
+  - component: {fileID: 150014298}
   m_Layer: 0
   m_Name: Cube16
   m_TagString: Cube16
@@ -246,6 +259,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &150014298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150014296}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &150014300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -328,6 +352,7 @@ GameObject:
   - component: {fileID: 158220879}
   - component: {fileID: 158220878}
   - component: {fileID: 158220875}
+  - component: {fileID: 158220876}
   m_Layer: 0
   m_Name: Cube14
   m_TagString: Cube14
@@ -349,6 +374,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &158220876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 158220874}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &158220878
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -489,6 +525,7 @@ GameObject:
   - component: {fileID: 186682094}
   - component: {fileID: 186682093}
   - component: {fileID: 186682090}
+  - component: {fileID: 186682091}
   m_Layer: 0
   m_Name: Cube6
   m_TagString: Cube6
@@ -510,6 +547,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &186682091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 186682089}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &186682093
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -588,6 +636,7 @@ GameObject:
   - component: {fileID: 201230829}
   - component: {fileID: 201230828}
   - component: {fileID: 201230825}
+  - component: {fileID: 201230826}
   m_Layer: 0
   m_Name: Cube4
   m_TagString: Cube4
@@ -609,6 +658,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &201230826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 201230824}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &201230828
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -700,7 +760,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 227318681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -320, y: -100, z: 0}
+  m_LocalPosition: {x: -320, y: -145, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 652497917}
@@ -710,7 +770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -320, y: -100}
+  m_AnchoredPosition: {x: -320, y: -145}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &227318683
@@ -810,6 +870,7 @@ GameObject:
   - component: {fileID: 276437661}
   - component: {fileID: 276437660}
   - component: {fileID: 276437657}
+  - component: {fileID: 276437658}
   m_Layer: 5
   m_Name: Cube10
   m_TagString: Cube10
@@ -831,6 +892,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &276437658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 276437656}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &276437660
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -983,6 +1055,7 @@ GameObject:
   - component: {fileID: 403450997}
   - component: {fileID: 403450996}
   - component: {fileID: 403450993}
+  - component: {fileID: 403450994}
   m_Layer: 0
   m_Name: Cube17
   m_TagString: Cube17
@@ -1004,6 +1077,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &403450994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 403450992}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &403450996
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1082,6 +1166,7 @@ GameObject:
   - component: {fileID: 551871473}
   - component: {fileID: 551871472}
   - component: {fileID: 551871469}
+  - component: {fileID: 551871470}
   m_Layer: 0
   m_Name: Cube1
   m_TagString: Cube1
@@ -1103,6 +1188,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &551871470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 551871468}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &551871472
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1181,6 +1277,7 @@ GameObject:
   - component: {fileID: 582376295}
   - component: {fileID: 582376294}
   - component: {fileID: 582376291}
+  - component: {fileID: 582376292}
   m_Layer: 0
   m_Name: Cube20
   m_TagString: Cube20
@@ -1202,6 +1299,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &582376292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 582376290}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &582376294
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1292,16 +1400,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 588165378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65, y: 409, z: 0}
+  m_LocalPosition: {x: -40, y: 280, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1622246853}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 65, y: -52}
-  m_SizeDelta: {x: 372.57, y: 50.77}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -40, y: 280}
+  m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588165380
 MonoBehaviour:
@@ -1323,8 +1431,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 6d8166b5337b74f1c9a2adea4ca584c7, type: 3}
-    m_FontSize: 40
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1428,6 +1536,7 @@ GameObject:
   - component: {fileID: 615722361}
   - component: {fileID: 615722360}
   - component: {fileID: 615722357}
+  - component: {fileID: 615722358}
   m_Layer: 0
   m_Name: Cube9
   m_TagString: Cube9
@@ -1449,6 +1558,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &615722358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 615722356}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &615722360
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1646,6 +1766,7 @@ GameObject:
   - component: {fileID: 766033732}
   - component: {fileID: 766033731}
   - component: {fileID: 766033728}
+  - component: {fileID: 766033729}
   m_Layer: 0
   m_Name: Cube25
   m_TagString: Cube25
@@ -1667,6 +1788,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &766033729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766033727}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &766033731
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1868,6 +2000,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 842446559}
+--- !u!1 &862972997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 862972998}
+  - component: {fileID: 862973000}
+  - component: {fileID: 862972999}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &862972998
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 862972997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1791139446}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &862972999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 862972997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Game Instructions
+--- !u!222 &862973000
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 862972997}
 --- !u!1 &910548596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,6 +2086,7 @@ GameObject:
   - component: {fileID: 910548601}
   - component: {fileID: 910548600}
   - component: {fileID: 910548597}
+  - component: {fileID: 910548598}
   m_Layer: 0
   m_Name: Cube5
   m_TagString: Cube5
@@ -1901,6 +2108,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &910548598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 910548596}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &910548600
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1979,6 +2197,7 @@ GameObject:
   - component: {fileID: 912285134}
   - component: {fileID: 912285133}
   - component: {fileID: 912285130}
+  - component: {fileID: 912285131}
   m_Layer: 0
   m_Name: Cube18
   m_TagString: Cube18
@@ -2000,6 +2219,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &912285131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 912285129}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &912285133
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2078,6 +2308,7 @@ GameObject:
   - component: {fileID: 934453031}
   - component: {fileID: 934453030}
   - component: {fileID: 934453027}
+  - component: {fileID: 934453028}
   m_Layer: 0
   m_Name: Cube3
   m_TagString: Cube3
@@ -2099,6 +2330,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &934453028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 934453026}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &934453030
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2177,6 +2419,7 @@ GameObject:
   - component: {fileID: 941733441}
   - component: {fileID: 941733440}
   - component: {fileID: 941733437}
+  - component: {fileID: 941733438}
   m_Layer: 0
   m_Name: Cube19
   m_TagString: Cube19
@@ -2198,6 +2441,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &941733438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 941733436}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &941733440
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2276,6 +2530,7 @@ GameObject:
   - component: {fileID: 952773892}
   - component: {fileID: 952773891}
   - component: {fileID: 952773888}
+  - component: {fileID: 952773889}
   m_Layer: 0
   m_Name: Cube2
   m_TagString: Cube2
@@ -2297,6 +2552,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &952773889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952773887}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &952773891
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2456,6 +2722,7 @@ GameObject:
   - component: {fileID: 1037360689}
   - component: {fileID: 1037360688}
   - component: {fileID: 1037360685}
+  - component: {fileID: 1037360686}
   m_Layer: 0
   m_Name: Cube15
   m_TagString: Cube15
@@ -2477,6 +2744,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &1037360686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1037360684}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1037360688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2620,6 +2898,7 @@ GameObject:
   - component: {fileID: 1150399596}
   - component: {fileID: 1150399595}
   - component: {fileID: 1150399592}
+  - component: {fileID: 1150399593}
   m_Layer: 0
   m_Name: Cube26
   m_TagString: Cube26
@@ -2641,6 +2920,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &1150399593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1150399591}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1150399595
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2782,6 +3072,7 @@ GameObject:
   - component: {fileID: 1271855063}
   - component: {fileID: 1271855062}
   - component: {fileID: 1271855059}
+  - component: {fileID: 1271855060}
   m_Layer: 0
   m_Name: Cube7
   m_TagString: Cube7
@@ -2803,6 +3094,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &1271855060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1271855058}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1271855062
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2881,6 +3183,7 @@ GameObject:
   - component: {fileID: 1274994457}
   - component: {fileID: 1274994456}
   - component: {fileID: 1274994452}
+  - component: {fileID: 1274994453}
   m_Layer: 0
   m_Name: Cube8
   m_TagString: Cube8
@@ -2902,6 +3205,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &1274994453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1274994451}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1274994456
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2980,6 +3294,7 @@ GameObject:
   - component: {fileID: 1311409393}
   - component: {fileID: 1311409392}
   - component: {fileID: 1311409389}
+  - component: {fileID: 1311409390}
   m_Layer: 0
   m_Name: Cube23
   m_TagString: Cube23
@@ -3001,6 +3316,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &1311409390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1311409388}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1311409392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3080,6 +3406,7 @@ GameObject:
   - component: {fileID: 1605013461}
   - component: {fileID: 1605013460}
   - component: {fileID: 1605013458}
+  - component: {fileID: 1605013459}
   m_Layer: 0
   m_Name: Cube0
   m_TagString: Cube0
@@ -3101,6 +3428,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &1605013459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1605013457}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1605013460
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3253,7 +3591,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1622246849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 904, y: 461, z: 0}
+  m_LocalPosition: {x: 402, y: 155, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 366714375}
@@ -3263,6 +3601,7 @@ RectTransform:
   - {fileID: 2041090942}
   - {fileID: 1749799261}
   - {fileID: 588165379}
+  - {fileID: 1791139446}
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3295,16 +3634,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1749799260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: -266.7, z: 0}
+  m_LocalPosition: {x: -20, y: -250, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1622246853}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -20, y: 194.3}
-  m_SizeDelta: {x: 161, y: 63.3}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -20, y: -250}
+  m_SizeDelta: {x: 161, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1749799263
 MonoBehaviour:
@@ -3327,7 +3666,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3353,7 +3692,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1781544390}
-  - component: {fileID: 1781544389}
   - component: {fileID: 1781544388}
   m_Layer: 0
   m_Name: GameObject
@@ -3373,20 +3711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140aeffb2c7f03e4dbcf7aa234d4c073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1781544389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1781544387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c982b7266ee1fe49a9ab3fdb85a15fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player_turn_text: {fileID: 0}
-  player_won_text: {fileID: 0}
-  restart_button: {fileID: 2041090939}
 --- !u!4 &1781544390
 Transform:
   m_ObjectHideFlags: 0
@@ -3400,6 +3724,117 @@ Transform:
   m_Father: {fileID: 2041090942}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1791139445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1791139446}
+  - component: {fileID: 1791139449}
+  - component: {fileID: 1791139448}
+  - component: {fileID: 1791139447}
+  m_Layer: 5
+  m_Name: Game Instructions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1791139446
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1791139445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -320, y: -100, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 862972998}
+  m_Father: {fileID: 1622246853}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -320, y: -100}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1791139447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1791139445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1791139448}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1791139448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1791139445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1791139449
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1791139445}
 --- !u!1 &1803381167
 GameObject:
   m_ObjectHideFlags: 0
@@ -3412,6 +3847,7 @@ GameObject:
   - component: {fileID: 1803381172}
   - component: {fileID: 1803381171}
   - component: {fileID: 1803381168}
+  - component: {fileID: 1803381169}
   m_Layer: 0
   m_Name: Cube11
   m_TagString: Cube11
@@ -3433,6 +3869,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &1803381169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1803381167}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1803381171
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3540,6 +3987,7 @@ GameObject:
   - component: {fileID: 1877488965}
   - component: {fileID: 1877488964}
   - component: {fileID: 1877488961}
+  - component: {fileID: 1877488962}
   m_Layer: 0
   m_Name: Cube21
   m_TagString: Cube21
@@ -3561,6 +4009,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &1877488962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877488960}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1877488964
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3639,6 +4098,7 @@ GameObject:
   - component: {fileID: 1886945472}
   - component: {fileID: 1886945471}
   - component: {fileID: 1886945468}
+  - component: {fileID: 1886945469}
   m_Layer: 0
   m_Name: Cube13
   m_TagString: Cube13
@@ -3660,6 +4120,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &1886945469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1886945467}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1886945471
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3739,6 +4210,7 @@ GameObject:
   - component: {fileID: 1891892266}
   - component: {fileID: 1891892265}
   - component: {fileID: 1891892262}
+  - component: {fileID: 1891892263}
   m_Layer: 0
   m_Name: Cube12
   m_TagString: Cube12
@@ -3760,6 +4232,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &1891892263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1891892261}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1891892265
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4349,6 +4832,7 @@ GameObject:
   - component: {fileID: 2102790324}
   - component: {fileID: 2102790323}
   - component: {fileID: 2102790320}
+  - component: {fileID: 2102790321}
   m_Layer: 0
   m_Name: Cube24
   m_TagString: Cube24
@@ -4370,6 +4854,17 @@ MonoBehaviour:
   player_turn_text: {fileID: 366714372}
   player_won_text: {fileID: 1749799263}
   restart_button: {fileID: 2041090939}
+--- !u!114 &2102790321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2102790319}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b644922840e244bbe82827dfc0a0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &2102790323
 MeshRenderer:
   m_ObjectHideFlags: 0
