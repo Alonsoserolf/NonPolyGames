@@ -6,11 +6,13 @@ public class Grid : MonoBehaviour
 {
     
     public int direction;
+    public static bool enable_game;
     public bool hasMoved;
     public   Transform snakeHead;
     public float speed;
     void Start()
     {
+        enable_game = true;
         speed = 0.05f;
         direction = 1;
         hasMoved = true;
@@ -78,7 +80,7 @@ public class Grid : MonoBehaviour
 
     IEnumerator moveTimer()
     {
-        while (enabled)
+        while (enable_game)
         {
             yield return new WaitForSeconds(speed);
             moveStep();

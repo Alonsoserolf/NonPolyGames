@@ -397,6 +397,28 @@ Prefab:
     - target: {fileID: 54992351816916160, guid: 3d9607f8bf7940248ad73a597ae38ccf,
         type: 2}
       propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 54992351816916160, guid: 3d9607f8bf7940248ad73a597ae38ccf,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54992351816916160, guid: 3d9607f8bf7940248ad73a597ae38ccf,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488063955407098, guid: 3d9607f8bf7940248ad73a597ae38ccf, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488063955407098, guid: 3d9607f8bf7940248ad73a597ae38ccf, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488063955407098, guid: 3d9607f8bf7940248ad73a597ae38ccf, type: 2}
+      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

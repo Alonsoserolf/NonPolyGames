@@ -18,12 +18,14 @@ public class creat_object : MonoBehaviour
     static public bool did_collide;
     static public bool snake_ate_mouse;
     static GameObject cube;
+   
+    static public bool mouse_collision_with_tail;
     // Use this for initialization
     void Start()
     {
 
 
-
+        mouse_collision_with_tail = false;
         player = GameObject.Find("Snake Head");
         snake_head = GameObject.Find("Snake Head");
         did_collide = false;
@@ -35,7 +37,7 @@ public class creat_object : MonoBehaviour
         cube.transform.position = new Vector3(mouse_pos_x, mouse_pos_y, mouse_pos_z);
          snake_ate_mouse = false;
         cube.name = "mouse";
-
+        
 
     }
 
@@ -47,21 +49,29 @@ public class creat_object : MonoBehaviour
     }
     static public void move_tail()
     {
+        
         generate_food();
+        mouse_collision_with_tail = false;
         cube_copy = GameObject.Find("Snake Head");
         if (snake_ate_mouse)
         {
             
             snake_ate_mouse = false;
-            GameObject cube = (GameObject)Instantiate(cube_copy,
-                                                         player.transform.position,
-                                                         Quaternion.identity);
+            
+            
+                GameObject cube = (GameObject)Instantiate(cube_copy,
+                                                             player.transform.position,
+                Quaternion.identity);
+               
+               
+            
 
-
+            cube.AddComponent<tail_colliding_with_head>();
             body.Insert(0, cube.transform);
             snake_ate_points++;
             Debug.Log(snake_ate_points);
-            
+
+
 
         }
 
@@ -99,11 +109,12 @@ public class creat_object : MonoBehaviour
             
            // Debug.Log(snake_ate_points);
                 Destroy(col.gameObject);
-               
-
-
-            }
-       
+              }
+       else if (col.gameObject.name== "Snake Head(Clone)")
+        {
+            
+            Grid.enable_game = false;
+        }
 
 
         
@@ -112,7 +123,7 @@ public class creat_object : MonoBehaviour
     {
         float dist = 0.0f;
         
-        int i = 0;
+        
         if (did_collide)
         {
 
@@ -124,32 +135,23 @@ public class creat_object : MonoBehaviour
             mouse_pos_y = Random.Range(1.611f, 1.611f);
             mouse_pos_z = Random.Range(-3.392f, 5.608f);
             Vector3 cube_object = new Vector3(mouse_pos_x, mouse_pos_y, mouse_pos_z);
-            
-            /*while (i < body.Count)
+            if (mouse_collision_with_tail)
             {
-                dist = Vector3.Distance(cube_object, (body[i].position));
-                if (dist>1.0f)
-                {
-                    Debug.Log("dist<1");
-                    mouse_pos_x = Random.Range(-4.428f, 4.428f);
-                    mouse_pos_y = Random.Range(1.611f, 1.611f);
-                    mouse_pos_z = Random.Range(-3.392f, 5.608f);
-                    cube_object = new Vector3(mouse_pos_x, mouse_pos_y, mouse_pos_z);
-                    i = -1;
-                }
+                
+                return;
 
-                i++;
             }
-            */
-            
 
             if (cube != null)
             {
+               
                 cube = (GameObject)Instantiate(cube,
                                                              cube.transform.position,
                                                              Quaternion.identity);
+               
                 cube.name = "mouse";
                 cube.transform.position = new Vector3(mouse_pos_x, mouse_pos_y, mouse_pos_z);
+               
                 Rigidbody gameObjectsRigidBody = cube.AddComponent<Rigidbody>();
             }
 
