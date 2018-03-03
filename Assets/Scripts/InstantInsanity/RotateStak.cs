@@ -49,15 +49,7 @@ public class RotateStak : MonoBehaviour {
             }
           
 
-            /*if (Input.GetAxis("Mouse X") > 0)
-            {
-
-                transform.RotateAround(Vector3.zero, -Vector3.up, 150 * Time.deltaTime);
-            }
-            else if(Input.GetAxis("Mouse X") < 0)
-            {
-                transform.RotateAround(Vector3.zero, Vector3.up, 150 * Time.deltaTime);
-            } */
+         
         }
         //Actual camera  rig transformations
         Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x, 0);

@@ -21,7 +21,7 @@ public class TheStak : MonoBehaviour
     private int cubeNum;
 
 
-    public Material[] skins;
+    public Material[] skins = new Material[20];
     public Material one;//1
     public Material two;//2
     public Material three;//3
@@ -43,6 +43,8 @@ public class TheStak : MonoBehaviour
         //using this for checking solved puzzle
         frontBack = new int[cubeNum][];
         topBottom = new int[cubeNum][];
+        //
+       // skins = new Material[cubeNum+1];
 
         for (int i = 0; i < cubeNum; i++)
         {
@@ -57,28 +59,16 @@ public class TheStak : MonoBehaviour
                 theStak[i][j] = this.gameObject.transform.GetChild(i).gameObject.transform.GetChild(j).gameObject;
                 //'randomly' assign numbers to the array  
                 numeratedFaces[i][j] = (int)(1 + (Mathf.Floor((((i * 6) + j)) * Mathf.PI) % cubeNum));
-                switch (numeratedFaces[i][j])
-                {
-                    case 1:
-                        theStak[i][j].GetComponent<Renderer>().material = one;
-                        break;
-                    case 2:
-                        theStak[i][j].GetComponent<Renderer>().material = two;
-                        break;
-                    case 3:
-                        theStak[i][j].GetComponent<Renderer>().material = three;
-                        break;
-                    case 4:
-                        theStak[i][j].GetComponent<Renderer>().material = four;
-                        break;
-
-                    default: break;
-                }
+                //apply skins to cube size
+                theStak[i][j].GetComponent<Renderer>().material = skins[numeratedFaces[i][j]];
             }
         }
 
         //printCubes(numeratedFaces);
         SolveItForMe();
+        if(leftRight.Count>2 && frontBak.Count>2)
+        printAnswer(frontBak, leftRight);
+
     }
 
 
@@ -195,8 +185,10 @@ public class TheStak : MonoBehaviour
             currCube.GetComponent<CubeBehavior>().enabled = true;
             yPos = (int)currCube.transform.position.y;
             //offset cube for rotation visibility
-            currCube.transform.position = new Vector3(2, yPos, 1);
-            //keep track of last cube used 
+            GameObject campos = GameObject.FindWithTag("Camera");
+            Vector3 cameraLeftVector = campos.transform.right;
+            currCube.transform.Translate(cameraLeftVector*2, Space.World);
+
             prevCube = currCube;
         }
     }
@@ -245,14 +237,12 @@ public class TheStak : MonoBehaviour
     private void SetSideArrays(GameObject obj, int[] arr)
     {
         int yPos = (int)obj.transform.position.y;
-        //print(yPos);
+
         frontBack[yPos][0] = arr[0];
         frontBack[yPos][1] = arr[1];
         topBottom[yPos][0] = arr[2];
         topBottom[yPos][1] = arr[3];
 
-        print("gg"+numeratedFaces[yPos][topBottom[yPos][1]]);
-        //IsGameSolved();
     }
 
     private void SolveItForMe()
@@ -262,8 +252,17 @@ public class TheStak : MonoBehaviour
         leftRight = IISolutionMachine(numeratedFaces, frontBak);
         frontBak = IISolutionMachine(numeratedFaces, leftRight);
         if (frontBak.Count > 2 && leftRight.Count <= 2) { print("f"); }
-    
-        printAnswer(frontBak, leftRight);
+        int idk = cubeNum - 1;
+        while ((frontBak.Count > 2 && leftRight.Count <= 2)||(frontBak.Count <= 2 && leftRight.Count > 2))
+        {
+            // secSearch(numeratedFaces, frontBak, cubeNum, checkList);
+            print("hello");
+            frontBak = IISolutionMachine(numeratedFaces, frontBak);
+            if (frontBak.Count > 2)
+                leftRight = IISolutionMachine(numeratedFaces, frontBak);
+            else break;
+        }
+
     }
 
     protected LinkedList<int> IISolutionMachine(int[][] cubeF, LinkedList<int> pairs)
@@ -276,22 +275,10 @@ public class TheStak : MonoBehaviour
         int[] pairArr = pairs.ToArray();
         int[] colrCount = new int[numberOCubes + 1];
         int i = 0, j = 0;
-        //i == cube obj, j == face obj evens? 2k
+      
         if (numberOPairs > 0)
         {
-            /* for(int x=0; x<numberOPairs-2; x++)
-             {
-                 visited.AddLast(pairArr[x]);
-                 if (x % 2 == 1)
-                 {
-                     colrCount[cubeF[pairArr[x-1]][pairArr[x]]]++;
-                     colrCount[cubeF[pairArr[x-1]][pairArr[x] + 1]]++;
-                 }
-             }
-
-             i = pairArr[numberOPairs-2];
-             j = pairArr[numberOPairs-1]+2;
-             */
+           
             i = pairArr[0];
             j = pairArr[1] + 2;
             if (j > 4) j = 0;
@@ -334,7 +321,6 @@ public class TheStak : MonoBehaviour
     public void IsGameSolved()
     {
         
-        int frontFace = 0;
         int[] frontFacesCounter = new int[cubeNum+1];
         int[] backFacesCounter = new int[cubeNum+1];
         int[] topFacesCounter = new int[cubeNum+1];
@@ -348,7 +334,7 @@ public class TheStak : MonoBehaviour
             ++backFacesCounter[numeratedFaces[i][frontBack[i][1]]];
             ++topFacesCounter[numeratedFaces[i][topBottom[i][0]]];
             ++bottomFacesCounter[numeratedFaces[i][topBottom[i][1]]];
-            print(numeratedFaces[i][topBottom[i][1]]);
+
        print(frontFacesCounter[0] + "," + frontFacesCounter[1] + "," + frontFacesCounter[2] + "," + frontFacesCounter[3] + "," + frontFacesCounter[4] ); 
         }
 
@@ -387,8 +373,11 @@ public class TheStak : MonoBehaviour
     {
         int[] print_FrontBack = fb.ToArray();
         int[] print_LeftRight = lr.ToArray();
-        for (int i = 0; i <=  (lr.Count/2)+2; i+=2)
+        print(lr.Count);
+        for (int i = 0; i <=  lr.Count-2; i+=2)
         {
+            print((print_LeftRight.Length)-2);
+
             print( numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1]]+".."
                 +numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1] + 1]+ "   " 
                 +numeratedFaces[print_LeftRight[i]][print_LeftRight[i + 1]]+",,"
