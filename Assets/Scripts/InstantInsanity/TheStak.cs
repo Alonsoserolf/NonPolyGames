@@ -10,69 +10,42 @@ public class TheStak : MonoBehaviour
     private Dictionary<string, int[]> cubeRotations;
     private GameObject[][] theStak;
     private int[][] numeratedFaces;
-
     private int[][] frontBack;
     private int[][] topBottom;
-    public Material[] skins;
     private LinkedList<int> frontBak = new LinkedList<int>();
     private LinkedList<int> leftRight = new LinkedList<int>();
 
     GameObject prevCube;
     private int yPos;
     public Transform cubePrefab;
+    private int cubeNum;
 
-    private Vector3 _LocalRotation;
 
-    public Material red;//1
-    public Material yellow;//2
-    public Material green;//3
-    public Material blue;//4
-    public Material pink;//5
+    public Material[] skins;
+    public Material one;//1
+    public Material two;//2
+    public Material three;//3
+    public Material four;//4
+
 
     //Use this for initialization
     private void Start()
-    {
-        //count # of cubes made in menu script
-        int cubeNum = (transform.childCount);
-        //Mathf.Floor((slide.GetComponent<Slider>().value * 10) + 4);
-  /*      GameObject cmr = GameObject.FindWithTag("MainCamera");
-        int yPos = (int)cmr.transform.position.y;
-        int zPos = (int)cmr.transform.position.z;
-        int xPos = (int)cmr.transform.position.x;
-        _LocalRotation.y = (cubeNum - 4)-2;
-        _LocalRotation.z = (3 * (cubeNum-4));
-     
-        cmr.transform.position=new Vector3(0, (cubeNum - 4)-2, _LocalRotation.z);
-
-        for (int i = 0; i < cubeNum; i++)
-        {
-            //instantiate cubes
-            makeChild = Instantiate(cubePrefab.gameObject, new Vector3(0, i, 0), Quaternion.identity) as GameObject;
-            //add a script(CubeBehavior) to each cube and disable it
-            makeChild.AddComponent<CubeBehavior>();
-            makeChild.GetComponent<CubeBehavior>().enabled = false;
-            makeChild.transform.parent = GameObject.Find("Stack").transform;
-        }
-        */
+    {  
         GameObject stak = GameObject.FindWithTag("Stak");
         stak.GetComponent<TheStak>().enabled = true;
-        print("hell");
-
         cubeNum = (transform.childCount);
         cubeRotations = FillInCubeRotations();
 
-       //numeratedFaces = new int[cubeNum][];
-
+        //theStak is filled with II cube objects
         theStak = new GameObject[cubeNum][];
+        //full random numbers assigned 
+        numeratedFaces = new int[cubeNum][];
+        //using this for checking solved puzzle
         frontBack = new int[cubeNum][];
         topBottom = new int[cubeNum][];
-        numeratedFaces = new int[cubeNum][];
+
         for (int i = 0; i < cubeNum; i++)
         {
-            // int[] arr = new int[6];
-            // numeratedFaces.Add(arr);
-
-            //arr[0]=i;
             numeratedFaces[i] = new int[6];
             theStak[i] = new GameObject[6];
             frontBack[i] = new int[2] { 2, 0 };
@@ -83,47 +56,45 @@ public class TheStak : MonoBehaviour
                 //assign faces from each cube to array
                 theStak[i][j] = this.gameObject.transform.GetChild(i).gameObject.transform.GetChild(j).gameObject;
                 //'randomly' assign numbers to the array  
-                numeratedFaces[i][j]= (int)(1 + (Mathf.Floor((((i * 6) + j)) * Mathf.PI) % cubeNum));//Find(x => x == arr)[j]=
-               // print(numeratedFaces.Count.ToString() + "," + numeratedFaces.Find(x => x == arr).Length);
-
+                numeratedFaces[i][j] = (int)(1 + (Mathf.Floor((((i * 6) + j)) * Mathf.PI) % cubeNum));
                 switch (numeratedFaces[i][j])
                 {
                     case 1:
-                        theStak[i][j].GetComponent<Renderer>().material = red;
+                        theStak[i][j].GetComponent<Renderer>().material = one;
                         break;
                     case 2:
-                        theStak[i][j].GetComponent<Renderer>().material = yellow;
+                        theStak[i][j].GetComponent<Renderer>().material = two;
                         break;
                     case 3:
-                        theStak[i][j].GetComponent<Renderer>().material = green;
+                        theStak[i][j].GetComponent<Renderer>().material = three;
                         break;
                     case 4:
-                        theStak[i][j].GetComponent<Renderer>().material = blue;
+                        theStak[i][j].GetComponent<Renderer>().material = four;
                         break;
 
                     default: break;
                 }
-                // print(numeratedFaces.Count.ToString() + "," + numeratedFaces.Find(x => x == arr)[j]);
-                 
             }
         }
-       
-        printCubes(numeratedFaces);
+
+        //printCubes(numeratedFaces);
         SolveItForMe();
     }
-    
+
+
+
     private static Dictionary<string, int[]> FillInCubeRotations()
     {
         return new Dictionary<string, int[]>()
         {
-            { "000", new int[] { 2, 0, 3, 4 } },
-            { "0090", new int[] { 2, 0, 5, 1 } },
-            { "00180", new int[] { 2, 0, 4, 3 } },
-            { "00270", new int[] { 2, 0, 1, 5 } },
-            { "0900", new int[] { 4, 3, 2, 0 } },
-            { "09090", new int[] { 1, 5, 2, 0 } },
-            { "090180", new int[] { 3, 4, 2, 0 } },
-            { "090270", new int[] { 5, 1, 2, 0 } },
+            { "000", new int[] { 2, 0, 3, 4 } }, //1254
+            { "0090", new int[] { 2, 0, 5, 1 } },//1032 2=1,0=0,3=5,4=4
+            { "00180", new int[] { 2, 0, 4, 3 } },//1045
+            { "00270", new int[] { 2, 0, 1, 5 } },//1023
+            { "0900", new int[] { 4, 3, 2, 0 } },//4510
+            { "09090", new int[] { 1, 5, 2, 0 } },//2,3,1,0
+            { "090180", new int[] { 3, 4, 2, 0 } },//5410
+            { "090270", new int[] { 5, 1, 2, 0 } },//3210
             { "01800", new int[] { 0, 2, 4, 3 } },
             { "018090", new int[] { 0, 2, 1, 5 } },
             { "0180180", new int[] { 0, 2, 3, 4 } },
@@ -182,7 +153,6 @@ public class TheStak : MonoBehaviour
             { "270270270", new int[] { 1, 5, 4, 3 } }
         };
     }
-
     // Update is called once per frame
     private void Update()
     {
@@ -193,6 +163,7 @@ public class TheStak : MonoBehaviour
             //Debug.Log("MOUSE IS OVER: " + hit.collider.name);
             if (Input.GetMouseButtonDown(0))
             {
+            
                 GameObject hitCube = hit.transform.gameObject;
                 CubeSelect(hitCube);
             }
@@ -200,7 +171,7 @@ public class TheStak : MonoBehaviour
     }
 
 
-
+//used by update to update cube position(rotation)
     public void CubeSelect(GameObject currCube)
     {
         if (prevCube != null && prevCube != currCube)
@@ -228,7 +199,6 @@ public class TheStak : MonoBehaviour
             //keep track of last cube used 
             prevCube = currCube;
         }
-        //IsGameSolved();
     }
 
     private void FixRotation(GameObject obj)
@@ -281,23 +251,22 @@ public class TheStak : MonoBehaviour
         topBottom[yPos][0] = arr[2];
         topBottom[yPos][1] = arr[3];
 
-        print(numeratedFaces[yPos][topBottom[yPos][1]]);
+        print("gg"+numeratedFaces[yPos][topBottom[yPos][1]]);
         //IsGameSolved();
     }
 
     private void SolveItForMe()
     {
         leftRight.Clear();
-        frontBak = IISolutionMachine(numeratedFaces,leftRight);
+        frontBak = IISolutionMachine(numeratedFaces, leftRight);
         leftRight = IISolutionMachine(numeratedFaces, frontBak);
         frontBak = IISolutionMachine(numeratedFaces, leftRight);
-        if (frontBak.Count>2 && leftRight.Count<=2) { print("f"); }
-        foreach(int s in frontBak)
-        print("vis. size:"+frontBak.Count+"..."+frontBak.Find(s).Value);
-        foreach (int s in leftRight)
-            print("vis sillze:" + leftRight.Count + "..." + leftRight.Find(s).Value);
+        if (frontBak.Count > 2 && leftRight.Count <= 2) { print("f"); }
+    
+        printAnswer(frontBak, leftRight);
     }
-    protected LinkedList<int> IISolutionMachine(int[][] cubeF,LinkedList<int> pairs)
+
+    protected LinkedList<int> IISolutionMachine(int[][] cubeF, LinkedList<int> pairs)
     {
 
         LinkedList<int> visited = new LinkedList<int>();
@@ -330,33 +299,32 @@ public class TheStak : MonoBehaviour
         while (i < numberOCubes)
         {
             if ((numberOPairs > 1
-                    && numberOPairs > ((i*2)+1) //not_empty
-                    && pairArr[(i*2)] == i//
-                    && pairArr[(i*2)+1] == j)//
-                || ((cubeF[i][j] == cubeF[i][j+1]) && (colrCount[cubeF[i][j]] != 0))
-                || (!((colrCount[cubeF[i][j]] < 2) && (colrCount[cubeF[i][j+1]] < 2))))
+                    && numberOPairs > ((i * 2) + 1) //not_empty
+                    && pairArr[(i * 2)] == i//
+                    && pairArr[(i * 2) + 1] == j)//
+                || ((cubeF[i][j] == cubeF[i][j + 1]) && (colrCount[cubeF[i][j]] != 0))
+                || (!((colrCount[cubeF[i][j]] < 2) && (colrCount[cubeF[i][j + 1]] < 2))))
             {
-                while (j%6==4)
+                while (j % 6 == 4)
                 {
-                    if(visited.Count==0) return visited;
-                    
+                    if (visited.Count == 0) return visited;
+
                     j = visited.Last.Value;
-                        visited.RemoveLast();
+                    visited.RemoveLast();
                     i = visited.Last.Value;
-                        visited.RemoveLast();
+                    visited.RemoveLast();
 
                     colrCount[cubeF[i][j]]--;
-                    colrCount[cubeF[i][j+1]]--;
+                    colrCount[cubeF[i][j + 1]]--;
                 }
-                    j += 2;  
+                j += 2;
             }
             else
             {
                 colrCount[cubeF[i][j]]++;
-                colrCount[cubeF[i][j+1]]++;
+                colrCount[cubeF[i][j + 1]]++;
                 visited.AddLast(i);
                 visited.AddLast(j);
-                //print(i + ":" + j);
                 i++;
                 j = 0;
             }
@@ -365,30 +333,32 @@ public class TheStak : MonoBehaviour
     }
     public void IsGameSolved()
     {
-        int cubeCount = 5;
+        
         int frontFace = 0;
-        int[] frontFacesCounter = new int[cubeCount];
-        int[] backFacesCounter = new int[cubeCount];
-        int[] topFacesCounter = new int[cubeCount];
-        int[] bottomFacesCounter = new int[cubeCount];
+        int[] frontFacesCounter = new int[cubeNum+1];
+        int[] backFacesCounter = new int[cubeNum+1];
+        int[] topFacesCounter = new int[cubeNum+1];
+        int[] bottomFacesCounter = new int[cubeNum+1];
         Text lose;
-        //print(cubeCount);
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < cubeNum; i++)
         {
+            
+
             ++frontFacesCounter[numeratedFaces[i][frontBack[i][0]]];
             ++backFacesCounter[numeratedFaces[i][frontBack[i][1]]];
             ++topFacesCounter[numeratedFaces[i][topBottom[i][0]]];
             ++bottomFacesCounter[numeratedFaces[i][topBottom[i][1]]];
-
-            // print(frontFacesCounter[0] + "," + frontFacesCounter[1] + "," + frontFacesCounter[2] + "," + frontFacesCounter[3] + "," + frontFacesCounter[4] + "," + frontFacesCounter[5]); 
+            print(numeratedFaces[i][topBottom[i][1]]);
+       print(frontFacesCounter[0] + "," + frontFacesCounter[1] + "," + frontFacesCounter[2] + "," + frontFacesCounter[3] + "," + frontFacesCounter[4] ); 
         }
-        if (frontFacesCounter[0] > 1 || frontFacesCounter[1] > 1 || frontFacesCounter[2] > 1 || frontFacesCounter[3] > 1 || frontFacesCounter[4] > 1
-            || backFacesCounter[0] > 1 || backFacesCounter[1] > 1 || backFacesCounter[2] > 1 || backFacesCounter[3] > 1 || backFacesCounter[4] > 1
-            || topFacesCounter[0] > 1 || topFacesCounter[1] > 1 || topFacesCounter[2] > 1 || topFacesCounter[3] > 1 || topFacesCounter[4] > 1
-            || bottomFacesCounter[0] > 1 || bottomFacesCounter[1] > 1 || bottomFacesCounter[2] > 1 || bottomFacesCounter[3] > 1 || bottomFacesCounter[4] > 1)
+
+        if (frontFacesCounter[0] > 1 || frontFacesCounter[1] > 1 || frontFacesCounter[2] > 1 || frontFacesCounter[3] > 1 || frontFacesCounter[4] > 1 || frontFacesCounter[5] > 1
+            || backFacesCounter[0] > 1 || backFacesCounter[1] > 1 || backFacesCounter[2] > 1 || backFacesCounter[3] > 1 || backFacesCounter[4] > 1 || backFacesCounter[5] > 1
+            || topFacesCounter[0] > 1 || topFacesCounter[1] > 1 || topFacesCounter[2] > 1 || topFacesCounter[3] > 1 || topFacesCounter[4] > 1 || topFacesCounter[5] > 1
+            || bottomFacesCounter[0] > 1 || bottomFacesCounter[1] > 1 || bottomFacesCounter[2] > 1 || bottomFacesCounter[3] > 1 || bottomFacesCounter[4] > 1 || bottomFacesCounter[5] > 1)
         {
             print("wrong");
-            lose= GameObject.FindWithTag("lose").GetComponent<Text>();
+            lose = GameObject.FindWithTag("lose").GetComponent<Text>();
             lose.text = "NO U LOSE";
             return;
         }
@@ -398,12 +368,13 @@ public class TheStak : MonoBehaviour
         Text win = GameObject.FindWithTag("win").GetComponent<Text>();
         win.text = "Bigly WINNING";
     }
+    
 
     private void printCubes(int[][] adjLists)
     {
         for (int i = 0, j = 0; i <= adjLists.Count() - 1; j++)
         {
-            if (j % 2 == 0) print(i+"l"+j+"(" + adjLists[i][j] + "," + adjLists[i][j + 1] + ") ");
+            if (j % 2 == 0) print(i + "l" + j + "(" + adjLists[i][j] + "," + adjLists[i][j + 1] + ") ");
             if (j % 6 == 5)
             {
                 i++;
@@ -412,4 +383,18 @@ public class TheStak : MonoBehaviour
             }
         }
     }
+    private void printAnswer(LinkedList<int> fb, LinkedList<int> lr)
+    {
+        int[] print_FrontBack = fb.ToArray();
+        int[] print_LeftRight = lr.ToArray();
+        for (int i = 0; i <=  (lr.Count/2)+2; i+=2)
+        {
+            print( numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1]]+".."
+                +numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1] + 1]+ "   " 
+                +numeratedFaces[print_LeftRight[i]][print_LeftRight[i + 1]]+",,"
+                +numeratedFaces[print_LeftRight[i]][print_LeftRight[i + 1] + 1]);
+        }
+    }
 }
+    
+
