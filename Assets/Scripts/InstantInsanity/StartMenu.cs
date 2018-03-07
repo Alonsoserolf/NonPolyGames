@@ -43,8 +43,8 @@ public class StartMenu : MonoBehaviour {
         xPos = (int)cmr.transform.position.x;
         int cubeNum = int.Parse(countCubes.text);
         _LocalRotation.y = (cubeNum - 4)/2 + 2;
-       // _LocalRotation.z = -(3 * (cubeNum - 4));
-        cmr.transform.position = new Vector3(0, _LocalRotation.y,0);
+        _LocalRotation.z = -(3 * (cubeNum - 4));
+       // cmr.transform.position = new Vector3(xPos,yPos,_LocalRotation.z);
 
     }
     public void subtCubes()
