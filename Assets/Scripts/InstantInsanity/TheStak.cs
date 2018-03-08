@@ -263,24 +263,30 @@ print(frontBak.Count);
     }
     protected LinkedList<int> IISolution_Pairs(int[][] cubeF,LinkedList<int> visited, int[] colrCount)
     {
+        print(visited.Count);
         int[] visted = visited.ToArray();
       
-        int i = cubeNum - 1,
-            j = visted[(i*2)-1] + 2,
-            save_i,save_j;
-
+        int i = visited.Count/2,
+            j = visted[visited.Count - 1] + 2,
+            save_i,
+            save_j;
+        print(i);
         while (j > 4)
-        {
-            i--;   
+        {   
+            print(i+"s");
+            i--;
             if (i < 1)
             {
                visited.Clear();
                 return visited;
             }
+            
             j = visted[(i * 2) - 1] + 2;
         }
-        while(visited.Count>(i*2)-2)
+        print(visited.Count);
+        while (visited.Count>(i*2))
         {
+            print(i+"d");
             save_j = visited.Last.Value;
             visited.RemoveLast();
 
@@ -298,6 +304,7 @@ print(frontBak.Count);
 
         while (i < cubeNum)
         {
+            print(i);
             //stmnt to check viability of pairs
             if ((visited.Count > 1
                    && visited.Count > ((i * 2) + 1) //not_empty
