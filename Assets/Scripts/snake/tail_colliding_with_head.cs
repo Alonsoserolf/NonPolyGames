@@ -13,19 +13,21 @@ public class tail_colliding_with_head : MonoBehaviour {
 	void Update () {
 		
 	}
-    void OnCollisionEnter(Collision col)
+   /* void OntriggerEnter(Collision col)
     {
 
-        // if snake head collide with the snake's food
+        // if snake tail collide with the snake's food
         if (col.gameObject.name == "mouse")
         {
-            creat_object.mouse_collision_with_tail = true;
-          
+            
+            Debug.Log("if snake tail collide with the snake's food");
 
         }
-        else if (col.gameObject.name == "Snake Head")
+        else if (col.gameObject.tag == "Snake Head"&&col.transform!= creat_object.body[0] )
         {
+            Debug.Log("head hit tail");
             Grid.enable_game = false;
+            
         }
 
 
@@ -33,4 +35,5 @@ public class tail_colliding_with_head : MonoBehaviour {
 
 
     }
+    */
 }

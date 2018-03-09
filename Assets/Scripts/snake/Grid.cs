@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
-    
-    public int direction;
     public static bool enable_game;
+    public int direction;
     public bool hasMoved;
-    public   Transform snakeHead;
+    public Transform snakeHead;
     public float speed;
+    public static void modify_enable_game()
+    {
+        
+        enable_game = true;
+
+    }
     void Start()
     {
         enable_game = true;
@@ -21,8 +26,8 @@ public class Grid : MonoBehaviour
 
     void Update()
     {
-       
-            if (hasMoved)
+
+        if (hasMoved)
         {
             if (Input.GetKeyDown("up"))
             {
@@ -75,7 +80,7 @@ public class Grid : MonoBehaviour
 
 
         }
-        
+
     }
 
     IEnumerator moveTimer()
@@ -89,37 +94,48 @@ public class Grid : MonoBehaviour
 
     public void moveStep()
     {
-        
-       
+
+
         switch (direction)
         {
-            
-            case 1: snakeHead.position += new Vector3(0, 0, 0.5f);
-                creat_object.move_tail();
-               
+
+            case 1:
+                creat_object.move_tail(1);
+                snakeHead.position += new Vector3(0, 0, 0.5f);
+
+
                 break;
-            case 2: snakeHead.position += new Vector3(0.5f, 0, 0);
-                creat_object.move_tail();
-                
+            case 2:
+                creat_object.move_tail(2);
+                snakeHead.position += new Vector3(0.5f, 0, 0);
+
+
                 break;
-            case 3: snakeHead.position += new Vector3(0, 0, -0.5f);
-                creat_object.move_tail();
-                
+            case 3:
+                creat_object.move_tail(3);
+                snakeHead.position += new Vector3(0, 0, -0.5f);
+
+
                 break;
-            case 4: snakeHead.position += new Vector3(-0.5f, 0, 0);
-                creat_object.move_tail();
-               
+            case 4:
+                creat_object.move_tail(4);
+                snakeHead.position += new Vector3(-0.5f, 0, 0);
+
+
                 break;
-            case 5: snakeHead.position += new Vector3(0, 0.5f, 0);
-                creat_object.move_tail();
-               
+            case 5:
+                creat_object.move_tail(5);
+                snakeHead.position += new Vector3(0, 0.5f, 0);
+
+
                 break;
-            case 6: snakeHead.position += new Vector3(0, -0.5f, 0);
-                creat_object.move_tail();
-                
+            case 6:
+                creat_object.move_tail(6);
+                snakeHead.position += new Vector3(0, -0.5f, 0);
+
+
                 break;
         }
         hasMoved = true;
     }
 }
-
