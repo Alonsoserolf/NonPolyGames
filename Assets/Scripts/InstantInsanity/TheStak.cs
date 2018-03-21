@@ -20,6 +20,7 @@ public class TheStak : MonoBehaviour
     private int yPos;
     public Transform cubePrefab;
     private int cubeNum;
+    int[] colrs;
 
     //Use this for initialization
     private void Start()
@@ -28,6 +29,9 @@ public class TheStak : MonoBehaviour
         stak.GetComponent<TheStak>().enabled = true;
         cubeNum = (transform.childCount);
         cubeRotations = FillInCubeRotations();
+
+        colrs = new int[cubeNum + 1];
+        
 
         //theStak is filled with II cube objects
         theStak = new GameObject[cubeNum][];
@@ -51,7 +55,7 @@ public class TheStak : MonoBehaviour
                 //assign faces from each cube to array
                 theStak[i][j] = this.gameObject.transform.GetChild(i).gameObject.transform.GetChild(j).gameObject;
                 //'randomly' assign numbers to the array  
-                numeratedFaces[i][j] = (int)(1 + (Mathf.Floor((((i * 6) + j)) * Mathf.PI) % cubeNum));
+                numeratedFaces[i][j] = (int)(1 + (Mathf.Floor((((i * 6) + j)) * 1.3657f) % cubeNum));
                 //apply skins to cube size
                 theStak[i][j].GetComponent<Renderer>().material = skins[numeratedFaces[i][j]];
             }
@@ -237,98 +241,173 @@ public class TheStak : MonoBehaviour
         topBottom[yPos][1] = arr[3];
 
     }
-        int[] colrs;
+        
 
     private void SolveItForMe()
     {
         leftRight.Clear();
-        frontBak = IISolutionMachine(numeratedFaces, leftRight);
-        leftRight = IISolutionMachine(numeratedFaces, frontBak);
-       
+        for(int x=0;x<colrs.Length;x++)
+            colrs[x]=0;
+
+        frontBak =  IISolution_Pairs(numeratedFaces, leftRight, colrs);
+        if (frontBak.Count > 0)
+        {
+            for (int x = 0; x < colrs.Length; x++)
+                colrs[x] = 0;
+
+        }
+        print(frontBak.Count+"fu");
+
+        leftRight = IISolution_Pairs(numeratedFaces, frontBak, colrs);
+        print(leftRight.Count);
+
         // frontBak = IISolutionMachine(numeratedFaces, leftRight);
         // if (frontBak.Count > 2 && leftRight.Count <= 2) {  }
+        /*
 
+                while ((frontBak.Count > 2 && leftRight.Count < cubeNum*2))//(frontBak.Count <= 2 && leftRight.Count > 2))
+                {
+                    // secSearch(numeratedFaces, frontBak, cubeNum, checkList);
+                    leftRight = IISolution_Pairs(numeratedFaces, frontBak, colrs);
 
-        while ((frontBak.Count > 2 && leftRight.Count < cubeNum*2))//(frontBak.Count <= 2 && leftRight.Count > 2))
-        {
-            // secSearch(numeratedFaces, frontBak, cubeNum, checkList);
-            frontBak = IISolution_Pairs(numeratedFaces, frontBak, colrs);
-print(frontBak.Count);
-        print(leftRight.Count);
-            if (frontBak.Count > 2)
-                leftRight = IISolutionMachine(numeratedFaces, frontBak);
-            else break;
-        }
-
+                   // if (frontBak.Count > 2)
+                     //   leftRight = IISolutionMachine(numeratedFaces, frontBak);
+                    //else break;
+                }
+                */
     }
-    protected LinkedList<int> IISolution_Pairs(int[][] cubeF,LinkedList<int> visited, int[] colrCount)
+    protected LinkedList<int> IISolution_Pairs(int[][] cubeF, LinkedList<int> comp_pairs, int[] colrCount)
     {
-        print(visited.Count);
-        int[] visted = visited.ToArray();
-      
-        int i = visited.Count/2,
-            j = visted[visited.Count - 1] + 2,
-            save_i,
-            save_j;
-        print(i);
-        while (j > 4)
-        {   
-            print(i+"s");
-            i--;
-            if (i < 1)
-            {
-               visited.Clear();
-                return visited;
-            }
-            
-            j = visted[(i * 2) - 1] + 2;
-        }
-        print(visited.Count);
-        while (visited.Count>(i*2))
+
+        int i = 0, save_i;
+        int[] oldVisitedArr = new int[cubeF.Length];//mp_pairs.ToArray();
+        LinkedList<int> visited = new LinkedList<int>(); // if comp not empty not full then visited=comp
+        if (comp_pairs.Count == cubeF.Length) oldVisitedArr = comp_pairs.ToArray();
+        if (comp_pairs.Count < cubeF.Length && comp_pairs.Count > 0)
         {
-            print(i+"d");
-            save_j = visited.Last.Value;
-            visited.RemoveLast();
+            visited = comp_pairs;
+            oldVisitedArr = comp_pairs.ToArray();
+            print("hello");
+            do
+            {
+                if (visited.Count == 0) return visited;
+                save_i = visited.Last.Value;
+                colrCount[cubeF[visited.Count][save_i]]--;
+                colrCount[cubeF[visited.Count][save_i + 1]]--;
+                visited.RemoveLast();
+                save_i += 2;
+            } while (save_i > 3);
 
-            save_i = visited.Last.Value;
-            visited.RemoveLast();
 
-            //save_VisSize = visited.Count();
-           // print("i: " + save_i + ", j: " + save_clr);
-           // print(colrCount.Length);
-            colrCount[cubeF[save_i][save_j]]--;
-            colrCount[cubeF[save_i][save_j + 1]]--;
+            i = save_i;
+            oldVisitedArr = visited.ToArray();
         }
-        //just in case previous while statement made changes
-        visted = visited.ToArray();
 
+        //if leftnum=ritenum nd counted 0 OR leftnum count 2 OR ritenum count 2 
+        while (visited.Count < cubeF.Length)
+        {
+            print(visited.Count+":"+i+","+oldVisitedArr.Length+" col"+colrCount.Length);
+
+            if ((cubeF[visited.Count][i] == cubeF[visited.Count][i + 1] && colrs[cubeF[visited.Count][i]] != 0)
+                || (colrCount[cubeF[visited.Count][i]] == 2 || colrCount[cubeF[visited.Count][i + 1]] == 2)
+                || (visited.Count>0 && oldVisitedArr[visited.Count-1] == i))
+            {
+                while (i > 3)
+                {
+                    if (visited.Count == 0) return visited;
+
+                    i = visited.Last.Value;
+                    visited.RemoveLast();
+
+                    colrCount[cubeF[visited.Count][i]]--;
+                    colrCount[cubeF[visited.Count][i + 1]]--;
+                }
+                i += 2;
+            }
+            else
+            {
+
+                colrCount[cubeF[visited.Count][i]]++;
+                colrCount[cubeF[visited.Count][i + 1]]++;
+                visited.AddLast(i);
+                i = 0;
+            }
+        }
+        return visited;
+    }
+        /* int i = 0,
+             j = 0,
+             save_i,
+             save_j;
+         int[] oldVisitedArr = comp_pairs.ToArray();
+         LinkedList<int> visited=new LinkedList<int>();// = comp_pairs
+
+         //this if loop will continue from previous call
+         if (visited.Count < cubeF.Length * 2 && visited.Count > 0)
+         {
+             i = visited.Count/2;
+             j = oldVisitedArr[visited.Count - 1] + 2;
+
+
+             while (j > 4)
+             {
+                 i--;
+                 if (i < 1)
+                 {
+                     visited.Clear();
+                     return visited;
+                 }
+
+                 j = oldVisitedArr[(i * 2) - 1] + 2;
+             }
+
+             while (visited.Count > (i * 2))
+             {
+                 save_j = visited.Last.Value;
+                          visited.RemoveLast();
+
+                 save_i = visited.Last.Value;
+                          visited.RemoveLast();
+
+                 colrCount[cubeF[save_i][save_j]]--;
+                 colrCount[cubeF[save_i][save_j + 1]]--;
+             }
+
+             //just in case previous while statement made changes
+             oldVisitedArr = visited.ToArray();
+         }
+     
+        //return IISol(cubeF,visited,colrsCurr,old_visited/*could be array)
         while (i < cubeNum)
         {
-            print(i);
+            
             //stmnt to check viability of pairs
-            if ((visited.Count > 1
-                   && visited.Count > ((i * 2) + 1) //not_empty
-                   && visted[(i * 2)] == i//
-                   && visted[(i * 2) + 1] == j)//
+      
+            if ((comp_pairs.Count > ((i * 2) + 1) //not_empty
+                   && oldVisitedArr[(i * 2)] == i//
+                   && oldVisitedArr[(i * 2) + 1] == j
+                  // && old_j=j
+                   )//
                || ((cubeF[i][j] == cubeF[i][j + 1]) && (colrCount[cubeF[i][j]] != 0))
                || (!((colrCount[cubeF[i][j]] < 2) && (colrCount[cubeF[i][j + 1]] < 2))))
             {
+                
                 while (j % 6 == 4)
                 {
                     if (visited.Count == 0) return visited;
 
                     j = visited.Last.Value;
-                    visited.RemoveLast();
+                        visited.RemoveLast();
                 
                     i = visited.Last.Value;
-                    visited.RemoveLast();
+                        visited.RemoveLast();
 
                     colrCount[cubeF[i][j]]--;
                     colrCount[cubeF[i][j+ 1]]--;
                 }
                 j += 2;
             }
-            else //go in here when pair is viable
+            else //go in here when pair is unique
             {
                 colrCount[cubeF[i][j]]++;
                 colrCount[cubeF[i][j+1]]++;
@@ -339,9 +418,9 @@ print(frontBak.Count);
                 j = 0;
             }
         }
-        colrCount = colrs;
+       // colrs = colrCount;
         return visited;
-    }
+    }*/
     protected LinkedList<int> IISolutionMachine(int[][] cubeF, LinkedList<int> pairs)
     {
 
@@ -396,6 +475,7 @@ print(frontBak.Count);
         colrs = colrCount;
         return visited;
     }
+
     public void IsGameSolved()
     {
         
@@ -453,13 +533,13 @@ print(frontBak.Count);
         int[] print_LeftRight = lr.ToArray();
         print(fb.Count);
         print(lr.Count);
-        for (int i = 0; i <=  (cubeNum*2)-2; i+=2)
+        for (int i = 0; i < cubeNum; i++)
         {
-
-            print( numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1]]+".."
+            print(numeratedFaces[i][print_FrontBack[i]] + " , " + numeratedFaces[i][print_FrontBack[i]+1]+")("+ numeratedFaces[i][print_LeftRight[i]] + " . " + numeratedFaces[i][print_LeftRight[i]+1]);
+            /*print( numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1]]+".."
                 +numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1] + 1]+ "   " 
                 +numeratedFaces[print_LeftRight[i]][print_LeftRight[i + 1]]+",,"
-                +numeratedFaces[print_LeftRight[i]][print_LeftRight[i + 1] + 1]);
+                +numeratedFaces[print_LeftRight[i]][print_LeftRight[i + 1] + 1]);*/
         }
     }
 }
