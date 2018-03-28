@@ -55,7 +55,7 @@ public class TheStak : MonoBehaviour
                 //assign faces from each cube to array
                 theStak[i][j] = this.gameObject.transform.GetChild(i).gameObject.transform.GetChild(j).gameObject;
                 //'randomly' assign numbers to the array  
-                numeratedFaces[i][j] = (int)(1 + (Mathf.Floor((((i * 6) + j)) * 1.3657f) % cubeNum));
+                numeratedFaces[i][j] = (int)(1 + (Mathf.Floor((((i * 6) + j)) */* 1.3657f*/Mathf.PI) % cubeNum));
                 //apply skins to cube size
                 theStak[i][j].GetComponent<Renderer>().material = skins[numeratedFaces[i][j]];
             }
@@ -74,7 +74,7 @@ public class TheStak : MonoBehaviour
     {
         return new Dictionary<string, int[]>()
         {
-            { "000", new int[] { 2, 0, 3, 4 } }, //1254
+            { "000", new int[] { 2, 0, 3, 4 } }, //1054
             { "0090", new int[] { 2, 0, 5, 1 } },//1032 2=1,0=0,3=5,4=4
             { "00180", new int[] { 2, 0, 4, 3 } },//1045
             { "00270", new int[] { 2, 0, 1, 5 } },//1023
@@ -216,7 +216,7 @@ public class TheStak : MonoBehaviour
         angl = (angl > 325 || angl < 45) ? 0 :
                (angl > 45 && angl < 135) ? 90 :
                (angl > 135 && angl < 225) ? 180 :
-               (angl > 225 && angl < 325) ? 270 : 360;
+               (angl > 225 && angl < 325) ? 270 : 0;
         return angl;
     }
     private int[] UpdateStackSides(int x, int y, int z)
@@ -252,29 +252,12 @@ public class TheStak : MonoBehaviour
         frontBak =  IISolution_Pairs(numeratedFaces, leftRight, colrs);
         if (frontBak.Count > 0)
         {
-            for (int x = 0; x < colrs.Length; x++)
+            foreach(int x in colrs)
                 colrs[x] = 0;
-
         }
-        print(frontBak.Count+"fu");
 
         leftRight = IISolution_Pairs(numeratedFaces, frontBak, colrs);
-        print(leftRight.Count);
 
-        // frontBak = IISolutionMachine(numeratedFaces, leftRight);
-        // if (frontBak.Count > 2 && leftRight.Count <= 2) {  }
-        /*
-
-                while ((frontBak.Count > 2 && leftRight.Count < cubeNum*2))//(frontBak.Count <= 2 && leftRight.Count > 2))
-                {
-                    // secSearch(numeratedFaces, frontBak, cubeNum, checkList);
-                    leftRight = IISolution_Pairs(numeratedFaces, frontBak, colrs);
-
-                   // if (frontBak.Count > 2)
-                     //   leftRight = IISolutionMachine(numeratedFaces, frontBak);
-                    //else break;
-                }
-                */
     }
     protected LinkedList<int> IISolution_Pairs(int[][] cubeF, LinkedList<int> comp_pairs, int[] colrCount)
     {
@@ -306,11 +289,10 @@ public class TheStak : MonoBehaviour
         //if leftnum=ritenum nd counted 0 OR leftnum count 2 OR ritenum count 2 
         while (visited.Count < cubeF.Length)
         {
-            print(visited.Count+":"+i+","+oldVisitedArr.Length+" col"+colrCount.Length);
-
-            if ((cubeF[visited.Count][i] == cubeF[visited.Count][i + 1] && colrs[cubeF[visited.Count][i]] != 0)
+            //if comp_pairs==cubeF nd oldVisitedArr[visited.count]==i
+            if ((comp_pairs.Count==cubeF.Length && oldVisitedArr[visited.Count] == i) 
                 || (colrCount[cubeF[visited.Count][i]] == 2 || colrCount[cubeF[visited.Count][i + 1]] == 2)
-                || (visited.Count>0 && oldVisitedArr[visited.Count-1] == i))
+                || (cubeF[visited.Count][i] == cubeF[visited.Count][i + 1] && colrs[cubeF[visited.Count][i]] != 0))
             {
                 while (i > 3)
                 {
@@ -536,6 +518,7 @@ public class TheStak : MonoBehaviour
         for (int i = 0; i < cubeNum; i++)
         {
             print(numeratedFaces[i][print_FrontBack[i]] + " , " + numeratedFaces[i][print_FrontBack[i]+1]+")("+ numeratedFaces[i][print_LeftRight[i]] + " . " + numeratedFaces[i][print_LeftRight[i]+1]);
+            print(print_FrontBack[i] + "_" + print_LeftRight[i]);
             /*print( numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1]]+".."
                 +numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1] + 1]+ "   " 
                 +numeratedFaces[print_LeftRight[i]][print_LeftRight[i + 1]]+",,"
