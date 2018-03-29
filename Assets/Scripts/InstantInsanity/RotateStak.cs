@@ -50,7 +50,6 @@ public class RotateStak : MonoBehaviour {
             {
                 _LocalRotation.x += Input.GetAxis("Mouse X") * MouseSensitivity;
                 _LocalRotation.y -= Input.GetAxis("Mouse Y") * .15f;
-              
 
                 //Clamp the y rotation to horizon and not flipping over at the top
                 int max= (stcb.transform.childCount % 2 == 0) ? stcb.transform.childCount - 2 : stcb.transform.childCount - 3;
