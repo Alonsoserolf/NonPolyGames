@@ -6,6 +6,6 @@ public class Return : MonoBehaviour {
 
     public void ReturnToBrickMenu()
     {
-        SceneManager.LoadScene("BlockMenu");
+		SceneManager.LoadScene("BlockScrollingbackground");
     }
 }
