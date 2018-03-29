@@ -21,7 +21,7 @@ public class return_to_main_menu : MonoBehaviour {
         if (scene.name == "cubes")
         {
             tictac_cpu_mode.mode_choice = 0;
-            SceneManager.LoadScene("TicTacToeMenu");
+			SceneManager.LoadScene("TicTacToeScrollingbackground");
         }
         else 
            SceneManager.LoadScene("cubes");
