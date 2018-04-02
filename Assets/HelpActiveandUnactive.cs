@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HelpActiveandUnactive : MonoBehaviour {
 
 	public GameObject HelpCanvas;
+	public Menu Menuld;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,9 +17,16 @@ public class HelpActiveandUnactive : MonoBehaviour {
 		
 	}
 	public void onClickHelp(){
-		HelpCanvas.SetActive (true);
+		if (!Menuld.isLoading) {
+			Menuld.isLoading = false;
+			HelpCanvas.SetActive (true);
+		}
 	}
 	public void OnClickExitHelp(){
-		HelpCanvas.SetActive (false);
+		if (!Menuld.isLoading) {
+			Menuld.isLoading = false;
+			Menuld.buttonSelected = false;
+			HelpCanvas.SetActive (false);
+		}
 	}
 }
