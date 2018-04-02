@@ -9,42 +9,70 @@ public class TheStak : MonoBehaviour
 {
     private Dictionary<string, int[]> cubeRotations;
     private GameObject[][] theStak;
-    public Material[] skins = new Material[20];
     private int[][] numeratedFaces;
+
     private int[][] frontBack;
     private int[][] topBottom;
+    public Material[] skins;
     private LinkedList<int> frontBak = new LinkedList<int>();
     private LinkedList<int> leftRight = new LinkedList<int>();
 
     GameObject prevCube;
     private int yPos;
     public Transform cubePrefab;
-    private int cubeNum;
-    int[] colrs;
+
+    private Vector3 _LocalRotation;
+
+    public Material red;//1
+    public Material yellow;//2
+    public Material green;//3
+    public Material blue;//4
+    public Material pink;//5
 
     //Use this for initialization
     private void Start()
-    {  
-        GameObject stak = GameObject.FindWithTag("Stak");
-        stak.GetComponent<TheStak>().enabled = true;
-        cubeNum = (transform.childCount);
-        cubeRotations = FillInCubeRotations();
-
-        colrs = new int[cubeNum + 1];
-        
-
-        //theStak is filled with II cube objects
-        theStak = new GameObject[cubeNum][];
-        //full random numbers assigned 
-        numeratedFaces = new int[cubeNum][];
-        //using this for checking solved puzzle
-        frontBack = new int[cubeNum][];
-        topBottom = new int[cubeNum][];
-        //
-       // skins = new Material[cubeNum+1];
+    {
+        //count # of cubes made in menu script
+        int cubeNum = (transform.childCount);
+        //Mathf.Floor((slide.GetComponent<Slider>().value * 10) + 4);
+  /*      GameObject cmr = GameObject.FindWithTag("MainCamera");
+        int yPos = (int)cmr.transform.position.y;
+        int zPos = (int)cmr.transform.position.z;
+        int xPos = (int)cmr.transform.position.x;
+        _LocalRotation.y = (cubeNum - 4)-2;
+        _LocalRotation.z = (3 * (cubeNum-4));
+     
+        cmr.transform.position=new Vector3(0, (cubeNum - 4)-2, _LocalRotation.z);
 
         for (int i = 0; i < cubeNum; i++)
         {
+            //instantiate cubes
+            makeChild = Instantiate(cubePrefab.gameObject, new Vector3(0, i, 0), Quaternion.identity) as GameObject;
+            //add a script(CubeBehavior) to each cube and disable it
+            makeChild.AddComponent<CubeBehavior>();
+            makeChild.GetComponent<CubeBehavior>().enabled = false;
+            makeChild.transform.parent = GameObject.Find("Stack").transform;
+        }
+        */
+        GameObject stak = GameObject.FindWithTag("Stak");
+        stak.GetComponent<TheStak>().enabled = true;
+        print("hell");
+
+        cubeNum = (transform.childCount);
+        cubeRotations = FillInCubeRotations();
+
+       //numeratedFaces = new int[cubeNum][];
+
+        theStak = new GameObject[cubeNum][];
+        frontBack = new int[cubeNum][];
+        topBottom = new int[cubeNum][];
+        numeratedFaces = new int[cubeNum][];
+        for (int i = 0; i < cubeNum; i++)
+        {
+            // int[] arr = new int[6];
+            // numeratedFaces.Add(arr);
+
+            //arr[0]=i;
             numeratedFaces[i] = new int[6];
             theStak[i] = new GameObject[6];
             frontBack[i] = new int[2] { 2, 0 };
@@ -55,33 +83,47 @@ public class TheStak : MonoBehaviour
                 //assign faces from each cube to array
                 theStak[i][j] = this.gameObject.transform.GetChild(i).gameObject.transform.GetChild(j).gameObject;
                 //'randomly' assign numbers to the array  
-                numeratedFaces[i][j] = (int)(1 + (Mathf.Floor((((i * 6) + j)) */* 1.3657f*/Mathf.PI) % cubeNum));
-                //apply skins to cube size
-                theStak[i][j].GetComponent<Renderer>().material = skins[numeratedFaces[i][j]];
+                numeratedFaces[i][j]= (int)(1 + (Mathf.Floor((((i * 6) + j)) * Mathf.PI) % cubeNum));//Find(x => x == arr)[j]=
+               // print(numeratedFaces.Count.ToString() + "," + numeratedFaces.Find(x => x == arr).Length);
+
+                switch (numeratedFaces[i][j])
+                {
+                    case 1:
+                        theStak[i][j].GetComponent<Renderer>().material = red;
+                        break;
+                    case 2:
+                        theStak[i][j].GetComponent<Renderer>().material = yellow;
+                        break;
+                    case 3:
+                        theStak[i][j].GetComponent<Renderer>().material = green;
+                        break;
+                    case 4:
+                        theStak[i][j].GetComponent<Renderer>().material = blue;
+                        break;
+
+                    default: break;
+                }
+                // print(numeratedFaces.Count.ToString() + "," + numeratedFaces.Find(x => x == arr)[j]);
+                 
             }
         }
-
+       
         printCubes(numeratedFaces);
         SolveItForMe();
-        if(leftRight.Count>2 && frontBak.Count>2)
-        printAnswer(frontBak, leftRight);
-
     }
-
-
-
+    
     private static Dictionary<string, int[]> FillInCubeRotations()
     {
         return new Dictionary<string, int[]>()
         {
-            { "000", new int[] { 2, 0, 3, 4 } }, //1054
-            { "0090", new int[] { 2, 0, 5, 1 } },//1032 2=1,0=0,3=5,4=4
-            { "00180", new int[] { 2, 0, 4, 3 } },//1045
-            { "00270", new int[] { 2, 0, 1, 5 } },//1023
-            { "0900", new int[] { 4, 3, 2, 0 } },//4510
-            { "09090", new int[] { 1, 5, 2, 0 } },//2,3,1,0
-            { "090180", new int[] { 3, 4, 2, 0 } },//5410
-            { "090270", new int[] { 5, 1, 2, 0 } },//3210
+            { "000", new int[] { 2, 0, 3, 4 } },
+            { "0090", new int[] { 2, 0, 5, 1 } },
+            { "00180", new int[] { 2, 0, 4, 3 } },
+            { "00270", new int[] { 2, 0, 1, 5 } },
+            { "0900", new int[] { 4, 3, 2, 0 } },
+            { "09090", new int[] { 1, 5, 2, 0 } },
+            { "090180", new int[] { 3, 4, 2, 0 } },
+            { "090270", new int[] { 5, 1, 2, 0 } },
             { "01800", new int[] { 0, 2, 4, 3 } },
             { "018090", new int[] { 0, 2, 1, 5 } },
             { "0180180", new int[] { 0, 2, 3, 4 } },
@@ -140,6 +182,7 @@ public class TheStak : MonoBehaviour
             { "270270270", new int[] { 1, 5, 4, 3 } }
         };
     }
+
     // Update is called once per frame
     private void Update()
     {
@@ -150,7 +193,6 @@ public class TheStak : MonoBehaviour
             //Debug.Log("MOUSE IS OVER: " + hit.collider.name);
             if (Input.GetMouseButtonDown(0))
             {
-            
                 GameObject hitCube = hit.transform.gameObject;
                 CubeSelect(hitCube);
             }
@@ -158,7 +200,7 @@ public class TheStak : MonoBehaviour
     }
 
 
-//used by update to update cube position(rotation)
+
     public void CubeSelect(GameObject currCube)
     {
         if (prevCube != null && prevCube != currCube)
@@ -182,12 +224,11 @@ public class TheStak : MonoBehaviour
             currCube.GetComponent<CubeBehavior>().enabled = true;
             yPos = (int)currCube.transform.position.y;
             //offset cube for rotation visibility
-            GameObject campos = GameObject.FindWithTag("Camera");
-            Vector3 cameraLeftVector = campos.transform.right;
-            currCube.transform.Translate(cameraLeftVector*2, Space.World);
-
+            currCube.transform.position = new Vector3(2, yPos, 1);
+            //keep track of last cube used 
             prevCube = currCube;
         }
+        //IsGameSolved();
     }
 
     private void FixRotation(GameObject obj)
@@ -216,7 +257,7 @@ public class TheStak : MonoBehaviour
         angl = (angl > 325 || angl < 45) ? 0 :
                (angl > 45 && angl < 135) ? 90 :
                (angl > 135 && angl < 225) ? 180 :
-               (angl > 225 && angl < 325) ? 270 : 0;
+               (angl > 225 && angl < 325) ? 270 : 360;
         return angl;
     }
     private int[] UpdateStackSides(int x, int y, int z)
@@ -234,176 +275,29 @@ public class TheStak : MonoBehaviour
     private void SetSideArrays(GameObject obj, int[] arr)
     {
         int yPos = (int)obj.transform.position.y;
-
+        //print(yPos);
         frontBack[yPos][0] = arr[0];
         frontBack[yPos][1] = arr[1];
         topBottom[yPos][0] = arr[2];
         topBottom[yPos][1] = arr[3];
 
+        print(numeratedFaces[yPos][topBottom[yPos][1]]);
+        //IsGameSolved();
     }
-        
 
     private void SolveItForMe()
     {
         leftRight.Clear();
-        for(int x=0;x<colrs.Length;x++)
-            colrs[x]=0;
-
-        frontBak =  IISolution_Pairs(numeratedFaces, leftRight, colrs);
-        if (frontBak.Count > 0)
-        {
-            foreach(int x in colrs)
-                colrs[x] = 0;
-        }
-
-        leftRight = IISolution_Pairs(numeratedFaces, frontBak, colrs);
-
+        frontBak = IISolutionMachine(numeratedFaces,leftRight);
+        leftRight = IISolutionMachine(numeratedFaces, frontBak);
+        frontBak = IISolutionMachine(numeratedFaces, leftRight);
+        if (frontBak.Count>2 && leftRight.Count<=2) { print("f"); }
+        foreach(int s in frontBak)
+        print("vis. size:"+frontBak.Count+"..."+frontBak.Find(s).Value);
+        foreach (int s in leftRight)
+            print("vis sillze:" + leftRight.Count + "..." + leftRight.Find(s).Value);
     }
-    protected LinkedList<int> IISolution_Pairs(int[][] cubeF, LinkedList<int> comp_pairs, int[] colrCount)
-    {
-
-        int i = 0, save_i;
-        int[] oldVisitedArr = new int[cubeF.Length];//mp_pairs.ToArray();
-        LinkedList<int> visited = new LinkedList<int>(); // if comp not empty not full then visited=comp
-        if (comp_pairs.Count == cubeF.Length) oldVisitedArr = comp_pairs.ToArray();
-        if (comp_pairs.Count < cubeF.Length && comp_pairs.Count > 0)
-        {
-            visited = comp_pairs;
-            oldVisitedArr = comp_pairs.ToArray();
-            print("hello");
-            do
-            {
-                if (visited.Count == 0) return visited;
-                save_i = visited.Last.Value;
-                colrCount[cubeF[visited.Count][save_i]]--;
-                colrCount[cubeF[visited.Count][save_i + 1]]--;
-                visited.RemoveLast();
-                save_i += 2;
-            } while (save_i > 3);
-
-
-            i = save_i;
-            oldVisitedArr = visited.ToArray();
-        }
-
-        //if leftnum=ritenum nd counted 0 OR leftnum count 2 OR ritenum count 2 
-        while (visited.Count < cubeF.Length)
-        {
-            //if comp_pairs==cubeF nd oldVisitedArr[visited.count]==i
-            if ((comp_pairs.Count==cubeF.Length && oldVisitedArr[visited.Count] == i) 
-                || (colrCount[cubeF[visited.Count][i]] == 2 || colrCount[cubeF[visited.Count][i + 1]] == 2)
-                || (cubeF[visited.Count][i] == cubeF[visited.Count][i + 1] && colrs[cubeF[visited.Count][i]] != 0))
-            {
-                while (i > 3)
-                {
-                    if (visited.Count == 0) return visited;
-
-                    i = visited.Last.Value;
-                    visited.RemoveLast();
-
-                    colrCount[cubeF[visited.Count][i]]--;
-                    colrCount[cubeF[visited.Count][i + 1]]--;
-                }
-                i += 2;
-            }
-            else
-            {
-
-                colrCount[cubeF[visited.Count][i]]++;
-                colrCount[cubeF[visited.Count][i + 1]]++;
-                visited.AddLast(i);
-                i = 0;
-            }
-        }
-        return visited;
-    }
-        /* int i = 0,
-             j = 0,
-             save_i,
-             save_j;
-         int[] oldVisitedArr = comp_pairs.ToArray();
-         LinkedList<int> visited=new LinkedList<int>();// = comp_pairs
-
-         //this if loop will continue from previous call
-         if (visited.Count < cubeF.Length * 2 && visited.Count > 0)
-         {
-             i = visited.Count/2;
-             j = oldVisitedArr[visited.Count - 1] + 2;
-
-
-             while (j > 4)
-             {
-                 i--;
-                 if (i < 1)
-                 {
-                     visited.Clear();
-                     return visited;
-                 }
-
-                 j = oldVisitedArr[(i * 2) - 1] + 2;
-             }
-
-             while (visited.Count > (i * 2))
-             {
-                 save_j = visited.Last.Value;
-                          visited.RemoveLast();
-
-                 save_i = visited.Last.Value;
-                          visited.RemoveLast();
-
-                 colrCount[cubeF[save_i][save_j]]--;
-                 colrCount[cubeF[save_i][save_j + 1]]--;
-             }
-
-             //just in case previous while statement made changes
-             oldVisitedArr = visited.ToArray();
-         }
-     
-        //return IISol(cubeF,visited,colrsCurr,old_visited/*could be array)
-        while (i < cubeNum)
-        {
-            
-            //stmnt to check viability of pairs
-      
-            if ((comp_pairs.Count > ((i * 2) + 1) //not_empty
-                   && oldVisitedArr[(i * 2)] == i//
-                   && oldVisitedArr[(i * 2) + 1] == j
-                  // && old_j=j
-                   )//
-               || ((cubeF[i][j] == cubeF[i][j + 1]) && (colrCount[cubeF[i][j]] != 0))
-               || (!((colrCount[cubeF[i][j]] < 2) && (colrCount[cubeF[i][j + 1]] < 2))))
-            {
-                
-                while (j % 6 == 4)
-                {
-                    if (visited.Count == 0) return visited;
-
-                    j = visited.Last.Value;
-                        visited.RemoveLast();
-                
-                    i = visited.Last.Value;
-                        visited.RemoveLast();
-
-                    colrCount[cubeF[i][j]]--;
-                    colrCount[cubeF[i][j+ 1]]--;
-                }
-                j += 2;
-            }
-            else //go in here when pair is unique
-            {
-                colrCount[cubeF[i][j]]++;
-                colrCount[cubeF[i][j+1]]++;
-
-                visited.AddLast(i);
-                visited.AddLast(j);
-                i++;
-                j = 0;
-            }
-        }
-       // colrs = colrCount;
-        return visited;
-    }*/
-    protected LinkedList<int> IISolutionMachine(int[][] cubeF, LinkedList<int> pairs)
+    protected LinkedList<int> IISolutionMachine(int[][] cubeF,LinkedList<int> pairs)
     {
 
         LinkedList<int> visited = new LinkedList<int>();
@@ -413,10 +307,22 @@ public class TheStak : MonoBehaviour
         int[] pairArr = pairs.ToArray();
         int[] colrCount = new int[numberOCubes + 1];
         int i = 0, j = 0;
-      
+        //i == cube obj, j == face obj evens? 2k
         if (numberOPairs > 0)
         {
-           
+            /* for(int x=0; x<numberOPairs-2; x++)
+             {
+                 visited.AddLast(pairArr[x]);
+                 if (x % 2 == 1)
+                 {
+                     colrCount[cubeF[pairArr[x-1]][pairArr[x]]]++;
+                     colrCount[cubeF[pairArr[x-1]][pairArr[x] + 1]]++;
+                 }
+             }
+
+             i = pairArr[numberOPairs-2];
+             j = pairArr[numberOPairs-1]+2;
+             */
             i = pairArr[0];
             j = pairArr[1] + 2;
             if (j > 4) j = 0;
@@ -424,67 +330,65 @@ public class TheStak : MonoBehaviour
         while (i < numberOCubes)
         {
             if ((numberOPairs > 1
-                    && numberOPairs > ((i * 2) + 1) //not_empty
-                    && pairArr[(i * 2)] == i//
-                    && pairArr[(i * 2) + 1] == j)//
-                || ((cubeF[i][j] == cubeF[i][j + 1]) && (colrCount[cubeF[i][j]] != 0))
-                || (!((colrCount[cubeF[i][j]] < 2) && (colrCount[cubeF[i][j + 1]] < 2))))
+                    && numberOPairs > ((i*2)+1) //not_empty
+                    && pairArr[(i*2)] == i//
+                    && pairArr[(i*2)+1] == j)//
+                || ((cubeF[i][j] == cubeF[i][j+1]) && (colrCount[cubeF[i][j]] != 0))
+                || (!((colrCount[cubeF[i][j]] < 2) && (colrCount[cubeF[i][j+1]] < 2))))
             {
-                while (j % 6 == 4)
+                while (j%6==4)
                 {
-                    if (visited.Count == 0) return visited;
-
+                    if(visited.Count==0) return visited;
+                    
                     j = visited.Last.Value;
-                    visited.RemoveLast();
+                        visited.RemoveLast();
                     i = visited.Last.Value;
-                    visited.RemoveLast();
+                        visited.RemoveLast();
 
                     colrCount[cubeF[i][j]]--;
-                    colrCount[cubeF[i][j + 1]]--;
+                    colrCount[cubeF[i][j+1]]--;
                 }
-                j += 2;
+                    j += 2;  
             }
             else
             {
                 colrCount[cubeF[i][j]]++;
-                colrCount[cubeF[i][j + 1]]++;
+                colrCount[cubeF[i][j+1]]++;
                 visited.AddLast(i);
                 visited.AddLast(j);
+                //print(i + ":" + j);
                 i++;
                 j = 0;
             }
         }
-        colrs = colrCount;
         return visited;
     }
-
     public void IsGameSolved()
     {
-        
-        int[] frontFacesCounter = new int[cubeNum+1];
-        int[] backFacesCounter = new int[cubeNum+1];
-        int[] topFacesCounter = new int[cubeNum+1];
-        int[] bottomFacesCounter = new int[cubeNum+1];
+        int cubeCount = 5;
+        int frontFace = 0;
+        int[] frontFacesCounter = new int[cubeCount];
+        int[] backFacesCounter = new int[cubeCount];
+        int[] topFacesCounter = new int[cubeCount];
+        int[] bottomFacesCounter = new int[cubeCount];
         Text lose;
-        for (int i = 0; i < cubeNum; i++)
+        //print(cubeCount);
+        for (int i = 0; i < 4; i++)
         {
-            
-
             ++frontFacesCounter[numeratedFaces[i][frontBack[i][0]]];
             ++backFacesCounter[numeratedFaces[i][frontBack[i][1]]];
             ++topFacesCounter[numeratedFaces[i][topBottom[i][0]]];
             ++bottomFacesCounter[numeratedFaces[i][topBottom[i][1]]];
 
-       print(frontFacesCounter[0] + "," + frontFacesCounter[1] + "," + frontFacesCounter[2] + "," + frontFacesCounter[3] + "," + frontFacesCounter[4] ); 
+            // print(frontFacesCounter[0] + "," + frontFacesCounter[1] + "," + frontFacesCounter[2] + "," + frontFacesCounter[3] + "," + frontFacesCounter[4] + "," + frontFacesCounter[5]); 
         }
-
-        if (frontFacesCounter[0] > 1 || frontFacesCounter[1] > 1 || frontFacesCounter[2] > 1 || frontFacesCounter[3] > 1 || frontFacesCounter[4] > 1 || frontFacesCounter[5] > 1
-            || backFacesCounter[0] > 1 || backFacesCounter[1] > 1 || backFacesCounter[2] > 1 || backFacesCounter[3] > 1 || backFacesCounter[4] > 1 || backFacesCounter[5] > 1
-            || topFacesCounter[0] > 1 || topFacesCounter[1] > 1 || topFacesCounter[2] > 1 || topFacesCounter[3] > 1 || topFacesCounter[4] > 1 || topFacesCounter[5] > 1
-            || bottomFacesCounter[0] > 1 || bottomFacesCounter[1] > 1 || bottomFacesCounter[2] > 1 || bottomFacesCounter[3] > 1 || bottomFacesCounter[4] > 1 || bottomFacesCounter[5] > 1)
+        if (frontFacesCounter[0] > 1 || frontFacesCounter[1] > 1 || frontFacesCounter[2] > 1 || frontFacesCounter[3] > 1 || frontFacesCounter[4] > 1
+            || backFacesCounter[0] > 1 || backFacesCounter[1] > 1 || backFacesCounter[2] > 1 || backFacesCounter[3] > 1 || backFacesCounter[4] > 1
+            || topFacesCounter[0] > 1 || topFacesCounter[1] > 1 || topFacesCounter[2] > 1 || topFacesCounter[3] > 1 || topFacesCounter[4] > 1
+            || bottomFacesCounter[0] > 1 || bottomFacesCounter[1] > 1 || bottomFacesCounter[2] > 1 || bottomFacesCounter[3] > 1 || bottomFacesCounter[4] > 1)
         {
             print("wrong");
-            lose = GameObject.FindWithTag("lose").GetComponent<Text>();
+            lose= GameObject.FindWithTag("lose").GetComponent<Text>();
             lose.text = "NO U LOSE";
             return;
         }
@@ -494,13 +398,12 @@ public class TheStak : MonoBehaviour
         Text win = GameObject.FindWithTag("win").GetComponent<Text>();
         win.text = "Bigly WINNING";
     }
-    
 
     private void printCubes(int[][] adjLists)
     {
         for (int i = 0, j = 0; i <= adjLists.Count() - 1; j++)
         {
-            if (j % 2 == 0) print(i + "l" + j + "(" + adjLists[i][j] + "," + adjLists[i][j + 1] + ") ");
+            if (j % 2 == 0) print(i+"l"+j+"(" + adjLists[i][j] + "," + adjLists[i][j + 1] + ") ");
             if (j % 6 == 5)
             {
                 i++;
@@ -509,22 +412,4 @@ public class TheStak : MonoBehaviour
             }
         }
     }
-    private void printAnswer(LinkedList<int> fb, LinkedList<int> lr)
-    {
-        int[] print_FrontBack = fb.ToArray();
-        int[] print_LeftRight = lr.ToArray();
-        print(fb.Count);
-        print(lr.Count);
-        for (int i = 0; i < cubeNum; i++)
-        {
-            print(numeratedFaces[i][print_FrontBack[i]] + " , " + numeratedFaces[i][print_FrontBack[i]+1]+")("+ numeratedFaces[i][print_LeftRight[i]] + " . " + numeratedFaces[i][print_LeftRight[i]+1]);
-            print(print_FrontBack[i] + "_" + print_LeftRight[i]);
-            /*print( numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1]]+".."
-                +numeratedFaces[print_FrontBack[i]][print_FrontBack[i + 1] + 1]+ "   " 
-                +numeratedFaces[print_LeftRight[i]][print_LeftRight[i + 1]]+",,"
-                +numeratedFaces[print_LeftRight[i]][print_LeftRight[i + 1] + 1]);*/
-        }
-    }
 }
-    
-
