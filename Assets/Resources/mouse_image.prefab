@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 54977031057371962}
   - component: {fileID: 114766332607821824}
   - component: {fileID: 65341891872169018}
+  - component: {fileID: 114273584860272654}
   m_Layer: 0
   m_Name: mouse_image
   m_TagString: Untagged
@@ -70,6 +71,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9, y: 5, z: 6}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114273584860272654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1203328975460082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16617580b96b724085ee82414cacdf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114766332607821824
 MonoBehaviour:
   m_ObjectHideFlags: 1
