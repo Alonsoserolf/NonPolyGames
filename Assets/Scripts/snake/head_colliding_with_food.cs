@@ -41,18 +41,15 @@ public class head_colliding_with_food : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.name == "mouse")
-        {
-            creat_object.did_collide = true;
-            Destroy(other.gameObject);
-        }
-        else if (other.name == "mouse_image(Clone)")
+        Debug.Log(other.name);
+        if (other.name == "mouse_image(Clone)")
         {
             snake_ate_points++;
 
             mouse_ate.text = snake_ate_points.ToString();
             creat_object.did_collide = true;
             Destroy(other.gameObject);
+            
         }
         
        else if (other.gameObject.name == "Snake Head(Clone)")

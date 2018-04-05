@@ -18,6 +18,7 @@ public class creat_object : MonoBehaviour
     static float mouse_pos_y = 0.0f;
     static float mouse_pos_z = 0.0f;
     static private GameObject snake_head;
+    static public bool did_mouse_collide_with_tail_;
     static public bool did_collide;
     static public bool snake_ate_mouse;
     static GameObject cube;
@@ -33,8 +34,8 @@ public class creat_object : MonoBehaviour
         
        
         snake_ate_mouse = false;
-        
-       
+
+        did_mouse_collide_with_tail_ = false;
 
         mouse_pos_x = Random.Range(-4.428f, 4.428f);
         mouse_pos_y = Random.Range(1.611f, 1.611f);
@@ -85,16 +86,14 @@ public class creat_object : MonoBehaviour
 
 
 
-            if (mouse_image != null&&head_colliding_with_food.is_game_over!=1 )
+            if (mouse_image != null && head_colliding_with_food.is_game_over != 1)
             {
-               
+
 
                 mouse_image = (GameObject)Instantiate(mouse_image,
                                                          mouse_image.transform.position,
                                                          Quaternion.identity);
                 mouse_image.transform.position = new Vector3(mouse_pos_x, mouse_pos_y, mouse_pos_z);
-             
-
             }
           
         }
@@ -180,7 +179,7 @@ public class creat_object : MonoBehaviour
             }
             snake_ate_mouse = false;
             cube.GetComponent<head_colliding_with_food>().enabled = false;
-            cube.AddComponent<tail_colliding_with_head>();
+
 
             Collider box_collider = cube.GetComponent<BoxCollider>();
             body.Insert(0, cube.transform);
@@ -213,5 +212,9 @@ public class creat_object : MonoBehaviour
 
 
     }
-    
+
+
+
+   
+
 }

@@ -2,52 +2,87 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Menu : MonoBehaviour {
 
+	public EventSystem eventSystem;
+	public GameObject selectedObject;
+	public bool isLoading;
+	public bool buttonSelected;
 	// Use this for initialization
 	//public Scene MenuScene;
 
 	void Start () {
 		//SceneManager.LoadScene ("MainMenu",LoadSceneMode.Additive);
+		buttonSelected = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetAxisRaw("Vertical") != 0 && buttonSelected == false /*&& isPaused == true*/)
+		{
+			eventSystem.SetSelectedGameObject(selectedObject);
+			buttonSelected = true;
+		}
 		
 	}
 	/*public void OnGameMenu(){
 		SceneManager.LoadScene(MenuScene);
 	}*/
+	private void OnDisable(){
+		buttonSelected = false;
+}
 	public void OnInstantInsanity(){
-		SceneManager.LoadScene ("InstantInsanityMenu");
+		SceneManager.LoadScene ("InstantScrollingbackground");
 	}
 	public void OnToTicTacToe(){
-		SceneManager.LoadScene ("TicTacToeMenu");
+		SceneManager.LoadScene ("TicTacToeScrollingbackground");
 	}
 	public void OnToSokaban(){
-		SceneManager.LoadScene ("SokabanMenu");
+		SceneManager.LoadScene ("SokabanScrollingbackground");
 	}
 	public void OnBlock(){
-		SceneManager.LoadScene ("BlockMenu");
+		SceneManager.LoadScene ("BlockScrollingbackground");
+	}
+	public void OnSnake(){
+		SceneManager.LoadScene ("SnakeGameScrollingbackground");
 	}
 	public void OnReturntoMainMenu(){
-		SceneManager.LoadScene ("ScrollingMainMenu");
+		if (!isLoading) {
+			isLoading = true;
+			SceneManager.LoadScene ("ScrollingMainMenu");
+		}
 	}
 	public void OnLevelSelect(){
-		SceneManager.LoadScene ("World1");
+		if (!isLoading) {
+			isLoading = true;
+			SceneManager.LoadScene ("World1");
+		}
 	}
 	public void OnTicPlay(){
-		SceneManager.LoadScene ("cubes");
+		if (!isLoading) {
+			isLoading = true;
+			SceneManager.LoadScene ("cubes");
+		}
 	}
 	public void OnPlayInstantInsanity(){
-		SceneManager.LoadScene ("InstantInsanity");
+		if (!isLoading) {
+			isLoading = true;
+			SceneManager.LoadScene ("InstantInsanity");
+		}
 	}
 	public void OnPlayBrick(){
-		SceneManager.LoadScene ("brick");
+		if (!isLoading) {
+			isLoading = true;
+			SceneManager.LoadScene ("brick");
+		}
 	}
 	public void OnReturnToLevelSelect(){
-		SceneManager.LoadScene ("World1");
+		if (!isLoading) {
+			isLoading = true;
+			SceneManager.LoadScene ("World1");
+		}
 	}
 
 	public void OnQuit(){
