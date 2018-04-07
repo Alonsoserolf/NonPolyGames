@@ -7,7 +7,7 @@ public class StartMenu : MonoBehaviour {
     private GameObject canvas;
     private GameObject stak;
     public Slider mainSlider;
-    private GameObject more;
+    private GameObject camera;
     private GameObject less;
     public Transform cubePrefab;
     GameObject cmr;
@@ -22,54 +22,32 @@ public class StartMenu : MonoBehaviour {
     void Start () {
         canvas = GameObject.FindWithTag("Canvas");
         stak = GameObject.FindWithTag("Stak");
-        more = GameObject.FindWithTag("morecube");
+
+        camera = GameObject.FindWithTag("MainCamera");
         less = GameObject.FindWithTag("lesscube");
     }
-
-    // Update is called once per frame
-    void Update () {
-
-  
-    }
-    public void addCubes()
+    public void ChooseLvl()
     {
-        countCubes = GameObject.FindWithTag("countcubes").GetComponent<Text>();
-        countCubes.text=(int.Parse(countCubes.text)+1).ToString();
-         cmr = GameObject.FindWithTag("Camera");
-        mainCmr = GameObject.FindWithTag("MainCamera");
-
-        yPos = (int)cmr.transform.position.y;
-        zPos = (int)cmr.transform.position.z;
-        xPos = (int)cmr.transform.position.x;
-        int cubeNum = int.Parse(countCubes.text);
-        _LocalRotation.y = (cubeNum - 4)/2 + 2;
-        _LocalRotation.z = -(3 * (cubeNum - 4));
-       // cmr.transform.position = new Vector3(xPos,yPos,_LocalRotation.z);
-
-    }
-    public void subtCubes()
-    {
-        countCubes = GameObject.FindWithTag("countcubes").GetComponent<Text>();
-        countCubes.text = (int.Parse(countCubes.text) - 1).ToString();
-    
+        print(this.gameObject.transform.childCount);
+        
     }
     public void Comence()
     {
-        countCubes=GameObject.FindWithTag("countcubes").GetComponent<Text>();
-        int cubeNum = int.Parse(countCubes.text);
+        
+        //What is this using?
+        countCubes = GameObject.FindWithTag("countcubes").GetComponent<Text>();
+        int cubeNum = 3;
+            cubeNum= int.Parse(countCubes.text);
+
+        int randColor;
         GameObject makeChild;
         GameObject[] sidesCube;
-        int randColor;
-        if (canvas.activeInHierarchy == false)
-        {
-            canvas.SetActive(true);
-        }
-        else
-        {
 
-            for(int i = 0; i < cubeNum; i++)
+        if (canvas.activeInHierarchy != false)
+        {
+            for (int i = 0; i < cubeNum; i++)
             {
-                sidesCube= new GameObject[transform.childCount];
+                sidesCube = new GameObject[transform.childCount];
                 //instantiate cubes
                 makeChild = Instantiate(cubePrefab.gameObject, new Vector3(0, i, 0), Quaternion.identity) as GameObject;
                 //add a script(CubeBehavior) to each cube and disable it
@@ -77,15 +55,25 @@ public class StartMenu : MonoBehaviour {
                 makeChild.GetComponent<CubeBehavior>().enabled = false;
 
                 sidesCube = new GameObject[makeChild.transform.childCount];
-               
+
                 makeChild.transform.parent = GameObject.Find("Stack").transform;
             }
 
 
             canvas.SetActive(false);
+            //set camerascript on
+            camera.GetComponent<RotateStak>().enabled = true;
+            //set cube rotation on
             stak.GetComponent<TheStak>().enabled = true;
 
         }
+        else
+        {
+            //set camerascript off
+            camera.GetComponent<RotateStak>().enabled = false;
+            //set cube rotation off
+            canvas.SetActive(true);
+        }
+
     }
-    
 }

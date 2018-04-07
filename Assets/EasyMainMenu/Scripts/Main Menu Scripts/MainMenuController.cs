@@ -32,7 +32,7 @@ public class MainMenuController : MonoBehaviour {
     {
         //enable respective panel
         MainOptionsPanel.SetActive(true);
-        StartGameOptionsPanel.SetActive(false);
+       // StartGameOptionsPanel.SetActive(false);
 
         //play anim for opening main options panel
         anim.Play("buttonTweenAnims_on");
@@ -41,7 +41,7 @@ public class MainMenuController : MonoBehaviour {
         playClickSound();
 
         //enable BLUR
-        Camera.main.GetComponent<Animator>().Play("BlurOn");
+       // Camera.main.GetComponent<Animator>().Play("BlurOn");
        
     }
 
@@ -72,6 +72,7 @@ public class MainMenuController : MonoBehaviour {
 
         //play anim for opening game options panel
         anim.Play("OptTweenAnim_on");
+        anim.Play("buttonTweenAnims_on");
 
         //play click sfx
         playClickSound();
