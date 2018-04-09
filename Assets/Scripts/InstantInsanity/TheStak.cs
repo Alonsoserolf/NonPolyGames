@@ -26,9 +26,11 @@ public class TheStak : MonoBehaviour
     {
         GameObject stak = GameObject.FindWithTag("Stak");
         stak.GetComponent<TheStak>().enabled = true;
+        //size of stack
         cubeNum = (transform.childCount);
-        cubeRotations = FillInCubeRotations();
 
+        cubeRotations = FillInCubeRotations();
+        //is this necessary?
         colrs = new int[cubeNum + 1];
 
 
@@ -39,7 +41,7 @@ public class TheStak : MonoBehaviour
         //using this for checking solved puzzle
         frontBack = new int[cubeNum][];
         topBottom = new int[cubeNum][];
-        //
+        
         // skins = new Material[cubeNum+1];
 
         for (int i = 0; i < cubeNum; i++)

@@ -8,12 +8,11 @@ public class StartMenu : MonoBehaviour {
     private GameObject stak;
     public Slider mainSlider;
     private GameObject camera;
-    private GameObject less;
     public Transform cubePrefab;
     GameObject cmr;
     GameObject mainCmr;
     private Vector3 _LocalRotation;
-
+    public GameObject[] cLvl;
     public Text countCubes;
     int yPos,zPos, xPos;
 
@@ -24,11 +23,14 @@ public class StartMenu : MonoBehaviour {
         stak = GameObject.FindWithTag("Stak");
 
         camera = GameObject.FindWithTag("MainCamera");
-        less = GameObject.FindWithTag("lesscube");
+
+        cLvl = new GameObject[15];
     }
     public void ChooseLvl()
     {
+
         print(this.gameObject.transform.childCount);
+       // print(cLvl[2].transform.childCount);
         
     }
     public void Comence()
