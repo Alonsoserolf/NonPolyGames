@@ -41,6 +41,7 @@ TagManager:
   - morecube
   - lesscube
   - Camera
+  - II_MENU_STACK_SEL
   layers:
   - Default
   - TransparentFX

@@ -71,8 +71,12 @@ public class MainMenuController : MonoBehaviour {
         LoadGamePanel.SetActive(false);
 
         //play anim for opening game options panel
-        anim.Play("OptTweenAnim_on");
-        anim.Play("buttonTweenAnims_on");
+       //anim.Play("buttonTweenAnims_on");
+
+        anim.Play("OptTweenAnim_off");
+       // anim.Play("OptTweenAnim_on");
+
+        // anim.Play("OptTweenAnim_on");
 
         //play click sfx
         playClickSound();
@@ -87,7 +91,9 @@ public class MainMenuController : MonoBehaviour {
         LoadGamePanel.SetActive(false);
 
         //play anim for opening game options panel
-        anim.Play("OptTweenAnim_on");
+        anim.Play("OptTweenAnim_off");
+       // anim.Play("OptTweenAnim_on");
+
 
         //play click sfx
         playClickSound();
@@ -102,7 +108,10 @@ public class MainMenuController : MonoBehaviour {
         LoadGamePanel.SetActive(false);
 
         //play anim for opening game options panel
+        anim.Play("OptTweenAnim_off");
+
         anim.Play("OptTweenAnim_on");
+
 
         //play click sfx
         playClickSound();
@@ -118,7 +127,9 @@ public class MainMenuController : MonoBehaviour {
         LoadGamePanel.SetActive(true);
 
         //play anim for opening game options panel
+        anim.Play("OptTweenAnim_off");
         anim.Play("OptTweenAnim_on");
+
 
         //play click sfx
         playClickSound();
@@ -152,7 +163,7 @@ public class MainMenuController : MonoBehaviour {
     public void back_options_panels()
     {
         //simply play anim for CLOSING main options panel
-        anim.Play("OptTweenAnim_off");
+        anim.Play("OptTweenAnim_on");
         
         //play click sfx
         playClickSound();

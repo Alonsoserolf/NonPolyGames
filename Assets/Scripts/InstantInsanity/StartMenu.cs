@@ -1,52 +1,80 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class StartMenu : MonoBehaviour {
     private GameObject canvas;
     private GameObject stak;
-    public Slider mainSlider;
     private GameObject camera;
     public Transform cubePrefab;
     GameObject cmr;
     GameObject mainCmr;
+    private Text stackSize;
+    private int sSize;
     private Vector3 _LocalRotation;
-    public GameObject[] cLvl;
+    public Toggle[] cLvl;
     public Text countCubes;
     int yPos,zPos, xPos;
+    private int selectedLevel;
 
+    private bool IsOn=false;
 
     // Use this for initialization
     void Start () {
         canvas = GameObject.FindWithTag("Canvas");
         stak = GameObject.FindWithTag("Stak");
-
         camera = GameObject.FindWithTag("MainCamera");
 
-        cLvl = new GameObject[15];
     }
     public void ChooseLvl()
     {
+       // int tar = Int32.Parse(this.gameObject.transform.name);
+       // selectedLevel = int.Parse(GameObject.FindWithTag("II_MENU_STACK_SEL").GetComponent<Text>().text);
+      //  if (tar<selectedLevel)
+       //     this.gameObject.transform.GetComponent<Toggle>().isOn = true;
 
-        print(this.gameObject.transform.childCount);
-       // print(cLvl[2].transform.childCount);
-        
+    }
+    public void CheLvl()
+    {
+       // int tar = Int32.Parse(this.gameObject.transform.name);
+       // selectedLevel = int.Parse(GameObject.FindWithTag("II_MENU_STACK_SEL").GetComponent<Text>().text);
+      //  if (tar>selectedLevel)
+      //  this.gameObject.transform.GetComponent<Toggle>().isOn = false;
+
+    }
+    public void go_play()
+    {
+        //height
+        int tar = Int32.Parse(this.gameObject.transform.name);
+        selectedLevel = tar;
+        stackSize = GameObject.FindWithTag("II_MENU_STACK_SEL").GetComponent<Text>();
+        stackSize.text = selectedLevel.ToString();
+        for (int i = tar + 1; i < 12; i++)
+        {
+            cLvl[i].isOn = false;
+        }
+        for (int i = tar-1; i>=0; i--)
+        {
+            cLvl[i].isOn = true;
+        }
+
     }
     public void Comence()
     {
-        
-        //What is this using?
-        countCubes = GameObject.FindWithTag("countcubes").GetComponent<Text>();
-        int cubeNum = 3;
-            cubeNum= int.Parse(countCubes.text);
 
-        int randColor;
+        //What is this using?
+        stackSize = GameObject.FindWithTag("II_MENU_STACK_SEL").GetComponent<Text>();
+        int cubeNum = 3;
+        cubeNum= int.Parse(stackSize.text);
+
         GameObject makeChild;
         GameObject[] sidesCube;
 
-        if (canvas.activeInHierarchy != false)
-        {
+       
             for (int i = 0; i < cubeNum; i++)
             {
                 sidesCube = new GameObject[transform.childCount];
@@ -68,14 +96,5 @@ public class StartMenu : MonoBehaviour {
             //set cube rotation on
             stak.GetComponent<TheStak>().enabled = true;
 
-        }
-        else
-        {
-            //set camerascript off
-            camera.GetComponent<RotateStak>().enabled = false;
-            //set cube rotation off
-            canvas.SetActive(true);
-        }
-
-    }
+        }    
 }
