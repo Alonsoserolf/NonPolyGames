@@ -42,16 +42,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Lvl2.unity
     guid: 70c99a1b663f44635bcda0f6baaec77d
   - enabled: 1
-    path: Assets/user vs cpu/cpu vs user.unity
+    path: Assets/Scenes/tictactoe/user vs cpu/cpu vs user.unity
     guid: 8af96adff3c016f4dbde9bc079e7ada5
   - enabled: 1
     path: Assets/Scenes/Menus/Lvl3.unity
     guid: b544fe1eeb94a423188e67ce43fc1a00
   - enabled: 1
-    path: Assets/Scenes/cube/cubes.unity
+    path: Assets/Scenes/tictactoe/cubes.unity
     guid: 592de7443cbc70546ac5df058ae1b90e
   - enabled: 1
-    path: Assets/second level/secondlevel.unity
+    path: Assets/Scenes/tictactoe/second level/secondlevel.unity
     guid: da51fe521129f3045b9acc8d62c90a05
   - enabled: 1
     path: Assets/Scenes/brick/brick.unity

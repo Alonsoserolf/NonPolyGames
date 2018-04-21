@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//[RequireComponent(typeof(AudioSource))]
 public class ScrollRectSnap_CS : MonoBehaviour {
 
 	//------image-----
@@ -29,10 +30,21 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 
 	//public Button bttncenter = false;
 
+	//private AudioSource clickSound;
+	//public AudioClip click;
+
 	public Menu MenuLoad;
 
+	//public float vol;
+
 	// Use this for initialization
+
+	void Awake(){
+		//
+		//clickSound.volume = vol;
+	}
 	void Start () {
+		//clickSound = GetComponent<AudioSource> ();
 		bttnLength = bttn.Length;
 		distance = new float[bttnLength];
 		distReposition = new float[bttnLength];
@@ -162,7 +174,17 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 			}
 			Debug.Log("Hello Up:" + minButtonNum);
 		}
-		if (Input.GetKeyDown (KeyCode.Return)) {
+		if (Input.GetKeyDown (KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
+		//if (Input.GetKeyDown (KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetMouseButtonDown(0)) {
+
+			//clickSound.clip = click;
+		
+			//clickSound.Play ();
+
+			//clickSound.PlayOneShot(click, 1.0f);
+
+
+			//Debug.Log ("soundPlayed");
 			if (minButtonNum == 0) {
 				MenuLoad.OnInstantInsanity ();
 				//SceneManager.LoadScene ("InstantScrollingbackground");
@@ -180,7 +202,9 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 			if (minButtonNum == 4) {
 				MenuLoad.OnSnake ();
 			}
+
 		}
+
 	}// end of update method
 
 	//----------imageloading method
