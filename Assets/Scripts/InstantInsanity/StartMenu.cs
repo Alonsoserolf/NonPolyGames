@@ -10,17 +10,10 @@ public class StartMenu : MonoBehaviour {
     private GameObject canvas;
     private GameObject stak;
     private GameObject camera;
-    public Transform cubePrefab;
-    GameObject cmr;
-    GameObject mainCmr;
-    private Text stackSize;
-    private int sSize;
-    private Vector3 _LocalRotation;
     public Toggle[] cLvl;
-    public Text countCubes;
-    int yPos,zPos, xPos;
+    public Transform cubePrefab;
+    private Text stackSize;
     private int selectedLevel;
-
     private bool IsOn=false;
 
     // Use this for initialization
@@ -30,22 +23,7 @@ public class StartMenu : MonoBehaviour {
         camera = GameObject.FindWithTag("MainCamera");
 
     }
-    public void ChooseLvl()
-    {
-       // int tar = Int32.Parse(this.gameObject.transform.name);
-       // selectedLevel = int.Parse(GameObject.FindWithTag("II_MENU_STACK_SEL").GetComponent<Text>().text);
-      //  if (tar<selectedLevel)
-       //     this.gameObject.transform.GetComponent<Toggle>().isOn = true;
-
-    }
-    public void CheLvl()
-    {
-       // int tar = Int32.Parse(this.gameObject.transform.name);
-       // selectedLevel = int.Parse(GameObject.FindWithTag("II_MENU_STACK_SEL").GetComponent<Text>().text);
-      //  if (tar>selectedLevel)
-      //  this.gameObject.transform.GetComponent<Toggle>().isOn = false;
-
-    }
+   
     public void go_play()
     {
         //height
@@ -68,8 +46,8 @@ public class StartMenu : MonoBehaviour {
 
         //What is this using?
         stackSize = GameObject.FindWithTag("II_MENU_STACK_SEL").GetComponent<Text>();
-        int cubeNum = 3;
-        cubeNum= int.Parse(stackSize.text);
+        int cubeNum = 2;
+       // cubeNum= int.Parse(stackSize.text)+1;
 
         GameObject makeChild;
         GameObject[] sidesCube;
