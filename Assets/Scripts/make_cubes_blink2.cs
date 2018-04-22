@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class make_cubes_blink2 : MonoBehaviour {
-    public static GameObject current_cube1;
+    public  GameObject current_cube1;
     public static GameObject current_cube2;
     public static GameObject current_cube3;
     private static int player_or_user = 0;
