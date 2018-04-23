@@ -4,19 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/brick/brick.unity
-    guid: 595c9f0c90f79e5418f0927d61e50859
-  - enabled: 1
-    path: Assets/Scenes/InstantInsanity.unity
-    guid: 374c3f94b0ac76e40afcd4e6edb04413
-  - enabled: 1
-    path: Assets/Scenes/tictactoe/cubes.unity
-    guid: 592de7443cbc70546ac5df058ae1b90e
-  - enabled: 1
-    path: Assets/Scenes/tictactoe/user vs cpu/cpu vs user.unity
-    guid: 8af96adff3c016f4dbde9bc079e7ada5
-  - enabled: 1
-    path: Assets/Scenes/tictactoe/second level/secondlevel.unity
-    guid: da51fe521129f3045b9acc8d62c90a05
+  m_Scenes: []
