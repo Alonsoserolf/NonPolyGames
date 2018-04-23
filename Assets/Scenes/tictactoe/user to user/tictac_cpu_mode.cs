@@ -269,7 +269,10 @@ public class tictac_cpu_mode : MonoBehaviour
             if (gameObject.tag == "Cube0" && level3c[0] == 0)
             {
                 level3c[0] = 1;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -279,7 +282,10 @@ public class tictac_cpu_mode : MonoBehaviour
             if (gameObject.tag == "Cube1" && level3c[1] == 0)
             {
                 level3c[1] = 1;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -288,8 +294,10 @@ public class tictac_cpu_mode : MonoBehaviour
             {
 
                 level3c[2] = 1;
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -298,8 +306,10 @@ public class tictac_cpu_mode : MonoBehaviour
             if (gameObject.tag == "Cube3" && level3c[3] == 0)
             {
                 level3c[3] = 1;
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -307,24 +317,32 @@ public class tictac_cpu_mode : MonoBehaviour
             if (gameObject.tag == "Cube4" && level3c[4] == 0)
             {
                 level3c[4] = 1;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
             }
             if (gameObject.tag == "Cube5" && level3c[5] == 0)
-            { 
+            {
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level3c[5] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
             }
             if (gameObject.tag == "Cube6" && level3c[6] == 0)
             {
- 
-              level3c[6] = 1;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                level3c[6] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -333,26 +351,32 @@ public class tictac_cpu_mode : MonoBehaviour
             if (gameObject.tag == "Cube7" && level3c[7] == 0)
             {  
              level3c[7] = 1;
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
             }
             if (gameObject.tag == "Cube8" && level3c[8] == 0)
             {
-                
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level3c[8] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
             }
             if (gameObject.tag == "Cube9" && level2c[0] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level2c[0] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -360,9 +384,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube10" && level2c[1] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level2c[1] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -370,9 +396,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube11" && level2c[2] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level2c[2] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -381,9 +409,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube12" && level2c[3] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level2c[3] = 1;
             gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -391,8 +421,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube13" && level2c[4] == 0)
             {
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level2c[4] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -400,9 +433,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube14" && level2c[5] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level2c[5] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -410,9 +445,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube15" && level2c[6] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level2c[6] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -420,9 +457,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube16" && level2c[7] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level2c[7] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -430,9 +469,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube17" && level2c[8] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level2c[8] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -440,9 +481,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube18" && level1c[0] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level1c[0] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -451,9 +494,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube19" && level1c[1] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level1c[1] = 1;
               gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -461,9 +506,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube20" && level1c[2] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level1c[2] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -471,9 +518,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube21" && level1c[3] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level1c[3] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -481,9 +530,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube22" && level1c[4] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level1c[4] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -491,27 +542,33 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube23" && level1c[5] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level1c[5] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
             }
             if (gameObject.tag == "Cube24" && level1c[6] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level1c[6] = 1;
              gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
             }
             if (gameObject.tag == "Cube25" && level1c[7] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level1c[7] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -519,9 +576,11 @@ public class tictac_cpu_mode : MonoBehaviour
             }
             if (gameObject.tag == "Cube26" && level1c[8] == 0)
             {
-
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                 level1c[8] = 1;
                 gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                gameObject.GetComponent<tictac_hover>().alreadyEnabled = true;
                 checkWin();
                 if (mode_choice == 0)
                     computer_algorithm();
@@ -1994,7 +2053,8 @@ void computer_offence1( ref int final_stage_array3)
             if (level_index==0)
             {
                 find_cube = GameObject.Find("Cube0");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2003,7 +2063,8 @@ void computer_offence1( ref int final_stage_array3)
             {
 
                 find_cube = GameObject.Find("Cube1");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2014,7 +2075,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube2");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2025,7 +2087,8 @@ void computer_offence1( ref int final_stage_array3)
             {
 
                 find_cube = GameObject.Find("Cube3");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2038,14 +2101,16 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube4");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
             if (level_index == 5)
             {
                 find_cube = GameObject.Find("Cube5");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2054,7 +2119,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube6");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2064,7 +2130,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube7");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2074,7 +2141,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube8");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2086,7 +2154,8 @@ void computer_offence1( ref int final_stage_array3)
             {
 
                 find_cube = GameObject.Find("Cube9");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2095,7 +2164,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube10");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2107,7 +2177,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube11");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2117,7 +2188,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube12");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2126,7 +2198,8 @@ void computer_offence1( ref int final_stage_array3)
             {
 
                 find_cube = GameObject.Find("Cube13");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2136,7 +2209,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube14");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2145,7 +2219,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube15");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2155,7 +2230,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube16");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2166,7 +2242,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube17");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2179,7 +2256,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube18");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
 
@@ -2189,7 +2267,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube19");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2199,7 +2278,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube20");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
             }
             if (level_index == 3)
@@ -2207,7 +2287,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube21");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2216,7 +2297,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube22");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2224,7 +2306,8 @@ void computer_offence1( ref int final_stage_array3)
             {
 
                 find_cube = GameObject.Find("Cube23");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2234,14 +2317,16 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube24");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
             }
             if (level_index == 7)
             {
 
                 find_cube = GameObject.Find("Cube25");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
 
             }
@@ -2251,7 +2336,8 @@ void computer_offence1( ref int final_stage_array3)
 
 
                 find_cube = GameObject.Find("Cube26");
-
+                find_cube = find_cube.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                find_cube.GetComponent<Renderer>().enabled = true;
                 find_cube.GetComponent<Renderer>().material.color = Color.red;
             }
         }
