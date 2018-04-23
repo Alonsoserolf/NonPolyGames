@@ -4,25 +4,36 @@ using UnityEngine;
 
 public class CubeBehavior : MonoBehaviour {
 
-    float yPosition;
-    //public GameObject morCube;
-    public float smooth = 2.0F;
-    public float tiltAngle = 90.0F;
+    public float speed = 5;
+    GameObject endRotation;
     private void Start()
     {
-        //transform.Translate(3, 0, 3);
-        yPosition = transform.position.y;
+        endRotation = new GameObject();
     }
+
+    
+  
+
     private void Update()
     {
-       OnMouseDown();
-    }
-   
-    void OnMouseDown()
-    {
-       
-       // print((Mathf.FloorToInt(transform.eulerAngles.x%360)/90)+"("+ transform.eulerAngles.x+", "+ transform.eulerAngles.y+", "+ transform.eulerAngles.z+")");
-        transform.Rotate(new Vector3(Input.GetAxis("Horizontal") * 2f, 0f, Input.GetAxis("Vertical") * 2f));
-        
+        if (Input.GetKeyDown("a"))
+        {
+            endRotation.transform.Rotate(Vector3.up, 90, Space.World);
+        }
+        if (Input.GetKeyDown("d"))
+        {
+            endRotation.transform.Rotate(Vector3.up, -90, Space.World);
+        }
+
+        if (Input.GetKeyDown("w"))
+        {
+            endRotation.transform.Rotate(Vector3.left, 90, Space.World);
+        }
+        if (Input.GetKeyDown("s"))
+        {
+            endRotation.transform.Rotate(Vector3.left, -90, Space.World);
+        }
+
+        this.transform.rotation = Quaternion.Lerp(this.transform.rotation, endRotation.transform.rotation, Time.deltaTime * speed);
     }
 }

@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menus/ScrollingMainMenu.unity
+    path: Assets/Scenes/finalscrollingmenus/ScrollingMainMenu.unity
     guid: d217e190700494dc5851c9c6988b3395
   - enabled: 1
-    path: Assets/Scenes/Menus/Level1.1.unity
+    path: Assets/Scenes/sokaban/Level1.1.unity
     guid: 9436642252c88460eb9606d929aa1da0
   - enabled: 1
-    path: Assets/Scenes/Menus/Level1.2.unity
+    path: Assets/Scenes/sokaban/Level1.2.unity
     guid: 2b15c2b82356048a1adbe86ca742568f
   - enabled: 1
     path: Assets/Scenes/Menus/MainMenu.unity
@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Levels/Level 2.unity
     guid: 37deaca88bfc64f2a8212f3982c02c57
   - enabled: 1
-    path: Assets/Scenes/Menus/World1.unity
+    path: Assets/Scenes/sokaban/World1.unity
     guid: a9046f414ddeb48318fa608c47fc2a73
   - enabled: 1
     path: Assets/Scenes/Menus/Lvll1.unity
@@ -42,19 +42,19 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Lvl2.unity
     guid: 70c99a1b663f44635bcda0f6baaec77d
   - enabled: 1
-    path: Assets/user vs cpu/cpu vs user.unity
+    path: Assets/Scenes/tictactoe/user vs cpu/cpu vs user.unity
     guid: 8af96adff3c016f4dbde9bc079e7ada5
   - enabled: 1
     path: Assets/Scenes/Menus/Lvl3.unity
     guid: b544fe1eeb94a423188e67ce43fc1a00
   - enabled: 1
-    path: Assets/Scenes/cubes.unity
+    path: Assets/Scenes/tictactoe/cubes.unity
     guid: 592de7443cbc70546ac5df058ae1b90e
   - enabled: 1
-    path: Assets/second level/secondlevel.unity
+    path: Assets/Scenes/tictactoe/second level/secondlevel.unity
     guid: da51fe521129f3045b9acc8d62c90a05
   - enabled: 1
-    path: Assets/Scenes/brick.unity
+    path: Assets/Scenes/brick/brick.unity
     guid: 595c9f0c90f79e5418f0927d61e50859
   - enabled: 1
     path: Assets/Scenes/InstantInsanity.unity
@@ -74,6 +74,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/TicTacToeMenu.unity
     guid: a2f469cb5f4e443c4870affd2bdbe131
+  - enabled: 1
+    path: Assets/Scenes/finalscrollingmenus/BlockScrollingbackground.unity
+    guid: 063d0c41da6044e68a1c06f314891427
+  - enabled: 1
+    path: Assets/Scenes/finalscrollingmenus/InstantScrollingbackground.unity
+    guid: 51c94697fadf04c20ad90b5e7bd61e41
+  - enabled: 1
+    path: Assets/Scenes/finalscrollingmenus/SnakeGameScrollingbackground.unity
+    guid: cb6507ee9a252413ab4793fe4e70d165
+  - enabled: 1
+    path: Assets/Scenes/finalscrollingmenus/SokabanScrollingbackground.unity
+    guid: 35635284871694b7293eee1d567a71f2
+  - enabled: 1
+    path: Assets/Scenes/finalscrollingmenus/TicTacToeScrollingbackground.unity
+    guid: f0940ce78e5ee40b4be0dfe7f4aecab2
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
