@@ -10,8 +10,8 @@ public class TheStak : MonoBehaviour
     private GameObject[][] theStak;
     public Material[] skins = new Material[20];
     private int[][] numeratedFaces;
-    private int[][] frontBack;
-    private int[][] topBottom;
+    private int[][] fbCheck;
+    private int[][] tbCheck;
     private LinkedList<int> frontBak = new LinkedList<int>();
     private LinkedList<int> leftRight = new LinkedList<int>();
 
@@ -26,9 +26,11 @@ public class TheStak : MonoBehaviour
     {
         GameObject stak = GameObject.FindWithTag("Stak");
         stak.GetComponent<TheStak>().enabled = true;
+        //size of stack
         cubeNum = (transform.childCount);
-        cubeRotations = FillInCubeRotations();
 
+        cubeRotations = FillInCubeRotations();
+        //is this necessary?
         colrs = new int[cubeNum + 1];
 
 
@@ -37,17 +39,17 @@ public class TheStak : MonoBehaviour
         //full random numbers assigned 
         numeratedFaces = new int[cubeNum][];
         //using this for checking solved puzzle
-        frontBack = new int[cubeNum][];
-        topBottom = new int[cubeNum][];
-        //
+        fbCheck = new int[cubeNum][];
+        tbCheck = new int[cubeNum][];
+        
         // skins = new Material[cubeNum+1];
 
         for (int i = 0; i < cubeNum; i++)
         {
             numeratedFaces[i] = new int[6];
             theStak[i] = new GameObject[6];
-            frontBack[i] = new int[2] { 2, 0 };
-            topBottom[i] = new int[2] { 3, 4 };
+            fbCheck[i] = new int[2] { 1, 0 };
+            tbCheck[i] = new int[2] { 5, 4 };
 
             for (int j = 0; j < 6; j++)
             {
@@ -73,70 +75,70 @@ public class TheStak : MonoBehaviour
     {
         return new Dictionary<string, int[]>()
         {
-            { "000", new int[] { 2, 0, 3, 4 } }, //1054
-            { "0090", new int[] { 2, 0, 5, 1 } },//1032 2=1,0=0,3=5,4=4
-            { "00180", new int[] { 2, 0, 4, 3 } },//1045
-            { "00270", new int[] { 2, 0, 1, 5 } },//1023
-            { "0900", new int[] { 4, 3, 2, 0 } },//4510
-            { "09090", new int[] { 1, 5, 2, 0 } },//2,3,1,0
-            { "090180", new int[] { 3, 4, 2, 0 } },//5410
-            { "090270", new int[] { 5, 1, 2, 0 } },//3210
-            { "01800", new int[] { 0, 2, 4, 3 } },
-            { "018090", new int[] { 0, 2, 1, 5 } },
-            { "0180180", new int[] { 0, 2, 3, 4 } },
-            { "0180270", new int[] { 0, 2, 5, 1 } },
-            { "02700", new int[] { 3, 4, 0, 2 } },
-            { "027090", new int[] { 5, 1, 0, 2 } },
-            { "0270180", new int[] { 4, 3, 0, 2 } },
-            { "0270270", new int[] { 1, 5, 0, 2 } },
-            { "9000", new int[] { 1, 5, 3, 4 } },
-            { "90090", new int[] { 3, 4, 5, 1 } },
-            { "900180", new int[] { 5, 1, 4, 3 } },
-            { "900270", new int[] { 4, 3, 1, 5 } },
-            { "90900", new int[] { 4, 3, 1, 5 } },
-            { "909090", new int[] { 1, 5, 3, 4 } },
-            { "9090180", new int[] { 3, 4, 5, 1 } },
-            { "9090270", new int[] { 5, 1, 4, 3 } },
-            { "901800", new int[] { 5, 1, 4, 3 } },
-            { "9018090", new int[] { 4, 3, 1, 5 } },
-            { "90180180", new int[] { 1, 5, 3, 4 } },
-            { "90180270", new int[] { 3, 4, 5, 1 } },
-            { "902700", new int[] { 3, 4, 5, 1 } },
-            { "9027090", new int[] { 5, 1, 4, 3 } },
-            { "90270180", new int[] { 4, 3, 1, 5 } },
-            { "90270270", new int[] { 1, 5, 3, 4 } },
-            { "18000", new int[] { 0, 2, 3, 4 } },
-            { "180090", new int[] { 0, 2, 5, 1 } },
-            { "1800180", new int[] { 0, 2, 4, 3 } },
-            { "1800270", new int[] { 0, 2, 1, 5 } },
-            { "180900", new int[] { 4, 3, 0, 2 } },
-            { "1809090", new int[] { 1, 5, 0, 2 } },
-            { "18090180", new int[] { 3, 4, 0, 2 } },
-            { "18090270", new int[] { 5, 1, 0, 2 } },
-            { "1801800", new int[] { 2, 0, 4, 3 } },
-            { "18018090", new int[] { 2, 0, 1, 5 } },
-            { "180180180", new int[] { 2, 0, 3, 4 } },
-            { "180180270", new int[] { 2, 0, 5, 1 } },
-            { "1802700", new int[] { 3, 4, 2, 0 } },
-            { "18027090", new int[] { 5, 1, 2, 0 } },
-            { "180270180", new int[] { 4, 3, 2, 0 } },
-            { "180270270", new int[] { 1, 5, 2, 0 } },
-            { "27000", new int[] { 5, 1, 3, 4 } },
-            { "270090", new int[] { 4, 3, 5, 1 } },
-            { "2700180", new int[] { 1, 5, 4, 3 } },
-            { "2700270", new int[] { 3, 4, 1, 5 } },
-            { "270900", new int[] { 4, 3, 5, 1 } },
-            { "2709090", new int[] { 1, 5, 4, 3 } },
-            { "27090180", new int[] { 3, 4, 1, 5 } },
-            { "27090270", new int[] { 5, 1, 3, 4 } },
-            { "2701800", new int[] { 1, 5, 4, 3 } },
-            { "27018090", new int[] { 3, 4, 1, 5 } },
-            { "270180180", new int[] { 5, 1, 3, 4 } },
-            { "270180270", new int[] { 4, 3, 5, 1 } },
-            { "2702700", new int[] { 3, 4, 1, 5 } },
-            { "27027090", new int[] { 5, 1, 3, 4 } },
-            { "270270180", new int[] { 4, 3, 5, 1 } },
-            { "270270270", new int[] { 1, 5, 4, 3 } }
+            { "000", new int[] { 1, 0, 5, 4 } }, //1054
+            { "0090", new int[] { 1, 0, 3, 2 } },//1032 2=1,0=0,3=5,4=4
+            { "00180", new int[] { 1, 0, 4, 5 } },//1045
+            { "00270", new int[] { 1, 0, 2, 3 } },//1023
+            { "0900", new int[] { 4, 5, 1, 0 } },//4510
+            { "09090", new int[] { 2, 3, 1, 0 } },//2,3,1,0
+            { "090180", new int[] { 5, 4, 1, 0 } },//5410
+            { "090270", new int[] { 3, 2, 1, 0 } },//3210
+            { "01800", new int[] { 0, 1, 4, 5 } },
+            { "018090", new int[] { 0, 1, 2, 3 } },
+            { "0180180", new int[] { 0, 1, 5, 4 } },
+            { "0180270", new int[] { 0, 1, 3, 2 } },
+            { "02700", new int[] { 5, 4, 0, 1 } },
+            { "027090", new int[] { 3, 2, 0, 1 } },
+            { "0270180", new int[] { 4, 5, 0, 1 } },
+            { "0270270", new int[] { 2, 3, 0, 1 } },
+            { "9000", new int[] { 2, 3, 5, 4 } },
+            { "90090", new int[] { 5, 4, 3, 2 } },
+            { "900180", new int[] { 3, 2, 4, 5 } },
+            { "900270", new int[] { 4, 5, 2, 3 } },
+            { "90900", new int[] { 4, 5, 2, 3 } },
+            { "909090", new int[] { 2, 3, 5, 4 } },
+            { "9090180", new int[] { 5, 4, 3, 2 } },
+            { "9090270", new int[] { 3, 2, 4, 5 } },
+            { "901800", new int[] { 3, 2, 4, 5 } },
+            { "9018090", new int[] { 4, 5, 2, 3 } },
+            { "90180180", new int[] { 2, 3, 5, 4 } },
+            { "90180270", new int[] { 5, 4, 3, 2 } },
+            { "902700", new int[] { 5, 4, 3, 2 } },
+            { "9027090", new int[] { 3, 2, 4, 5 } },
+            { "90270180", new int[] { 4, 5, 2, 3 } },
+            { "90270270", new int[] { 2, 3, 5, 4 } },
+            { "18000", new int[] { 0, 1, 5, 4 } },
+            { "180090", new int[] { 0, 1, 3, 2 } },
+            { "1800180", new int[] { 0, 1, 4, 5 } },
+            { "1800270", new int[] { 0, 1, 2, 3 } },
+            { "180900", new int[] { 4, 5, 0, 1 } },
+            { "1809090", new int[] { 2, 3, 0, 1 } },
+            { "18090180", new int[] { 5, 4, 0, 1 } },
+            { "18090270", new int[] { 3, 2, 0, 1 } },
+            { "1801800", new int[] { 1, 0, 4, 5 } },
+            { "18018090", new int[] { 1, 0, 2, 3 } },
+            { "180180180", new int[] { 1, 0, 5, 4 } },
+            { "180180270", new int[] { 1, 0, 3, 2 } },
+            { "1802700", new int[] { 5, 4, 1, 0 } },
+            { "18027090", new int[] { 3, 2, 1, 0 } },
+            { "180270180", new int[] { 4, 5, 1, 0 } },
+            { "180270270", new int[] { 2, 3, 1, 0 } },
+            { "27000", new int[] { 3, 2, 5, 4 } },
+            { "270090", new int[] { 4, 5, 3, 2 } },
+            { "2700180", new int[] { 2, 3, 4, 5 } },
+            { "2700270", new int[] { 5, 4, 2, 3 } },
+            { "270900", new int[] { 4, 5, 3, 2 } },
+            { "2709090", new int[] { 2, 3, 4, 5 } },
+            { "27090180", new int[] { 5, 4, 2, 3 } },
+            { "27090270", new int[] { 3, 2, 5, 4 } },
+            { "2701800", new int[] { 2, 3, 4, 5 } },
+            { "27018090", new int[] { 5, 4, 2, 3 } },
+            { "270180180", new int[] { 3, 2, 5, 4 } },
+            { "270180270", new int[] { 4, 5, 3, 2 } },
+            { "2702700", new int[] { 5, 4, 2, 3 } },
+            { "27027090", new int[] { 3, 2, 5, 4 } },
+            { "270270180", new int[] { 4, 5, 3, 2 } },
+            { "270270270", new int[] { 2, 3, 4, 5 } }
         };
     }
     // Update is called once per frame
@@ -234,10 +236,10 @@ public class TheStak : MonoBehaviour
     {
         int yPos = (int)obj.transform.position.y;
 
-        frontBack[yPos][0] = arr[0];
-        frontBack[yPos][1] = arr[1];
-        topBottom[yPos][0] = arr[2];
-        topBottom[yPos][1] = arr[3];
+        fbCheck[yPos][0] = arr[0];
+        fbCheck[yPos][1] = arr[1];
+        tbCheck[yPos][0] = arr[2];
+        tbCheck[yPos][1] = arr[3];
 
     }
 
@@ -391,34 +393,41 @@ public class TheStak : MonoBehaviour
         int[] topFacesCounter = new int[cubeNum + 1];
         int[] bottomFacesCounter = new int[cubeNum + 1];
         Text lose;
+
         for (int i = 0; i < cubeNum; i++)
         {
+            ++frontFacesCounter[numeratedFaces[i][fbCheck[i][0]]];
+            ++backFacesCounter[numeratedFaces[i][fbCheck[i][1]]];
+            ++topFacesCounter[numeratedFaces[i][tbCheck[i][0]]];
+            ++bottomFacesCounter[numeratedFaces[i][tbCheck[i][1]]];
 
-
-            ++frontFacesCounter[numeratedFaces[i][frontBack[i][0]]];
-            ++backFacesCounter[numeratedFaces[i][frontBack[i][1]]];
-            ++topFacesCounter[numeratedFaces[i][topBottom[i][0]]];
-            ++bottomFacesCounter[numeratedFaces[i][topBottom[i][1]]];
-
-            print(frontFacesCounter[0] + "," + frontFacesCounter[1] + "," + frontFacesCounter[2] + "," + frontFacesCounter[3] + "," + frontFacesCounter[4]);
+           // print(frontFacesCounter[0] + "," + frontFacesCounter[1] + "," + frontFacesCounter[2] + "," + frontFacesCounter[3] + "," + frontFacesCounter[4]);
         }
 
-        if (frontFacesCounter[0] > 1 || frontFacesCounter[1] > 1 || frontFacesCounter[2] > 1 || frontFacesCounter[3] > 1 || frontFacesCounter[4] > 1 || frontFacesCounter[5] > 1
-            || backFacesCounter[0] > 1 || backFacesCounter[1] > 1 || backFacesCounter[2] > 1 || backFacesCounter[3] > 1 || backFacesCounter[4] > 1 || backFacesCounter[5] > 1
-            || topFacesCounter[0] > 1 || topFacesCounter[1] > 1 || topFacesCounter[2] > 1 || topFacesCounter[3] > 1 || topFacesCounter[4] > 1 || topFacesCounter[5] > 1
-            || bottomFacesCounter[0] > 1 || bottomFacesCounter[1] > 1 || bottomFacesCounter[2] > 1 || bottomFacesCounter[3] > 1 || bottomFacesCounter[4] > 1 || bottomFacesCounter[5] > 1)
+        for (int i = 1; i <= cubeNum; i++)
         {
-            print("wrong");
-            lose = GameObject.FindWithTag("lose").GetComponent<Text>();
-            lose.text = "NO U LOSE";
-            return;
+            if (frontFacesCounter[i] == 1 && backFacesCounter[i] == 1 && topFacesCounter[i] == 1 && bottomFacesCounter[i] == 1) print(".");
+            else print("wrong");
         }
-        print("correct");
-        lose = GameObject.FindWithTag("lose").GetComponent<Text>();
-        lose.text = "";
-        Text win = GameObject.FindWithTag("win").GetComponent<Text>();
-        win.text = "Bigly WINNING";
-    }
+
+
+            /*
+            if (frontFacesCounter[0] > 1 || frontFacesCounter[1] > 1 || frontFacesCounter[2] > 1 || frontFacesCounter[3] > 1 || frontFacesCounter[4] > 1 || frontFacesCounter[5] > 1
+                || backFacesCounter[0] > 1 || backFacesCounter[1] > 1 || backFacesCounter[2] > 1 || backFacesCounter[3] > 1 || backFacesCounter[4] > 1 || backFacesCounter[5] > 1
+                || topFacesCounter[0] > 1 || topFacesCounter[1] > 1 || topFacesCounter[2] > 1 || topFacesCounter[3] > 1 || topFacesCounter[4] > 1 || topFacesCounter[5] > 1
+                || bottomFacesCounter[0] > 1 || bottomFacesCounter[1] > 1 || bottomFacesCounter[2] > 1 || bottomFacesCounter[3] > 1 || bottomFacesCounter[4] > 1 || bottomFacesCounter[5] > 1)
+            {
+                print("wrong");
+                lose = GameObject.FindWithTag("lose").GetComponent<Text>();
+                lose.text = "NO U LOSE";
+                return;
+            }
+            print("correct");
+            lose = GameObject.FindWithTag("lose").GetComponent<Text>();
+            lose.text = "";
+            Text win = GameObject.FindWithTag("win").GetComponent<Text>();
+            win.text = "Bigly WINNING";*/
+        }
 
     //BBT
     private void printCubes(int[][] adjLists)
