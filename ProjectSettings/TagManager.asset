@@ -42,6 +42,10 @@ TagManager:
   - lesscube
   - Camera
   - II_MENU_STACK_SEL
+  - upButton
+  - menuCubeNum
+  - menuRotations
+  - menuRotationsHalf
   layers:
   - Default
   - TransparentFX

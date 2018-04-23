@@ -30,6 +30,7 @@ public class MainMenuController : MonoBehaviour {
     public GameObject _info;
     public GameObject _help;
     public GameObject _controls;
+    public GameObject _ShowCube;
     public GameObject MainOptionsPanel;
     public GameObject StartGameOptionsPanel;
     public GameObject GamePanel;
@@ -57,24 +58,32 @@ public class MainMenuController : MonoBehaviour {
         else anim.Play("expndHowTo_on");
     }
 
-    #region Open Different panels
+    //#region Open Different panels
     public void OpenInfo()
     {
         _help.SetActive(false);
         _controls.SetActive(false);
+        _ShowCube.SetActive(true);
         _info.SetActive(true);
+
     }
     public void OpenHelp()
     {
         _controls.SetActive(false);
         _info.SetActive(false);
+        _ShowCube.SetActive(false);
+
         _help.SetActive(true);
+
     }
     public void OpenControls()
     {
         _help.SetActive(false);
         _info.SetActive(false);
+        _ShowCube.SetActive(false);
+
         _controls.SetActive(true);
+
     }
     public void openOptions()
     {
@@ -86,10 +95,10 @@ public class MainMenuController : MonoBehaviour {
         anim.Play("buttonTweenAnims_on");
 
         //play click sfx
-        playClickSound();
+        //playClickSound();
                
     }
-
+/*
     public void openStartGameOptions()
     {
         //enable respective panel
@@ -106,7 +115,6 @@ public class MainMenuController : MonoBehaviour {
         //Camera.main.GetComponent<Animator>().Play("BlurOn");
         
     }
-
     public void openOptions_Game()
     {
         //enable respective panel
@@ -162,7 +170,6 @@ public class MainMenuController : MonoBehaviour {
         playClickSound();
 
     }
-
     public void openContinue_Load()
     {
         //enable respective panel
@@ -180,7 +187,6 @@ public class MainMenuController : MonoBehaviour {
         playClickSound();
 
     }
-
     public void newGame()
     {
         if (!string.IsNullOrEmpty(newGameSceneName))
@@ -233,6 +239,7 @@ public class MainMenuController : MonoBehaviour {
 
 
     #endregion
+    */
     public void go_play()
     {
         //height
@@ -293,14 +300,18 @@ public class MainMenuController : MonoBehaviour {
         {
             stak.SetActive(false);
             anim.Play("openSettings");
+            camera.GetComponent<RotateStak>().enabled = false;
+            anim.Play("cu_be");
+
         }
         else
         {
             anim.Play("closeSettings");
             stak.SetActive(true);
+            camera.GetComponent<RotateStak>().enabled = true;
         }
-        
-        
+
+
     }
     public void BackToStart()
     {

@@ -31,7 +31,6 @@ public class CubeBehavior : MonoBehaviour {
         {
             endRotation.transform.Rotate(Vector3.left, -90, Space.World);
         }
-
         this.transform.rotation = Quaternion.Lerp(this.transform.rotation, endRotation.transform.rotation, Time.deltaTime * speed);
     }
 }
