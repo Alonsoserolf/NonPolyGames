@@ -46,14 +46,14 @@ public class RotateStak : MonoBehaviour {
         {
             // Rotation of the camera is based on mouse coordinates
             //Rotation of the camera is based on mouse coordinates
-            if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+            if (Input.GetAxis("Mouse X") != 0 /*|| Input.GetAxis("Mouse Y") != 0*/)
             {
                 _LocalRotation.x += Input.GetAxis("Mouse X") * MouseSensitivity;
-                _LocalRotation.y -= Input.GetAxis("Mouse Y") * .15f;
+               // _LocalRotation.y -= Input.GetAxis("Mouse Y") * .15f;
 
                 //Clamp the y rotation to horizon and not flipping over at the top
-                int max= (stcb.transform.childCount % 2 == 0) ? stcb.transform.childCount - 2 : stcb.transform.childCount - 3;
-                _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, 2f,max);
+                //int max= (stcb.transform.childCount % 2 == 0) ? stcb.transform.childCount - 2 : stcb.transform.childCount - 3;
+               // _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, 2f,0/*max*/);
             }
        
 
