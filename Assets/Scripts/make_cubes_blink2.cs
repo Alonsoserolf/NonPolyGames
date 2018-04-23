@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class make_cubes_blink2 : MonoBehaviour {
-    public  GameObject current_cube1;
+    public static GameObject current_cube1;
     public static GameObject current_cube2;
     public static GameObject current_cube3;
     private static int player_or_user = 0;
@@ -435,6 +435,9 @@ public class make_cubes_blink2 : MonoBehaviour {
 
         if (player_or_user == 1)
         {
+            current_cube1 = current_cube1.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
+            current_cube2 = current_cube2.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
+            current_cube3 = current_cube3.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
             while (x == 0)
             {
                 current_cube1.GetComponent<Renderer>().material.color = Color.magenta;
@@ -451,6 +454,10 @@ public class make_cubes_blink2 : MonoBehaviour {
         }
         if (player_or_user == 2)
         {
+
+            current_cube1 = current_cube1.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+            current_cube2 = current_cube2.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+            current_cube3 = current_cube3.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
             while (x == 0)
             {
                 current_cube1.GetComponent<Renderer>().material.color = Color.magenta;
