@@ -11,7 +11,7 @@ public class tictac : MonoBehaviour
     public static int[] level1;
     public static int[] level2;
     public static int[] level3;
-    private static int player_turn;
+    public static int player_turn;
     public static int mode_choice = 1;
     public Text player_turn_text;
     public Text player_won_text;
@@ -288,13 +288,18 @@ public class tictac : MonoBehaviour
                     level3[0] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -307,13 +312,18 @@ public class tictac : MonoBehaviour
                     level3[1] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -326,13 +336,18 @@ public class tictac : MonoBehaviour
                     level3[2] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -345,13 +360,18 @@ public class tictac : MonoBehaviour
                     level3[3] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -364,13 +384,18 @@ public class tictac : MonoBehaviour
                     level3[4] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -383,13 +408,18 @@ public class tictac : MonoBehaviour
                     level3[5] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -402,13 +432,18 @@ public class tictac : MonoBehaviour
                     level3[6] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -421,13 +456,18 @@ public class tictac : MonoBehaviour
                     level3[7] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -440,13 +480,18 @@ public class tictac : MonoBehaviour
                     level3[8] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -459,13 +504,18 @@ public class tictac : MonoBehaviour
                     level2[0] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -478,13 +528,18 @@ public class tictac : MonoBehaviour
                     level2[1] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -497,13 +552,18 @@ public class tictac : MonoBehaviour
                     level2[2] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -516,13 +576,18 @@ public class tictac : MonoBehaviour
                     level2[3] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -535,13 +600,18 @@ public class tictac : MonoBehaviour
                     level2[4] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -554,13 +624,18 @@ public class tictac : MonoBehaviour
                     level2[5] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -573,13 +648,18 @@ public class tictac : MonoBehaviour
                     level2[6] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -592,13 +672,18 @@ public class tictac : MonoBehaviour
                     level2[7] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -611,13 +696,18 @@ public class tictac : MonoBehaviour
                     level2[8] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -630,13 +720,18 @@ public class tictac : MonoBehaviour
                     level1[0] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -649,13 +744,18 @@ public class tictac : MonoBehaviour
                     level1[1] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -668,13 +768,18 @@ public class tictac : MonoBehaviour
                     level1[2] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -687,13 +792,18 @@ public class tictac : MonoBehaviour
                     level1[3] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -706,13 +816,18 @@ public class tictac : MonoBehaviour
                     level1[4] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -725,13 +840,18 @@ public class tictac : MonoBehaviour
                     level1[5] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -744,13 +864,18 @@ public class tictac : MonoBehaviour
                     level1[6] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -763,13 +888,18 @@ public class tictac : MonoBehaviour
                     level1[7] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
 
@@ -782,13 +912,18 @@ public class tictac : MonoBehaviour
                     level1[8] = 2;
                 if (player_turn == 0)
                 {
-
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 1;
                 }
                 else
                 {
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = true;
+                    gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.red;
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    gameObject.GetComponent<tictac_hover2>().alreadyEnabled = true;
                     player_turn = 0;
                 }
             }
