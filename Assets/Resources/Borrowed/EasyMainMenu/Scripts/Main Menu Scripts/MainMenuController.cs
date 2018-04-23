@@ -27,20 +27,23 @@ public class MainMenuController : MonoBehaviour {
     private bool IsOn = false;
 
     [Header("Options Panel")]
+    public GameObject _info;
+    public GameObject _help;
+    public GameObject _controls;
     public GameObject MainOptionsPanel;
     public GameObject StartGameOptionsPanel;
     public GameObject GamePanel;
     public GameObject ControlsPanel;
     public GameObject GfxPanel;
     public GameObject LoadGamePanel;
-    private int lastClicked, howTo=0;
+    private int lastClicked, howTo=0, inGameSettingsToggle=0;
 
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
 
         //new key
-        PlayerPrefs.SetInt("quickSaveSlot", quickSaveSlotID);
+        //PlayerPrefs.SetInt("quickSaveSlot", quickSaveSlotID);
 
         canvas = GameObject.FindWithTag("Canvas");
         stak = GameObject.FindWithTag("Stak");
@@ -48,20 +51,31 @@ public class MainMenuController : MonoBehaviour {
     }
     public void ExpandHowTo()
     {
-
         howTo = (howTo == 0) ? 1 : 0;
 
         if (howTo == 0) anim.Play("expndHowTo");
         else anim.Play("expndHowTo_on");
+    }
 
-    }
-    public void ExpandHowTo_on()
-    {
-        print("lek");
-        anim.Play("expndHowTo_on");
-    }
     #region Open Different panels
-
+    public void OpenInfo()
+    {
+        _help.SetActive(false);
+        _controls.SetActive(false);
+        _info.SetActive(true);
+    }
+    public void OpenHelp()
+    {
+        _controls.SetActive(false);
+        _info.SetActive(false);
+        _help.SetActive(true);
+    }
+    public void OpenControls()
+    {
+        _help.SetActive(false);
+        _info.SetActive(false);
+        _controls.SetActive(true);
+    }
     public void openOptions()
     {
         //enable respective panel
@@ -273,13 +287,25 @@ public class MainMenuController : MonoBehaviour {
     }
     public void OpenInGameSettings()
     {
+        inGameSettingsToggle = ( inGameSettingsToggle == 0) ? 1 : 0;
 
-        anim.Play("openSettings");
+        if (inGameSettingsToggle == 1)
+        {
+            stak.SetActive(false);
+            anim.Play("openSettings");
+        }
+        else
+        {
+            anim.Play("closeSettings");
+            stak.SetActive(true);
+        }
+        
+        
     }
-    public void CloseInGameSettings()
+    public void BackToStart()
     {
-        anim.SetFloat("openSettings", -1);
-        anim.Play("openSettings");
-
+        SceneManager.LoadScene("InstantInsanity");
+        anim.Play("bugGAMESCROLL");
+        print("hel");
     }
 }

@@ -396,8 +396,6 @@ public class TheStak : MonoBehaviour
 
         for (int i = 0; i < cubeNum; i++)
         {
-
-
             ++frontFacesCounter[numeratedFaces[i][fbCheck[i][0]]];
             ++backFacesCounter[numeratedFaces[i][fbCheck[i][1]]];
             ++topFacesCounter[numeratedFaces[i][tbCheck[i][0]]];
