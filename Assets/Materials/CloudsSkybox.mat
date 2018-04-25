@@ -98,6 +98,7 @@ Material:
     - _Parallax: 0.02
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _Rotation: 637.26794
 =======
     - _Rotation: 1140.3817
@@ -108,6 +109,9 @@ Material:
 =======
     - _Rotation: 25.359776
 >>>>>>> cdc1d23e53c694c402bfe58485a9f8b0ece352b5
+>>>>>>> master
+=======
+    - _Rotation: 0
 >>>>>>> master
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
