@@ -10,8 +10,6 @@ public class CubeBehavior : MonoBehaviour {
     {
         endRotation = new GameObject();
     }
-
-    
   
 
     private void Update()

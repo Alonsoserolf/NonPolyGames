@@ -97,7 +97,11 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _Rotation: 637.26794
+=======
+    - _Rotation: 1140.3817
+>>>>>>> master
 =======
 <<<<<<< HEAD
     - _Rotation: 275.58905
