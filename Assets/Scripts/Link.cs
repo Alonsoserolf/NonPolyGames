@@ -15,6 +15,6 @@ public class Link : MonoBehaviour {
 		
 	}
 	public void GoToLink(){
-		Application.OpenURL("http://google.com");
+		Application.OpenURL("http://npgames.herokuapp.com");
 	}
 }
