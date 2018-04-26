@@ -1243,6 +1243,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &805545676 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1508751462356526, guid: 04ff270b6e418417bbb5d2ce1ac7aea2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1686132712}
+--- !u!114 &805545680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805545676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 317307205}
+          m_MethodName: PlayOnSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &912494834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,6 +1579,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994467453}
+--- !u!114 &1077087112 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114201075111177558, guid: 2cbead582628249a5bca61b406316520,
+    type: 2}
+  m_PrefabInternal: {fileID: 1733873553}
+  m_Script: {fileID: 11500000, guid: b9d0c72fbd0114d9993573f9bd477f6f, type: 3}
 --- !u!1 &1080363381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2821,6 +2862,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114031148911436956, guid: 04ff270b6e418417bbb5d2ce1ac7aea2,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1077087112}
+    - target: {fileID: 114031148911436956, guid: 04ff270b6e418417bbb5d2ce1ac7aea2,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToLink
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04ff270b6e418417bbb5d2ce1ac7aea2, type: 2}
   m_IsPrefabParent: 0
@@ -2868,6 +2919,48 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   isLoading: 0
   buttonSelected: 0
+--- !u!1001 &1733873553
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4318210530432164, guid: 2cbead582628249a5bca61b406316520, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 907.8657
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318210530432164, guid: 2cbead582628249a5bca61b406316520, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 481.8249
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318210530432164, guid: 2cbead582628249a5bca61b406316520, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -222.16238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318210530432164, guid: 2cbead582628249a5bca61b406316520, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318210530432164, guid: 2cbead582628249a5bca61b406316520, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318210530432164, guid: 2cbead582628249a5bca61b406316520, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318210530432164, guid: 2cbead582628249a5bca61b406316520, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318210530432164, guid: 2cbead582628249a5bca61b406316520, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2cbead582628249a5bca61b406316520, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1740013411
 GameObject:
   m_ObjectHideFlags: 0
