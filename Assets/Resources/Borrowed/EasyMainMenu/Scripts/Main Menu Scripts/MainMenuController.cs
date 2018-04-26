@@ -39,8 +39,6 @@ public class MainMenuController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
-        //new key
-        //PlayerPrefs.SetInt("quickSaveSlot", quickSaveSlotID);
         canvas = GameObject.FindWithTag("Canvas");
         stak = GameObject.FindWithTag("Stak");
         camera = GameObject.FindWithTag("MainCamera");
@@ -60,7 +58,6 @@ public class MainMenuController : MonoBehaviour {
         _controls.SetActive(false);
         _ShowCube.SetActive(true);
         _info.SetActive(true);
-        anim.SetBool("SHWANS", true);
 
 
     }
@@ -78,7 +75,6 @@ public class MainMenuController : MonoBehaviour {
         _info.SetActive(false);
         _ShowCube.SetActive(false);
         _controls.SetActive(true);
-        anim.SetBool("SHWANS", true);
 
 
     }
@@ -109,7 +105,7 @@ public class MainMenuController : MonoBehaviour {
             makeChild.transform.parent = GameObject.Find("Stack").transform;
         }
 
-
+        anim.SetBool("startt", true);
         //canvas.SetActive(false);
         anim.SetFloat("Start",1);
        // anim.Play("II_Start_Anim");
@@ -117,6 +113,7 @@ public class MainMenuController : MonoBehaviour {
         camera.GetComponent<RotateStak>().enabled = true;
         //set cube rotation on
         stak.GetComponent<TheStak>().enabled = true;
+        //anim.SetBool("startt", false);
 
     }
 

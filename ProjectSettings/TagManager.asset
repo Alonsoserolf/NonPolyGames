@@ -48,6 +48,7 @@ TagManager:
   - menuRotationsHalf
   - wasd
   - _Controlss
+  - time
   layers:
   - Default
   - TransparentFX
