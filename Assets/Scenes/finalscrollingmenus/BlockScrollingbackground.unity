@@ -112,6 +112,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &41678748
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4430311001632344, guid: e04d5b549c98049068c552c838da3750, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -176.52234
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430311001632344, guid: e04d5b549c98049068c552c838da3750, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 132.06152
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430311001632344, guid: e04d5b549c98049068c552c838da3750, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -233.32733
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430311001632344, guid: e04d5b549c98049068c552c838da3750, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430311001632344, guid: e04d5b549c98049068c552c838da3750, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430311001632344, guid: e04d5b549c98049068c552c838da3750, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430311001632344, guid: e04d5b549c98049068c552c838da3750, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430311001632344, guid: e04d5b549c98049068c552c838da3750, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 82759140594463838, guid: e04d5b549c98049068c552c838da3750,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 98fa9c8ee9bca44ae9f2d07bb5f49cd4, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e04d5b549c98049068c552c838da3750, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &129486295
 GameObject:
   m_ObjectHideFlags: 0
