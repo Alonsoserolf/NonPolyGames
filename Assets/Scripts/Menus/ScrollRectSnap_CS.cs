@@ -61,7 +61,7 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 
 
 		//vertical scroll
-		panel.anchoredPosition = new Vector2 (410f,(startButton - 1) * -100);
+		panel.anchoredPosition = new Vector2 (400f,(startButton - 1) * -100);
 		//print (bttnDistance);
 
 		//Button btncenter = GameObject.FindGameObjectWithTag ("upButton").GetComponent<Button>();
