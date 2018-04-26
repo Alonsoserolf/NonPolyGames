@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/tictactoe/second level/secondlevel.unity
     guid: da51fe521129f3045b9acc8d62c90a05
   - enabled: 1
-    path: Assets/Scenes/tictactoe/user vs cpu/cpu vs user.unity
-    guid: 8af96adff3c016f4dbde9bc079e7ada5
-  - enabled: 1
     path: Assets/Scenes/tictactoe/cubes.unity
     guid: 592de7443cbc70546ac5df058ae1b90e
+  - enabled: 1
+    path: Assets/Scenes/tictactoe/user vs cpu/cpu vs user.unity
+    guid: 8af96adff3c016f4dbde9bc079e7ada5
