@@ -12,11 +12,8 @@ public class tictac_hover : MonoBehaviour {
     }
     private void OnMouseOver()
     {
-    if(tictac_cpu_mode.mode_choice == 0){
-            if (!alreadyEnabled)
-                hover.GetComponent<Renderer>().enabled = true;
-        }
-        
+        if (!alreadyEnabled)
+            hover.GetComponent<Renderer>().enabled = true;
 
 
     }

@@ -14,27 +14,23 @@ public class tictac_hover2 : MonoBehaviour {
     }
     private void OnMouseOver()
     {
-        if (tictac.mode_choice == 0)
-        {
-            if (!alreadyEnabled)
+        if (!alreadyEnabled) {
+
+
+            if (tictac.player_turn == 0)
             {
-
-
-                if (tictac.player_turn == 0)
-                {
-                    hover = hoverCopy.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
-                    hover.GetComponent<Renderer>().material.color = Color.blue;
-                }
-
-                else
-                {
-                    hover = hoverCopy.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
-                    hover.GetComponent<Renderer>().material.color = Color.red;
-                }
-                hover.GetComponent<Renderer>().enabled = true;
+                hover = hoverCopy.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
+                hover.GetComponent<Renderer>().material.color = Color.blue;
             }
 
+            else {
+                hover = hoverCopy.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
+                hover.GetComponent<Renderer>().material.color = Color.red;
+            }
+                hover.GetComponent<Renderer>().enabled = true;
         }
+
+
     }
     private void OnMouseExit()
     {
