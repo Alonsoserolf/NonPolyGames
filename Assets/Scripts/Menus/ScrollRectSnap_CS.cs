@@ -61,7 +61,7 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 
 
 		//vertical scroll
-		panel.anchoredPosition = new Vector2 (410f,(startButton - 1) * -100);
+		panel.anchoredPosition = new Vector2 (400f,(startButton - 1) * -100);
 		//print (bttnDistance);
 
 		//Button btncenter = GameObject.FindGameObjectWithTag ("upButton").GetComponent<Button>();
@@ -81,7 +81,7 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 			//distance [i] = Mathf.Abs (center.transform.position.x - bttn [i].transform.position.x);
 			distance[i] = Mathf.Abs(distReposition[i]);
 
-			if(distReposition[i]> 400){
+			if(distReposition[i]> 550){
 				float curX = bttn [i].GetComponent<RectTransform> ().anchoredPosition.x;
 				float curY = bttn [i].GetComponent<RectTransform> ().anchoredPosition.y;
 
@@ -93,7 +93,7 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 
 				bttn [i].GetComponent<RectTransform> ().anchoredPosition = newAnchoredPos;
 			}
-			if(distReposition[i] < -400){
+			if(distReposition[i] < -550){
 				float curX = bttn [i].GetComponent<RectTransform> ().anchoredPosition.x;
 				float curY = bttn [i].GetComponent<RectTransform> ().anchoredPosition.y;
 				//vertical scroll
@@ -141,9 +141,9 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 		if (minButtonNum == 3) {
 			SwitchToImage ("BrickImg");
 		}
-		if (minButtonNum == 4) {
-			SwitchToImage ("snake");
-		}
+		//if (minButtonNum == 4) {
+		//	SwitchToImage ("snake");
+		//}
 		//if (minButtonNum == 5) {
 		//	SwitchToImage ("puzzlebackground");
 		//}
@@ -161,7 +161,7 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.DownArrow)){
 			targetNearestButton = false;
 			minButtonNum = minButtonNum + 1;
-			if(minButtonNum == 5){
+			if(minButtonNum == 4){
 				minButtonNum = 0;
 			}
 			Debug.Log("Hello Up:" + minButtonNum);
@@ -170,7 +170,7 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 			targetNearestButton = false;
 			minButtonNum = minButtonNum - 1;
 			if(minButtonNum == -1){
-				minButtonNum = 4;
+				minButtonNum = 3;
 			}
 			Debug.Log("Hello Up:" + minButtonNum);
 		}
@@ -199,9 +199,9 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 			if (minButtonNum == 3) {
 				MenuLoad.OnBlock ();
 			}
-			if (minButtonNum == 4) {
-				MenuLoad.OnSnake ();
-			}
+			//if (minButtonNum == 4) {
+			//	MenuLoad.OnSnake ();
+			//}
 
 		}
 
@@ -220,7 +220,7 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 	public void OnDownButton(){
 		targetNearestButton = false;
 		minButtonNum = minButtonNum + 1;
-		if(minButtonNum == 5){
+		if(minButtonNum == 4){
 			minButtonNum = 0;
 		}
 		Debug.Log("Hello Up:" + minButtonNum);
@@ -295,14 +295,14 @@ public class ScrollRectSnap_CS : MonoBehaviour {
 		targetNearestButton = false;
 		minButtonNum = minButtonNum - 1;
 		if(minButtonNum == -1){
-			minButtonNum = 4;
+			minButtonNum = 3;
 		}
 		Debug.Log("Hello Up:" + minButtonNum);
 
 		//return minButNum;
 	}
 	public void buttonIntereact(){
-		for(int i = 0;i<=4; i++){
+		for(int i = 0;i<=3; i++){
 			
 			bttn [i].interactable = false;
 			var colorblock= bttn [i].colors;
