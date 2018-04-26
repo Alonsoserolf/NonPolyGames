@@ -14,7 +14,11 @@ public class TheStak : MonoBehaviour
     public GameObject[] ansB = new GameObject[13];
     public GameObject[] ansL = new GameObject[13];
     public GameObject[] ansR = new GameObject[13];
-
+    public GameObject time;
+        public GameObject timeWin;
+    public GameObject timeLose;
+    private Text l;
+    Animator anim;
     public int[][] numeratedFaces;
     private int[][] fbCheck;
     private int[][] tbCheck;
@@ -22,6 +26,7 @@ public class TheStak : MonoBehaviour
     public LinkedList<int> leftRight = new LinkedList<int>();
 
     GameObject prevCube;
+    
     private GameObject ansS;
     private int yPos;
     public Transform cubePrefab;
@@ -32,9 +37,10 @@ public class TheStak : MonoBehaviour
     private void Start()
     {
 
-        GameObject stak = GameObject.FindWithTag("Stak");
+          GameObject stak = GameObject.FindWithTag("Stak");
          ansS = GameObject.Find("Mmenu");
-
+         anim = GameObject.FindWithTag("Canvas").GetComponent<Animator>();
+        
         // stak.GetComponent<TheStak>().enabled = true;
         //size of stack
         cubeNum = (transform.childCount);
@@ -413,8 +419,21 @@ public class TheStak : MonoBehaviour
         for (int i = 1; i <= cubeNum; i++)
         {
 
-            if (frontFacesCounter[i] == 1 && backFacesCounter[i] == 1 && topFacesCounter[i] == 1 && bottomFacesCounter[i] == 1) print(".");
-            else print("wrong");
+            if (frontFacesCounter[i] == 1 && backFacesCounter[i] == 1 && topFacesCounter[i] == 1 && bottomFacesCounter[i] == 1)
+            {
+                l = GameObject.FindWithTag("time").GetComponent<Text>();
+                timeWin.GetComponent<Text>().text = l.text;
+                print(l.text);
+                anim.Play("winn");
+            }
+            else
+            {
+                l = GameObject.FindWithTag("time").GetComponent<Text>();
+                timeLose.GetComponent<Text>().text = l.text;
+                anim.Play("losse");
+                print(l.text);
+
+            }
         }
     }
 

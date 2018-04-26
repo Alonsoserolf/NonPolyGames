@@ -111,7 +111,8 @@ public class MainMenuController : MonoBehaviour {
 
 
         //canvas.SetActive(false);
-        anim.Play("II_Start_Anim");
+        anim.SetFloat("Start",1);
+       // anim.Play("II_Start_Anim");
         //set camerascript on
         camera.GetComponent<RotateStak>().enabled = true;
         //set cube rotation on
@@ -144,7 +145,7 @@ public class MainMenuController : MonoBehaviour {
     }
     public void BackToScrollingMenu()
     {
-        SceneManager.LoadScene("ScrollingMenu");
+        SceneManager.LoadScene("ScrollingMainMenu");
         //print("Restart SCENE");
     }
 }

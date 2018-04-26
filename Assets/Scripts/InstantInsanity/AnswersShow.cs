@@ -102,12 +102,14 @@ public class AnswersShow : MonoBehaviour {
 
 
 
-            anim.Play("ShowAnswer");
-
+           // anim.SetBool("Show",true);
+            anim.Play("openSettings");
         }
         else
         {
-            anim.SetBool("SHWANS", true);
+        //    anim.SetBool("Show", false);
+            anim.Play("closeSettings");
+
         }
     }
 
