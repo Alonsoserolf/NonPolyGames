@@ -1256,7 +1256,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 227318681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 799.2801, y: 469.77502, z: 0}
+  m_LocalPosition: {x: 462.0678, y: 392.7575, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 652497917}
@@ -1778,7 +1778,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 366714371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04232788, y: 367.76, z: 0}
+  m_LocalPosition: {x: 1.3256683, y: 307.70358, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1622246853}
@@ -2327,7 +2327,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 588165378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2798462, y: 424.47006, z: 0}
+  m_LocalPosition: {x: -0.0493927, y: 355.52106, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1622246853}
@@ -3461,6 +3461,18 @@ Prefab:
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayOnSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 114550627387990798, guid: aa12d20c921444b3485c284c01455a37,
+        type: 2}
+      propertyPath: m_Text
+      value: Left click any cell to place your symbol there. Match 3 in a row in any
+        direction to win.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114168717530764664, guid: aa12d20c921444b3485c284c01455a37,
+        type: 2}
+      propertyPath: m_Text
+      value: Hold the right mouse button and drag to rotate the camera. Scroll in
+        and out using the mouse wheel.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa12d20c921444b3485c284c01455a37, type: 2}
@@ -6604,7 +6616,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1622246849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 880, y: 495, z: 0}
+  m_LocalPosition: {x: 508.5, y: 413.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 366714375}
@@ -6922,7 +6934,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1749799260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4376526, y: -398.97, z: 0}
+  m_LocalPosition: {x: -0.0070762634, y: -333.281, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1622246853}
@@ -7038,7 +7050,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1791139445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -799.4, y: -469.775, z: 0}
+  m_LocalPosition: {x: -461.50385, y: -392.7575, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 862972998}
@@ -8251,7 +8263,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2041090938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -799.4, y: 469.77502, z: 0}
+  m_LocalPosition: {x: -461.50385, y: 392.7575, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 590114006}
