@@ -14,9 +14,6 @@ public class MainMenuController : MonoBehaviour {
 
     Animator anim;
 
-    public string newGameSceneName;
-    public int quickSaveSlotID;
-
     private GameObject canvas;
     private GameObject stak;
     private GameObject camera;
@@ -42,10 +39,8 @@ public class MainMenuController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
-
         //new key
         //PlayerPrefs.SetInt("quickSaveSlot", quickSaveSlotID);
-
         canvas = GameObject.FindWithTag("Canvas");
         stak = GameObject.FindWithTag("Stak");
         camera = GameObject.FindWithTag("MainCamera");
@@ -54,7 +49,7 @@ public class MainMenuController : MonoBehaviour {
     {
         howTo = (howTo == 0) ? 1 : 0;
 
-        if (howTo == 0) anim.Play("expndHowTo");
+        if (howTo == 0) anim.Play("expndHowTo_off");
         else anim.Play("expndHowTo_on");
     }
 
@@ -65,6 +60,8 @@ public class MainMenuController : MonoBehaviour {
         _controls.SetActive(false);
         _ShowCube.SetActive(true);
         _info.SetActive(true);
+        anim.SetBool("SHWANS", true);
+
 
     }
     public void OpenHelp()
@@ -72,7 +69,6 @@ public class MainMenuController : MonoBehaviour {
         _controls.SetActive(false);
         _info.SetActive(false);
         _ShowCube.SetActive(false);
-
         _help.SetActive(true);
 
     }
@@ -81,182 +77,12 @@ public class MainMenuController : MonoBehaviour {
         _help.SetActive(false);
         _info.SetActive(false);
         _ShowCube.SetActive(false);
-
         _controls.SetActive(true);
+        anim.SetBool("SHWANS", true);
 
-    }
-    public void openOptions()
-    {
-        //enable respective panel
-        MainOptionsPanel.SetActive(true);
-       // StartGameOptionsPanel.SetActive(false);
-
-        //play anim for opening main options panel
-        anim.Play("buttonTweenAnims_on");
-
-        //play click sfx
-        //playClickSound();
-               
-    }
-/*
-    public void openStartGameOptions()
-    {
-        //enable respective panel
-        MainOptionsPanel.SetActive(false);
-        StartGameOptionsPanel.SetActive(true);
-
-        //play anim for opening main options panel
-        anim.Play("buttonTweenAnims_on");
-
-        //play click sfx
-        playClickSound();
-
-        //enable BLUR
-        //Camera.main.GetComponent<Animator>().Play("BlurOn");
-        
-    }
-    public void openOptions_Game()
-    {
-        //enable respective panel
-        GamePanel.SetActive(true);
-        ControlsPanel.SetActive(false);
-        GfxPanel.SetActive(false);
-        LoadGamePanel.SetActive(false);
-
-        //play anim for opening game options panel
-       //anim.Play("buttonTweenAnims_on");
-
-        anim.Play("OptTweenAnim_off");
-       // anim.Play("OptTweenAnim_on");
-
-        // anim.Play("OptTweenAnim_on");
-
-        //play click sfx
-        playClickSound();
-
-    }
-    public void openOptions_Controls()
-    {
-        //enable respective panel
-        GamePanel.SetActive(false);
-        ControlsPanel.SetActive(true);
-        GfxPanel.SetActive(false);
-        LoadGamePanel.SetActive(false);
-
-        //play anim for opening game options panel
-        anim.Play("mainMControls");
-
-        lastClicked = 2;
-
-        //play click sfx
-        playClickSound();
-
-    }
-    public void openOptions_Gfx()
-    {
-        //enable respective panel
-        GamePanel.SetActive(false);
-        ControlsPanel.SetActive(false);
-        GfxPanel.SetActive(true);
-        LoadGamePanel.SetActive(false);
-
-        //play anim for opening game options panel
-        //anim.Play("OptTweenAnim_off");
-
-       // anim.Play("OptTweenAnim_on");
-
-
-        //play click sfx
-        playClickSound();
-
-    }
-    public void openContinue_Load()
-    {
-        //enable respective panel
-        GamePanel.SetActive(false);
-        ControlsPanel.SetActive(false);
-        GfxPanel.SetActive(false);
-        LoadGamePanel.SetActive(true);
-
-        //play anim for opening game options panel
-       // anim.Play("OptTweenAnim_off");
-       // anim.Play("OptTweenAnim_on");
-
-
-        //play click sfx
-        playClickSound();
-
-    }
-    public void newGame()
-    {
-        if (!string.IsNullOrEmpty(newGameSceneName))
-            SceneManager.LoadScene(newGameSceneName);
-        else
-            Debug.Log("Please write a scene name in the 'newGameSceneName' field of the Main Menu Script and don't forget to " +
-                "add that scene in the Build Settings!");
-    }
-    #endregion
-
-    #region Back Buttons
-
-    public void back_options()
-    {
-        //simply play anim for CLOSING main options panel
-        anim.Play("buttonTweenAnims_off");
-
-        //disable BLUR
-       // Camera.main.GetComponent<Animator>().Play("BlurOff");
-
-        //play click sfx
-        playClickSound();
-    }
-
-    public void back_options_panels()
-    {
-        //simply play anim for CLOSING main options panel
-        anim.Play("OptTweenAnim_on");
-        
-        //play click sfx
-        playClickSound();
 
     }
 
-    public void Quit()
-    {
-        Application.Quit();
-    }
-    #endregion
-
-    #region Sounds
-    public void playHoverClip()
-    {
-       
-    }
-
-    void playClickSound() {
-
-    }
-
-
-    #endregion
-    */
-    public void go_play()
-    {
-        //height
-        int tar = Int32.Parse(this.gameObject.transform.name);
-        selectedLevel = tar;
-        stackSize = GameObject.FindWithTag("II_MENU_STACK_SEL").GetComponent<Text>();
-        stackSize.text = selectedLevel.ToString();
-        for (int i = tar + 1; i < 12; i++)
-        {
-            cLvl[i].isOn = false;
-        }
-        for (int i = tar - 1; i >= 0; i--)
-        {
-            cLvl[i].isOn = true;
-        }
-
-    }
     public void Comence()
     {
 
@@ -292,6 +118,7 @@ public class MainMenuController : MonoBehaviour {
         stak.GetComponent<TheStak>().enabled = true;
 
     }
+
     public void OpenInGameSettings()
     {
         inGameSettingsToggle = ( inGameSettingsToggle == 0) ? 1 : 0;
@@ -301,8 +128,6 @@ public class MainMenuController : MonoBehaviour {
             stak.SetActive(false);
             anim.Play("openSettings");
             camera.GetComponent<RotateStak>().enabled = false;
-            anim.Play("cu_be");
-
         }
         else
         {
@@ -310,13 +135,16 @@ public class MainMenuController : MonoBehaviour {
             stak.SetActive(true);
             camera.GetComponent<RotateStak>().enabled = true;
         }
-
-
     }
+  
     public void BackToStart()
     {
         SceneManager.LoadScene("InstantInsanity");
-        anim.Play("bugGAMESCROLL");
-        print("hel");
+        //print("Restart SCENE");
+    }
+    public void BackToScrollingMenu()
+    {
+        SceneManager.LoadScene("ScrollingMenu");
+        //print("Restart SCENE");
     }
 }

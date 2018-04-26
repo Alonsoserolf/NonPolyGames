@@ -46,6 +46,8 @@ TagManager:
   - menuCubeNum
   - menuRotations
   - menuRotationsHalf
+  - wasd
+  - _Controlss
   layers:
   - Default
   - TransparentFX

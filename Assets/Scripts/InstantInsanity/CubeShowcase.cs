@@ -11,15 +11,15 @@ public class CubeShowcase : MonoBehaviour
     {
         canvas = GameObject.FindWithTag("Canvas");
         anim = canvas.GetComponent<Animator>();
-
-        anim.Play("cu_be");
+       // anim.Play("cu_be");
 
     }
 
 
     private void Update()
     {
-        
+                //anim.speed = 1f;
+
 
     }
 }
