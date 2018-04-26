@@ -8,7 +8,7 @@ public class control_camera : MonoBehaviour
     private Transform _XForm_Parent;
 
     private Vector3 _LocalRotation;
-    private float _CameraDistance = 15f;
+    private float _CameraDistance = 14f;
 
     public float MouseSensitivity = 4f;
     public float ScrollSensitivity = 2f;
