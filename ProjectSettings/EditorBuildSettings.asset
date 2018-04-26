@@ -4,6 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/tictactoe/second level/secondlevel.unity
@@ -14,3 +15,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tictactoe/user vs cpu/cpu vs user.unity
     guid: 8af96adff3c016f4dbde9bc079e7ada5
+=======
+  m_Scenes: []
+>>>>>>> master
