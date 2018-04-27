@@ -186,7 +186,8 @@ public class createStack : MonoBehaviour
             winText.text = "Tie";
         }
         restart.gameObject.SetActive(true);
-
+        take1.interactable = false;
+        take2.interactable = false;
     }
 
     void switchTurn()
@@ -205,7 +206,10 @@ public class createStack : MonoBehaviour
         playerTurn.text = "Player " + turn.ToString() + "'s turn";
 
     }
-
+    public void enableTakeButtons() {
+        take1.interactable = true;
+        take2.interactable = true;
+    }
 
 }
 
