@@ -6,7 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< HEAD
+    path: Assets/Scenes/finalscrollingmenus/ScrollingMainMenu.unity
+    guid: d217e190700494dc5851c9c6988b3395
+  - enabled: 1
     path: Assets/Resources/Borrowed/1_BlackHole/1_BlackHole.unity
     guid: 54d035b469419af41be355a233fdbc5e
   - enabled: 1
@@ -21,22 +23,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tictactoe/user vs cpu/cpu vs user.unity
     guid: 8af96adff3c016f4dbde9bc079e7ada5
-=======
-    path: Assets/Scenes/finalscrollingmenus/ScrollingMainMenu.unity
-    guid: d217e190700494dc5851c9c6988b3395
->>>>>>> ef11f59852c34323381e29dcc0ae91243c38593f
   - enabled: 1
-    path: Assets/Scenes/finalscrollingmenus/SnakeGameScrollingbackground.unity
-    guid: cb6507ee9a252413ab4793fe4e70d165
+    path: Assets/Scenes/tictactoe/cubes.unity
+    guid: 592de7443cbc70546ac5df058ae1b90e
   - enabled: 1
-    path: Assets/Scenes/finalscrollingmenus/SokabanScrollingbackground.unity
-    guid: 35635284871694b7293eee1d567a71f2
+    path: Assets/Example scene.unity
+    guid: 90ac54f8d33cc284c8d361837fa6cc2a
   - enabled: 1
-    path: Assets/Scenes/finalscrollingmenus/TicTacToeScrollingbackground.unity
-    guid: f0940ce78e5ee40b4be0dfe7f4aecab2
+    path: Assets/Scenes/InstantInsanity.unity
+    guid: 374c3f94b0ac76e40afcd4e6edb04413
   - enabled: 1
-    path: Assets/Scenes/finalscrollingmenus/BlockScrollingbackground.unity
-    guid: 063d0c41da6044e68a1c06f314891427
+    path: Assets/Scenes/Menus/InstantInsanityMenu.unity
+    guid: e01992c014b9a4398a615b9fa4cb68d3
   - enabled: 1
     path: Assets/Scenes/finalscrollingmenus/InstantScrollingbackground.unity
     guid: 51c94697fadf04c20ad90b5e7bd61e41
@@ -53,7 +51,6 @@ EditorBuildSettings:
     path: Assets/Scenes/sokaban/Level1.4.unity
     guid: 7caa3dc70f97845eb851313dd3f7c64f
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/Scenes/Menus/Lvl2.unity
     guid: 70c99a1b663f44635bcda0f6baaec77d
   - enabled: 1
@@ -68,24 +65,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main.unity
     guid: 829e1b4827b2a4044aa8333e70fd0042
-=======
-    path: Assets/Scenes/sokaban/World1.unity
-    guid: a9046f414ddeb48318fa608c47fc2a73
->>>>>>> ef11f59852c34323381e29dcc0ae91243c38593f
   - enabled: 1
-    path: Assets/Scenes/brick/brick.unity
-    guid: 595c9f0c90f79e5418f0927d61e50859
+    path: Assets/Scenes/Menus/MainMenu.unity
+    guid: 63dc247c783524673939707a23637593
   - enabled: 1
-    path: Assets/Scenes/InstantInsanity.unity
-    guid: 374c3f94b0ac76e40afcd4e6edb04413
-  - enabled: 1
-    path: Assets/Scenes/tictactoe/cubes.unity
-    guid: 592de7443cbc70546ac5df058ae1b90e
+    path: Assets/Scenes/Menus/menuUI.unity
+    guid: e924d6bb112dfeb48b44757a46934db4
   - enabled: 1
     path: Assets/Scenes/tictactoe/second level/secondlevel.unity
     guid: da51fe521129f3045b9acc8d62c90a05
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/Scenes/Menus/skyboxtest.unity
     guid: f928c70ab7a494a59971652764b94777
   - enabled: 1
@@ -121,7 +110,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sokaban/World1.unity
     guid: a9046f414ddeb48318fa608c47fc2a73
-=======
-    path: Assets/Scenes/tictactoe/user vs cpu/cpu vs user.unity
-    guid: 8af96adff3c016f4dbde9bc079e7ada5
->>>>>>> ef11f59852c34323381e29dcc0ae91243c38593f
