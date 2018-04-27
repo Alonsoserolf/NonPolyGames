@@ -123,7 +123,10 @@ public class MainMenuController : MonoBehaviour {
         //anim.SetBool("startt", false);
 
     }
+    public void disThis()
+    {
 
+    }
     public void OpenInGameSettings()
     {
         inGameSettingsToggle = ( inGameSettingsToggle == 0) ? 1 : 0;
