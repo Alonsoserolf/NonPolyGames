@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &3128448 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114137652346259412, guid: e169be78833bb4f0ba8a6eab3924f4fa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1621480116}
+  m_Script: {fileID: 11500000, guid: 9653c91bc84a44f7a90cf3cf1e2d0f8f, type: 3}
 --- !u!1 &125673102
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,6 +861,7 @@ GameObject:
   - component: {fileID: 875362186}
   - component: {fileID: 875362185}
   - component: {fileID: 875362184}
+  - component: {fileID: 875362187}
   m_Layer: 5
   m_Name: Level 2
   m_TagString: Untagged
@@ -977,6 +984,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 875362182}
+--- !u!114 &875362187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 875362182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3128448}
+          m_MethodName: PlayOnSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &918700257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,6 +1736,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1580343499}
+--- !u!1001 &1621480116
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4730204644035408, guid: e169be78833bb4f0ba8a6eab3924f4fa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 750.0702
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730204644035408, guid: e169be78833bb4f0ba8a6eab3924f4fa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 327.16098
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730204644035408, guid: e169be78833bb4f0ba8a6eab3924f4fa, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -239.65231
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730204644035408, guid: e169be78833bb4f0ba8a6eab3924f4fa, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730204644035408, guid: e169be78833bb4f0ba8a6eab3924f4fa, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730204644035408, guid: e169be78833bb4f0ba8a6eab3924f4fa, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730204644035408, guid: e169be78833bb4f0ba8a6eab3924f4fa, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730204644035408, guid: e169be78833bb4f0ba8a6eab3924f4fa, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e169be78833bb4f0ba8a6eab3924f4fa, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1827101448
 GameObject:
   m_ObjectHideFlags: 0

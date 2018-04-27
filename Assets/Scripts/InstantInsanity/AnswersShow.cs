@@ -20,6 +20,7 @@ public class AnswersShow : MonoBehaviour {
     private LinkedList<int> lr;
     private int[][] numeratedFaces;
     private int cubeNum;
+    private GameObject stak;
 
     // Use this for initialization
     void Start () {
@@ -34,7 +35,7 @@ public class AnswersShow : MonoBehaviour {
     }
     public void SetAnsShowParam()
     {
-        GameObject stak = GameObject.FindWithTag("Stak");
+        stak = GameObject.FindWithTag("Stak");
         fb = stak.GetComponent<TheStak>().frontBak;
         lr = stak.GetComponent<TheStak>().leftRight;
         cubeNum = stak.GetComponent<TheStak>().cubeNum;
@@ -104,6 +105,10 @@ public class AnswersShow : MonoBehaviour {
 
            // anim.SetBool("Show",true);
             anim.Play("ShowAnswer");
+
+            Destroy(GameObject.FindGameObjectWithTag("time"));
+           // GameObject.Find("Infinitytxt").active=true;
+
         }
         else
         {
