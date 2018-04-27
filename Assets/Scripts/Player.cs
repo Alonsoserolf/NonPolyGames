@@ -32,8 +32,13 @@ public class Player : MonoBehaviour {
 
 	public int currentLevel;
 
+	//-------------ivan lvl select-----------
+	protected string currLevel;
+	protected int worldIndex;
+	protected int levelIndex;
+	//-------------------------
 	void Start () {
-
+		currLevel = SceneManager.GetActiveScene().name;
 		// Finds all boxes in game.
 		boxes = GameObject.FindGameObjectsWithTag("GridBox");
 
@@ -119,6 +124,7 @@ public class Player : MonoBehaviour {
 						movesMade++;
 					}
 					if (destinationsMet == destinations.Length) {
+						UnlockLevels ();
 						StartCoroutine(nextLevel());
 					}
 				}
@@ -150,6 +156,7 @@ public class Player : MonoBehaviour {
 						movesMade++;
 					}
 					if (destinationsMet == destinations.Length) {
+						UnlockLevels ();
 						StartCoroutine(nextLevel());
 					}
 				}
@@ -181,6 +188,7 @@ public class Player : MonoBehaviour {
 						movesMade++;
 					}
 					if (destinationsMet == destinations.Length) {
+						UnlockLevels ();
 						StartCoroutine(nextLevel());
 					}
 				}
@@ -213,6 +221,7 @@ public class Player : MonoBehaviour {
 						movesMade++;
 					}
 					if (destinationsMet == destinations.Length) {
+						UnlockLevels ();
 						StartCoroutine(nextLevel());
 					}
 				}
@@ -261,6 +270,7 @@ public class Player : MonoBehaviour {
 						movesMade++;
 					}
 					if (destinationsMet == destinations.Length) {
+						UnlockLevels ();
 						StartCoroutine(nextLevel());
 					}
 				}
@@ -292,6 +302,7 @@ public class Player : MonoBehaviour {
 						movesMade++;
 					}
 					if (destinationsMet == destinations.Length) {
+						UnlockLevels ();
 						StartCoroutine(nextLevel());
 					}
 				}
@@ -323,6 +334,7 @@ public class Player : MonoBehaviour {
 						movesMade++;
 					}
 					if (destinationsMet == destinations.Length) {
+						UnlockLevels ();
 						StartCoroutine(nextLevel());
 					}
 				}
@@ -354,6 +366,7 @@ public class Player : MonoBehaviour {
 						movesMade++;
 					}
 					if (destinationsMet == destinations.Length) {
+						UnlockLevels ();
 						StartCoroutine(nextLevel());
 					}
 				}
@@ -411,13 +424,33 @@ public class Player : MonoBehaviour {
 	}
 
 	IEnumerator nextLevel() {
-		int totalLevels = SceneManager.sceneCount;
+		int totalLevels = 5;
 		string level = "Level1." + ++currentLevel;
+
 		anim.SetBool("Fade", true);
 		yield return new WaitUntil(()=>black.color.a == 1);
 		if (currentLevel > totalLevels) {
 			Application.Quit();
 		}
 		SceneManager.LoadScene(level);
+	}
+	protected void  UnlockLevels (){
+		//set the playerprefs value of next level to 1 to unlock
+		for(int i = 0; i < LockLevel.worlds; i++){
+			Debug.Log ("inside for loop destination point locklevelworlds, worldIndex " +worldIndex+" levelIndex "+levelIndex);
+			for(int j = 1; j < LockLevel.levels; j++){
+				Debug.Log ("inside 2nd loop destination point locklevel.levels");
+				if(currLevel == "Level"+(i+1).ToString() +"." +j.ToString()){
+					Debug.Log ("inside if loop destination point currlevel"+worldIndex+" "+levelIndex);
+					worldIndex  = (i+1);
+					levelIndex  = (j+1);
+					Debug.Log ("inside if afterloop destination point currlevel"+worldIndex+" "+levelIndex);
+					PlayerPrefs.SetInt("level"+worldIndex.ToString() +":" +levelIndex.ToString(),1);
+				}
+			}
+		}
+		//load the World1 level
+		//Application.LoadLevel("World1");
+		//SceneManager.LoadScene("World1");
 	}
 }
