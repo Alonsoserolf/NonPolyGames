@@ -49,6 +49,12 @@ TagManager:
   - wasd
   - _Controlss
   - time
+  - GridBlock
+  - GridRow
+  - GridColumn
+  - GridBox
+  - GridDestination
+  - BackgroundMusic
   layers:
   - Default
   - TransparentFX

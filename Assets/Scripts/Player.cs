@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
 	private int movesMade = 0;
 	public Text movesMadeText;
 	public Text axisText;
+	public Text boxesLeftText;
 
 	public Image black;
 	public Animator anim;
@@ -71,13 +72,10 @@ public class Player : MonoBehaviour {
 		}
 
 		transform.position = new Vector3(0, 0, 0);
-		setMovesMadeText();
 	}
 
 
 	void Update () {
-		setMovesMadeText();
-		setAxisText();
 		if (xAxis) {
 			bool hasMoved = false;
 			if (Input.GetKeyDown("up")) {
@@ -343,6 +341,12 @@ public class Player : MonoBehaviour {
 
 	}
 
+	void LateUpdate() {
+		setAxisText();
+		setBoxesLeftText();
+		setMovesMadeText();
+	}
+
 	public int getBlock(int X, int Y, int Z) {
 		for (int i = 0; i < boxes.Length; i++) {
 			int x = (int)boxes[i].transform.position.x;
@@ -360,11 +364,9 @@ public class Player : MonoBehaviour {
 	}
 
 
-//	IEnumerator showAxisText() {
-//		if (xAxis) {
-//			
-//		}
-//	}
+	void setBoxesLeftText() {
+		boxesLeftText.text = "Boxes left: " + (destinations.Length - destinationsMet);
+	}
 
 	void setAxisText() {
 		if (xAxis) {
