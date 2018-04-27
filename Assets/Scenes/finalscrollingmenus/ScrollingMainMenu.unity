@@ -3715,7 +3715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64, y: 248.25}
+  m_AnchoredPosition: {x: 197.77039, y: 251.5}
   m_SizeDelta: {x: 85.3, y: 91.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &328779692
@@ -4159,7 +4159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -233, y: 264}
+  m_AnchoredPosition: {x: -149, y: 267.25}
   m_SizeDelta: {x: 555.6, y: 59.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &507540417
@@ -4227,7 +4227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1031.1, y: 42}
+  m_AnchoredPosition: {x: -937.0534, y: 42.136124}
   m_SizeDelta: {x: 303, y: 202}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541983937
@@ -4412,7 +4412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1068.3, y: -133.6}
+  m_AnchoredPosition: {x: -1017, y: -134}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &674067052
@@ -4639,7 +4639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -282}
+  m_AnchoredPosition: {x: 401.2, y: -277.1}
   m_SizeDelta: {x: 190, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &741546053
@@ -8263,7 +8263,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 796354213}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &796354215
 Behaviour:
   m_ObjectHideFlags: 0
@@ -8946,6 +8946,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1225803315 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1735351422910446, guid: e04d5b549c98049068c552c838da3750,
+    type: 2}
+  m_PrefabInternal: {fileID: 1504755109}
+--- !u!114 &1225803316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1225803315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce612e0e9556479a93bcd951d0a8ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1288793700
 GameObject:
   m_ObjectHideFlags: 0
@@ -9473,7 +9489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: 6.199997}
+  m_AnchoredPosition: {x: 276.63696, y: 18.06525}
   m_SizeDelta: {x: 300, y: 452.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486566793
@@ -9551,6 +9567,10 @@ Prefab:
     - target: {fileID: 1735351422910446, guid: e04d5b549c98049068c552c838da3750, type: 2}
       propertyPath: m_Name
       value: AudioBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735351422910446, guid: e04d5b549c98049068c552c838da3750, type: 2}
+      propertyPath: m_TagString
+      value: MMBackgroundMusic
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e04d5b549c98049068c552c838da3750, type: 2}
@@ -9780,7 +9800,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: 282}
+  m_AnchoredPosition: {x: 401.2, y: 285}
   m_SizeDelta: {x: 190, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1635196426
@@ -13353,12 +13373,12 @@ Prefab:
     - target: {fileID: 224791670711314320, guid: 04ff270b6e418417bbb5d2ce1ac7aea2,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -477.09
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224791670711314320, guid: 04ff270b6e418417bbb5d2ce1ac7aea2,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -189.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224791670711314320, guid: 04ff270b6e418417bbb5d2ce1ac7aea2,
         type: 2}
@@ -13393,12 +13413,12 @@ Prefab:
     - target: {fileID: 224791670711314320, guid: 04ff270b6e418417bbb5d2ce1ac7aea2,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -477.09
+      value: -427.0564
       objectReference: {fileID: 0}
     - target: {fileID: 224791670711314320, guid: 04ff270b6e418417bbb5d2ce1ac7aea2,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -189.9
+      value: -187.01923
       objectReference: {fileID: 0}
     - target: {fileID: 224791670711314320, guid: 04ff270b6e418417bbb5d2ce1ac7aea2,
         type: 2}
