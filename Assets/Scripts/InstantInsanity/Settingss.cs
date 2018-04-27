@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Settingss : MonoBehaviour {
     public Toggle isAct;
     public bool isA=true;
+    public Text a;
+    public Text b;
 	// Use this for initialization
 	void Start () {
         isA = !isA;
@@ -17,5 +19,8 @@ public class Settingss : MonoBehaviour {
     public void SetCntrl()
     {
         isA = isAct.isOn;
+        a.text = (!isA) ? "Camera Controls" : "Cube Controls";
+        b.text = (isA) ? "Camera Controls" : "Cube Controls";
+
     }
 }

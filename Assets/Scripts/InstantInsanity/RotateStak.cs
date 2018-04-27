@@ -126,7 +126,7 @@ public class RotateStak : MonoBehaviour
         if (!isa)gameCNTRLS = new string[4] { "a", "d", "w", "s" };
         else gameCNTRLS = new string[4] { "left", "right", "up", "down" };
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetKey(KeyCode.Space))
         {
             CameraDisabled = false;
         }
