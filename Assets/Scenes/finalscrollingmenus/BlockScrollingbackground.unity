@@ -542,10 +542,9 @@ Prefab:
     - target: {fileID: 114550627387990798, guid: aa12d20c921444b3485c284c01455a37,
         type: 2}
       propertyPath: m_Text
-      value: Two players take turns taking either one or two bricks from the top of
-        a stack. Each brick has a value, try to get the most points. Click the Take
-        1 button to take one brick from the top of the stack and click the Take 2
-        to take two.
+      value: Two players take turns taking one or two bricks from the top of the stack.
+        Each brick has a value, try to get the most points. Click the Take 1 button
+        to take one brick from the top of the stack and  the Take 2 to take two.
       objectReference: {fileID: 0}
     - target: {fileID: 114768856384112788, guid: aa12d20c921444b3485c284c01455a37,
         type: 2}
