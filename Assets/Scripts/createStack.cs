@@ -65,11 +65,14 @@ public class createStack : MonoBehaviour
 
     private void updateVals()
     {
-        stackVals.text = "";
-        for (int x = bricksLeft - 1; x >= 0; x--)
+        stackVals.text = "Stack Values\n";
+        for (int x = 9; x >= 0; x--)
         {
             Console.WriteLine("brick val =" + vals[x]);
-            stackVals.text += vals[x].ToString() + "\n";
+            if (x < bricksLeft)
+                stackVals.text += vals[x].ToString() + "\n";
+            else
+                stackVals.text += "\n";
         }
 
     }

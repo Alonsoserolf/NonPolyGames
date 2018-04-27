@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44659358, g: 0.49642974, b: 0.574825, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -542,8 +542,10 @@ Prefab:
     - target: {fileID: 114550627387990798, guid: aa12d20c921444b3485c284c01455a37,
         type: 2}
       propertyPath: m_Text
-      value: Click left button in order to select the buttonof take 1 or take 2 you
-        wish to use when it is your turn
+      value: Two players take turns taking either one or two bricks from the top of
+        a stack. Each brick has a value, try to get the most points. Click the Take
+        1 button to take one brick from the top of the stack and click the Take 2
+        to take two.
       objectReference: {fileID: 0}
     - target: {fileID: 114768856384112788, guid: aa12d20c921444b3485c284c01455a37,
         type: 2}
@@ -559,6 +561,12 @@ Prefab:
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayOnSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 114168717530764664, guid: aa12d20c921444b3485c284c01455a37,
+        type: 2}
+      propertyPath: m_Text
+      value: Hold the right mouse button and drag to rotate the camera.  Use the scroll
+        wheel to zoom in and out.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa12d20c921444b3485c284c01455a37, type: 2}
@@ -650,7 +658,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 595703303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 880, y: 495, z: 0}
+  m_LocalPosition: {x: 551, y: 339, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 317738337}
