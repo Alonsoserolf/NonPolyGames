@@ -658,7 +658,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 595703303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 551, y: 339, z: 0}
+  m_LocalPosition: {x: 545.5, y: 339, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 317738337}
@@ -1345,7 +1345,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Block Game Menu
+  m_Text: Brick Game Menu
 --- !u!222 &1558188285
 CanvasRenderer:
   m_ObjectHideFlags: 0
