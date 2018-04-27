@@ -9,6 +9,7 @@ public class TheStak : MonoBehaviour
     private Dictionary<string, int[]> cubeRotations;
     private GameObject[][] theStak;
     public Material[] skins = new Material[12];
+    public Material[] skins2 = new Material[12];
     public Sprite[] spriteList= new Sprite[13];
     public GameObject[] ansF = new GameObject[13];
     public GameObject[] ansB = new GameObject[13];
@@ -28,16 +29,20 @@ public class TheStak : MonoBehaviour
     GameObject prevCube;
     
     private GameObject ansS;
+    private GameObject stak;
     private int yPos;
     public Transform cubePrefab;
     public int cubeNum;
     int[] colrs;
+    
 
     //Use this for initialization
     private void Start()
     {
-
-          GameObject stak = GameObject.FindWithTag("Stak");
+         Random rnd_skin_picker = new Random();
+         int rn= RandomNumber(0, 2);
+        print(rn);
+         stak = GameObject.FindWithTag("Stak");
          ansS = GameObject.Find("Mmenu");
          anim = GameObject.FindWithTag("Canvas").GetComponent<Animator>();
         
@@ -74,7 +79,8 @@ public class TheStak : MonoBehaviour
                 //'randomly' assign numbers to the array  
                 numeratedFaces[i][j] = (int)(1 + (Mathf.Floor((((i * 6) + j)) */* 1.3657f*/Mathf.PI) % cubeNum));
                 //apply skins to cube size
-                theStak[i][j].GetComponent<Renderer>().material = skins[numeratedFaces[i][j]];
+
+                theStak[i][j].GetComponent<Renderer>().material = (rn==0)?skins[numeratedFaces[i][j]]: skins2[numeratedFaces[i][j]];
             }
 
         }
@@ -84,7 +90,11 @@ public class TheStak : MonoBehaviour
         ansS.GetComponent<AnswersShow>().SetAnsShowParam();
     }
 
-
+    private int RandomNumber(int min, int max)
+{
+Random random = new Random();
+return Random.Range(min, max);
+}
 
     private static Dictionary<string, int[]> FillInCubeRotations()
     {
@@ -425,6 +435,7 @@ public class TheStak : MonoBehaviour
                 timeWin.GetComponent<Text>().text = l.text;
                 print(l.text);
                 anim.Play("winn");
+                Destroy(stak);
             }
             else
             {
@@ -432,6 +443,7 @@ public class TheStak : MonoBehaviour
                 timeLose.GetComponent<Text>().text = l.text;
                 anim.Play("losse");
                 print(l.text);
+                Destroy(stak);
 
             }
         }
