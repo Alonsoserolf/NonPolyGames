@@ -9454,12 +9454,33 @@ Prefab:
       value: AudioBackground
       objectReference: {fileID: 0}
     - target: {fileID: 1735351422910446, guid: e04d5b549c98049068c552c838da3750, type: 2}
+<<<<<<< HEAD
       propertyPath: m_IsActive
       value: 0
+=======
+      propertyPath: m_TagString
+      value: MMBackgroundMusic
+>>>>>>> master
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e04d5b549c98049068c552c838da3750, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1504755110 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1735351422910446, guid: e04d5b549c98049068c552c838da3750,
+    type: 2}
+  m_PrefabInternal: {fileID: 1504755109}
+--- !u!114 &1504755111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1504755110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce612e0e9556479a93bcd951d0a8ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1537327373
 Prefab:
   m_ObjectHideFlags: 0

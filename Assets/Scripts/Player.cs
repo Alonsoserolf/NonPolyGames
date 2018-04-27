@@ -30,20 +30,29 @@ public class Player : MonoBehaviour {
 	public Image black;
 	public Animator anim;
 
-	public static int currentLevel = 1;
+	public int currentLevel;
 
 	void Start () {
+
 		// Finds all boxes in game.
 		boxes = GameObject.FindGameObjectsWithTag("GridBox");
-		destinations = GameObject.FindGameObjectsWithTag("GridDestination");
-		
-		GameObject[] rows = GameObject.FindGameObjectsWithTag("GridRow");
-		GameObject[] columns = GameObject.FindGameObjectsWithTag("GridColumn");
 
+		// Finds all destinations in game.
+		destinations = GameObject.FindGameObjectsWithTag("GridDestination");
+
+		// # of rows in grid.
+		GameObject[] rows = GameObject.FindGameObjectsWithTag("GridRow");
+		// # of columns in grid.
+		GameObject[] columns = GameObject.FindGameObjectsWithTag("GridColumn");
+		// # of blocks in grid.
 		int totalBlocks = (int)GameObject.FindGameObjectsWithTag("GridBlock").Length + GameObject.FindGameObjectsWithTag("GridDestination").Length;
+
+		// Dimensions of grid.
 		X = totalBlocks / columns.Length;
 		Y = rows.Length;
 		Z = columns.Length / rows.Length;
+
+		// Instantiation of grid.
 		Grid = new int[X, Y, Z];
 
 		// Sets all spaces in Grid that are empty to 0.
@@ -72,19 +81,26 @@ public class Player : MonoBehaviour {
 		}
 
 		transform.position = new Vector3(0, 0, 0);
+
+		// Gets current level.
+		currentLevel = System.Convert.ToInt32(SceneManager.GetActiveScene().name.Substring(SceneManager.GetActiveScene().name.Length - 1));
 	}
 
 
 	void Update () {
+
+		// If moving along the X axis.
 		if (xAxis) {
 			bool hasMoved = false;
+
+			// UP
 			if (Input.GetKeyDown("up")) {
 				if (zPos + 1 < Z) {
 					if (Grid[xPos, yPos, zPos + 1] == 3) {
 						if (zPos + 2 < Z && Grid[xPos, yPos, zPos + 2] != 1) {
 							transform.Translate(0.0f, 0.0f, 1.0f);
 							zPos++;
-							int x = getBlock(xPos, yPos, zPos);
+							int x = getBox(xPos, yPos, zPos);
 							boxes[x].transform.Translate(0.0f, 0.0f, 1.0f);
 							Grid[xPos, yPos, zPos] = 0;
 							if (Grid[xPos, yPos, zPos + 1] == 2) {
@@ -107,13 +123,15 @@ public class Player : MonoBehaviour {
 					}
 				}
 			}
+
+			// DOWN
 			if (Input.GetKeyDown("down")) {
 				if (zPos - 1 >= 0) {
 					if (Grid[xPos, yPos, zPos - 1] == 3) {
 						if (zPos - 2 >= 0 && Grid[xPos, yPos, zPos - 2] != 1) {
 							transform.Translate(0.0f, 0.0f, -1.0f);
 							zPos--;
-							int x = getBlock(xPos, yPos, zPos);
+							int x = getBox(xPos, yPos, zPos);
 							boxes[x].transform.Translate(0.0f, 0.0f, -1.0f);
 							Grid[xPos, yPos, zPos] = 0;
 							if (Grid[xPos, yPos, zPos - 1] == 2) {
@@ -136,13 +154,15 @@ public class Player : MonoBehaviour {
 					}
 				}
 			}
+
+			// LEFT
 			if (Input.GetKeyDown("left")) {
 				if (xPos - 1 >= 0) {
 					if (Grid[xPos - 1, yPos, zPos] == 3) {
 						if (xPos - 2 >= 0 && Grid[xPos - 2, yPos, zPos] != 1) {
 							transform.Translate(-1.0f, 0.0f, 0.0f);
 							xPos--;
-							int x = getBlock(xPos, yPos, zPos);
+							int x = getBox(xPos, yPos, zPos);
 							boxes[x].transform.Translate(-1.0f, 0.0f, 0.0f);
 							Grid[xPos, yPos, zPos] = 0;
 							if (Grid[xPos - 1, yPos, zPos] == 2) {
@@ -165,6 +185,8 @@ public class Player : MonoBehaviour {
 					}
 				}
 			}
+
+			// RIGHT
 			if (Input.GetKeyDown("right")) {
 				
 				if (xPos + 1 < X) {
@@ -172,7 +194,7 @@ public class Player : MonoBehaviour {
 						if (xPos + 2 < X && Grid[xPos + 2, yPos, zPos] != 1) {
 							transform.Translate(1.0f, 0.0f, 0.0f);
 							xPos++;
-							int x = getBlock(xPos, yPos, zPos);
+							int x = getBox(xPos, yPos, zPos);
 							boxes[x].transform.Translate(1.0f, 0.0f, 0.0f);
 							Grid[xPos, yPos, zPos] = 0;
 							if (Grid[xPos + 1, yPos, zPos] == 2) {
@@ -209,15 +231,18 @@ public class Player : MonoBehaviour {
 			}
 		}
 
+		// If moving along the Y axis.
 		if (yAxis) {
 			bool hasMoved = false;
+
+			// UP
 			if (Input.GetKeyDown("up")) {
 				if (yPos + 1 < Y) {
 					if (Grid[xPos, yPos + 1, zPos] == 3) {
 						if (yPos + 2 < Y && Grid[xPos, yPos + 2, zPos] != 1) {
 							transform.Translate(0.0f, 1.0f, 0.0f);
 							yPos++;
-							int x = getBlock(xPos, yPos, zPos);
+							int x = getBox(xPos, yPos, zPos);
 							boxes[x].transform.Translate(0.0f, 1.0f, 0.0f);
 							Grid[xPos, yPos, zPos] = 0;
 							if (Grid[xPos, yPos + 1, zPos] == 2) {
@@ -240,13 +265,15 @@ public class Player : MonoBehaviour {
 					}
 				}
 			}
+
+			// DOWN
 			if (Input.GetKeyDown("down")) {
 				if (yPos - 1 >= 0) {
 					if (Grid[xPos, yPos - 1, zPos] == 3) {
 						if (yPos - 2 >= 0 && Grid[xPos, yPos - 2, zPos] != 1) {
 							transform.Translate(0.0f, -1.0f, 0.0f);
 							yPos--;
-							int x = getBlock(xPos, yPos, zPos);
+							int x = getBox(xPos, yPos, zPos);
 							boxes[x].transform.Translate(0.0f, -1.0f, 0.0f);
 							Grid[xPos, yPos, zPos] = 0;
 							if (Grid[xPos, yPos - 1, zPos] == 2) {
@@ -269,13 +296,15 @@ public class Player : MonoBehaviour {
 					}
 				}
 			}
+
+			// LEFT
 			if (Input.GetKeyDown("left")) {
 				if (xPos - 1 >= 0) {
 					if (Grid[xPos - 1, yPos, zPos] == 3) {
 						if (xPos - 2 >= 0 && Grid[xPos - 2, yPos, zPos] != 1) {
 							transform.Translate(-1.0f, 0.0f, 0.0f);
 							xPos--;
-							int x = getBlock(xPos, yPos, zPos);
+							int x = getBox(xPos, yPos, zPos);
 							boxes[x].transform.Translate(-1.0f, 0.0f, 0.0f);
 							Grid[xPos, yPos, zPos] = 0;
 							if (Grid[xPos - 1, yPos, zPos] == 2) {
@@ -298,13 +327,15 @@ public class Player : MonoBehaviour {
 					}
 				}
 			}
+
+			// RIGHT
 			if (Input.GetKeyDown("right")) {
 				if (xPos + 1 < X) {
 					if (Grid[xPos + 1, yPos, zPos] == 3) {
 						if (xPos + 2 < X && Grid[xPos + 2, yPos, zPos] < 3) {
 							transform.Translate(1.0f, 0.0f, 0.0f);
 							xPos++;
-							int x = getBlock(xPos, yPos, zPos);
+							int x = getBox(xPos, yPos, zPos);
 							boxes[x].transform.Translate(1.0f, 0.0f, 0.0f);
 							Grid[xPos, yPos, zPos] = 0;
 							if (Grid[xPos + 1, yPos, zPos] == 2) {
@@ -347,7 +378,9 @@ public class Player : MonoBehaviour {
 		setMovesMadeText();
 	}
 
-	public int getBlock(int X, int Y, int Z) {
+
+	// Returns box number.
+	public int getBox(int X, int Y, int Z) {
 		for (int i = 0; i < boxes.Length; i++) {
 			int x = (int)boxes[i].transform.position.x;
 			int y = (int)boxes[i].transform.position.y;
