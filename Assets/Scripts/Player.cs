@@ -424,7 +424,7 @@ public class Player : MonoBehaviour {
 	}
 
 	IEnumerator nextLevel() {
-		int totalLevels = SceneManager.sceneCount;
+		int totalLevels = 5;
 		string level = "Level1." + ++currentLevel;
 
 		anim.SetBool("Fade", true);
