@@ -413,6 +413,7 @@ public class Player : MonoBehaviour {
 	IEnumerator nextLevel() {
 		int totalLevels = SceneManager.sceneCount;
 		string level = "Level1." + ++currentLevel;
+
 		anim.SetBool("Fade", true);
 		yield return new WaitUntil(()=>black.color.a == 1);
 		if (currentLevel > totalLevels) {
