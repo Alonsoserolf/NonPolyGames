@@ -13,6 +13,7 @@ using System;
 public class MainMenuController : MonoBehaviour {
 
     Animator anim;
+    Animator fader;
 
     private GameObject canvas;
     private GameObject stak;
@@ -45,9 +46,14 @@ public class MainMenuController : MonoBehaviour {
     }
     public void ExpandHowTo()
     {
+        
         howTo = (howTo == 0) ? 1 : 0;
 
-        if (howTo == 0) anim.Play("expndHowTo_off");
+        if (howTo == 0)
+        {
+            anim.Play("expndHowTo_off");
+           // anim.SetBool("how2Play", true);
+        }
         else anim.Play("expndHowTo_on");
     }
 
@@ -108,6 +114,7 @@ public class MainMenuController : MonoBehaviour {
         anim.SetBool("startt", true);
         //canvas.SetActive(false);
         anim.SetFloat("Start",1);
+       // anim.SetBool("how2Play", true);
        // anim.Play("II_Start_Anim");
         //set camerascript on
         camera.GetComponent<RotateStak>().enabled = true;
@@ -137,7 +144,9 @@ public class MainMenuController : MonoBehaviour {
   
     public void BackToStart()
     {
+
         SceneManager.LoadScene("InstantInsanity");
+
         //print("Restart SCENE");
     }
     public void BackToScrollingMenu()
