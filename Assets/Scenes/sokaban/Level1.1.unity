@@ -684,6 +684,7 @@ MonoBehaviour:
   boxesLeftText: {fileID: 1887435745}
   black: {fileID: 1583699938}
   anim: {fileID: 1583699937}
+  currentLevel: 0
 --- !u!23 &264327866
 MeshRenderer:
   m_ObjectHideFlags: 0

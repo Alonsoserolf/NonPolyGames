@@ -54,7 +54,8 @@ TagManager:
   - GridColumn
   - GridBox
   - GridDestination
-  - BackgroundMusic
+  - MMBackgroundMusic
+  - SokobanBackgroundMusic
   layers:
   - Default
   - TransparentFX
