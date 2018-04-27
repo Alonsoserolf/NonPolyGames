@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4428678, g: 0.49203372, b: 0.57179, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: 99d16b6b92110874eb7d1eacf0861288,
     type: 2}
   m_UseShadowmask: 1
@@ -1505,9 +1504,13 @@ RectTransform:
   m_GameObject: {fileID: 342049291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 274.5, y: 160.48004, z: 0}
 =======
   m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> master
+=======
+  m_LocalPosition: {x: 799, y: 472.48004, z: 0}
 >>>>>>> master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2129,7 +2132,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 411773433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -150, y: -55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 956082074}
@@ -2356,7 +2359,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 483148076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -150, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1561793032}
@@ -3276,11 +3279,16 @@ RectTransform:
   m_GameObject: {fileID: 901112659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 355.5, y: 183, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
 =======
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+>>>>>>> master
+=======
+  m_LocalPosition: {x: 880, y: 495, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
 >>>>>>> master
   m_Children:
   - {fileID: 1233055602}
@@ -4831,9 +4839,13 @@ RectTransform:
   m_GameObject: {fileID: 1140812117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -276, y: -157.5, z: 0}
 =======
   m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> master
+=======
+  m_LocalPosition: {x: -800.5, y: -469.5, z: 0}
 >>>>>>> master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5192,9 +5204,13 @@ RectTransform:
   m_GameObject: {fileID: 1233055601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 28, y: 80, z: 0}
 =======
   m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> master
+=======
+  m_LocalPosition: {x: 28, y: 392, z: 0}
 >>>>>>> master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5506,9 +5522,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1312863898
@@ -5892,9 +5908,13 @@ RectTransform:
   m_GameObject: {fileID: 1416142464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 82.5, y: 121.479996, z: 0}
 =======
   m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> master
+=======
+  m_LocalPosition: {x: 82.5, y: 433.48, z: 0}
 >>>>>>> master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6428,9 +6448,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1499420514
@@ -6554,7 +6574,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -6922,9 +6941,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1637409430
@@ -7649,9 +7668,13 @@ RectTransform:
   m_GameObject: {fileID: 1773516512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -276, y: 158, z: 0}
 =======
   m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> master
+=======
+  m_LocalPosition: {x: -800.5, y: 470, z: 0}
 >>>>>>> master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8389,9 +8412,13 @@ RectTransform:
   m_GameObject: {fileID: 1949929617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: -99, z: 0}
 =======
   m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> master
+=======
+  m_LocalPosition: {x: 36.4, y: -395.1, z: 0}
 >>>>>>> master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8400,8 +8427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 84}
-  m_SizeDelta: {x: 161, y: 30}
+  m_AnchoredPosition: {x: 36.4, y: 99.9}
+  m_SizeDelta: {x: 233.8, y: 61.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949929619
 MonoBehaviour:
@@ -8719,9 +8746,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &2063260373
@@ -8805,9 +8832,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &2074481083
@@ -9163,9 +9190,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &2120006276
