@@ -363,7 +363,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1735351422910446, guid: e04d5b549c98049068c552c838da3750, type: 2}
       propertyPath: m_TagString
-      value: MMBackgroundMusic
+      value: BackgroundMusic
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e04d5b549c98049068c552c838da3750, type: 2}
