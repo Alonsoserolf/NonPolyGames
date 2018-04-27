@@ -586,6 +586,10 @@ Prefab:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayOnSound
       objectReference: {fileID: 0}
+    - target: {fileID: 1631432923421862, guid: aa12d20c921444b3485c284c01455a37, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa12d20c921444b3485c284c01455a37, type: 2}
   m_IsPrefabParent: 0
