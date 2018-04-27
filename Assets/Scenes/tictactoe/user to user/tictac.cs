@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class tictac : MonoBehaviour
 {
-
+    Color player1 ;
     public static int[] level1;
     public static int[] level2;
     public static int[] level3;
@@ -219,7 +219,7 @@ public class tictac : MonoBehaviour
             else
             {
                 player_turn_text.text = "Player 1 turn";
-                player_turn_text.color = Color.blue;
+                player_turn_text.color =player1;
             }
         }
 
@@ -260,8 +260,8 @@ public class tictac : MonoBehaviour
         level2 = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         level3 = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         player_turn = 0;
-       
 
+       player1= player_turn_text.color;
         
 
 
