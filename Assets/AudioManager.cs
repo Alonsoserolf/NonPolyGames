@@ -5,8 +5,8 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 //[RequireComponent(typeof(Button))]
-public class AudioManager : MonoBehaviour {
-
+public class AudioManager : MonoBehaviour
+{
 	public AudioSource clickSound;
 	public AudioClip click;
 
@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour {
 		//source.playOnAwake = false;
 		//button.onClick.AddListener (() => PlaySound ());
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		/*if (Input.GetKeyDown (KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetMouseButtonDown(0)) {
@@ -44,5 +44,5 @@ public class AudioManager : MonoBehaviour {
 		clickSound.PlayOneShot (click);
 	}
 
+
 }
-//}
