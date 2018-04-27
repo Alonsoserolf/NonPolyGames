@@ -125,7 +125,13 @@ public class MainMenuController : MonoBehaviour {
     }
     public void disThis()
     {
-
+         GameObject Arrows=  GameObject.Find("Arrows");
+        Arrows.SetActive(false);
+    }
+    public void Thisdis()
+    {
+        GameObject Arrows = GameObject.Find("WASD");
+        Arrows.SetActive(false);
     }
     public void OpenInGameSettings()
     {
