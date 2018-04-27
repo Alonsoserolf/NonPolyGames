@@ -65,11 +65,14 @@ public class createStack : MonoBehaviour
 
     private void updateVals()
     {
-        stackVals.text = "";
-        for (int x = bricksLeft - 1; x >= 0; x--)
+        stackVals.text = "Stack Values\n";
+        for (int x = 9; x >= 0; x--)
         {
             Console.WriteLine("brick val =" + vals[x]);
-            stackVals.text += vals[x].ToString() + "\n";
+            if (x < bricksLeft)
+                stackVals.text += vals[x].ToString() + "\n";
+            else
+                stackVals.text += "\n";
         }
 
     }
@@ -183,7 +186,8 @@ public class createStack : MonoBehaviour
             winText.text = "Tie";
         }
         restart.gameObject.SetActive(true);
-
+        take1.interactable = false;
+        take2.interactable = false;
     }
 
     void switchTurn()
@@ -202,7 +206,10 @@ public class createStack : MonoBehaviour
         playerTurn.text = "Player " + turn.ToString() + "'s turn";
 
     }
-
+    public void enableTakeButtons() {
+        take1.interactable = true;
+        take2.interactable = true;
+    }
 
 }
 
