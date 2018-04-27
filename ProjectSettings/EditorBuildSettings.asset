@@ -4,6 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/finalscrollingmenus/ScrollingMainMenu.unity
@@ -110,3 +111,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sokaban/World1.unity
     guid: a9046f414ddeb48318fa608c47fc2a73
+=======
+  m_Scenes: []
+>>>>>>> ff0d5a3a84fcf5f4bacf1818fae3ee7a4b7d8a6e
