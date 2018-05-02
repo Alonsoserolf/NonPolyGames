@@ -1,0 +1,6 @@
+Use DB
+Go
+Select 
+	When Price=0 Then Select Substrint(Speaker, 1, PatInDex('% %', Speaker)) as First FROM Presentations
+	
+	
